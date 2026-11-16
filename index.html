@@ -1,60 +1,2640 @@
-<!doctype html>
-<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>المستكشفة السعودية: رحلة في عالم المعادلات</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet"><style>
-:root{--green:#006c35;--dark:#004b24;--gold:#c59b27;--paper:#faf7f0;--line:#e2ddd2;--mint:#e8f5ee;--ink:#1e293b}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 15%,#e7f2e9,transparent 42%),var(--paper);font-family:Tajawal,Arial,sans-serif;color:var(--ink);line-height:1.65}button,input{font:inherit}button{cursor:pointer}.sadu{height:13px;background:repeating-linear-gradient(90deg,var(--green) 0 18px,var(--gold) 18px 26px,#8b1e24 26px 34px,white 34px 40px);border-bottom:2px solid var(--gold)}header{background:#fffc;backdrop-filter:blur(8px);position:sticky;top:0;z-index:5;box-shadow:0 3px 12px #004b2414}.nav{max-width:1100px;margin:auto;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-weight:900;color:var(--dark);font-size:1.16rem}.nav-items{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pill{border-radius:30px;padding:5px 12px;background:var(--mint);border:1px solid #a7d0b8;font-weight:800;color:var(--dark)}.goldpill{background:#fbf6e8;border-color:var(--gold);color:#80610f}main{max-width:1050px;margin:26px auto 65px;padding:0 16px}.screen{display:none;animation:appear .3s ease}.screen.active{display:block}@keyframes appear{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}.panel{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 10px 28px #004b2417}.hero{overflow:hidden;padding:0;border:2px solid #d6bc78}.hero-head{padding:38px 22px;background:linear-gradient(130deg,var(--dark),var(--green),#14834c);text-align:center;color:white}.emblem{margin:0 auto 15px;width:82px;height:82px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:3rem;background:#ffffff1f}.hero h1,.certificate h1{font-family:Amiri,serif;font-size:clamp(2rem,5vw,3rem);margin:0}.hero-head p{color:#ffe29a;font-weight:800}.hero-body{padding:24px;max-width:760px;margin:auto}.credits{display:flex;gap:12px;justify-content:space-around;flex-wrap:wrap;background:#fbf6e8;border:1px dashed var(--gold);border-radius:13px;padding:12px;text-align:center}.credits small{display:block;color:#667085}.credits strong{color:var(--dark)}.namebox{margin:20px 0;padding:18px;background:var(--paper);border:2px solid #b9dcca;border-radius:15px}label{font-weight:900;color:var(--dark);display:block;margin-bottom:8px}input{width:100%;padding:12px 16px;border:2px solid var(--line);border-radius:12px;outline:none;font-weight:800;background:white}input:focus{border-color:var(--green)}.features,.station-grid,.two-col,.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}.feature{background:var(--mint);color:var(--dark);border-radius:12px;padding:12px;font-weight:800}.btn{background:white;color:var(--dark);border:2px solid var(--green);padding:11px 18px;border-radius:13px;font-weight:900;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:6px}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(120deg,var(--green),var(--dark));color:white;border-color:var(--green)}.gold{background:linear-gradient(120deg,#d4aa35,#9e7916);border-color:var(--gold);color:white}.soft{background:var(--paper);border-color:var(--line);color:var(--ink)}.center{text-align:center}.topgap{margin-top:20px}.map-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:20px}.map-top h2,.section-title{color:var(--dark);margin:0 0 5px}.muted{color:#617083}.progress{height:14px;background:#e6e1d7;border-radius:30px;overflow:hidden;margin-top:7px}.progress div{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));width:0;transition:width .4s}.station-card{display:flex;flex-direction:column;justify-content:space-between;gap:14px;border:2px solid var(--line)}.station-card.done{border-color:var(--green);background:#f4fbf7}.sthead{display:flex;justify-content:space-between;align-items:center}.tag{padding:4px 12px;border-radius:30px;background:#fbf6e8;color:#97751a;font-weight:900}.station-card h3{margin:10px 0 1px;color:var(--dark);font-size:1.42rem}.station-card h4{margin:0;color:#98771d}.actions{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:20px}.station-banner{background:linear-gradient(120deg,var(--dark),var(--green));color:white;border-bottom:5px solid var(--gold);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:18px}.station-banner h2{margin:4px 0}.info h3{color:var(--dark);margin:0 0 10px}.rule{background:#fbf6e8;border-right:4px solid var(--gold);padding:12px;border-radius:10px;font-weight:800}.example{background:var(--mint);padding:12px;border-radius:10px}.math{direction:ltr;unicode-bidi:isolate;display:inline-block;border:1px solid #b9dcca;background:white;color:var(--dark);padding:2px 8px;border-radius:8px;font-weight:900}.lab{text-align:center;margin:18px 0}.balance{max-width:450px;margin:20px auto 5px;display:flex;align-items:end;justify-content:space-between;padding:14px 10px 6px;border-bottom:7px solid #9e7916;border-radius:5px}.pan{background:var(--mint);border:2px solid var(--green);border-radius:13px;padding:10px;min-width:100px;color:var(--dark);font-size:1.2rem;font-weight:900}.base{width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:30px solid var(--dark);margin:auto}.question{font-size:1.28rem;font-weight:900;margin:18px 0}.option{background:var(--paper);color:var(--ink);border:2px solid var(--line);padding:16px;border-radius:13px;font-weight:900;font-size:1.1rem}.option:hover:not(:disabled){border-color:var(--green);background:var(--mint)}.option.correct{background:#dcfce7;border-color:#15803d;color:#14532d}.option.wrong{background:#fee2e2;border-color:#b91c1c;color:#991b1b}.option:disabled{cursor:default}.feedback{padding:15px;border-radius:12px;margin-top:14px;font-weight:800}.feedback.good{background:#dcfce7;color:#14532d;border:1px solid #15803d}.feedback.hint{background:#fef3c7;color:#854d0e;border:1px solid #f59e0b}.feedback.bad{background:#fee2e2;color:#991b1b;border:1px solid #ef4444}.quiz-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}.numeric-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.numeric-row input{max-width:240px;text-align:center;direction:ltr}.certificate{border:10px double var(--gold);outline:4px solid var(--green);outline-offset:-18px;background:#fffdf8;text-align:center;padding:48px 30px;max-width:900px;margin:20px auto;box-shadow:0 12px 28px #004b241c}.certificate h1{color:var(--green)}.certificate .student{font:700 clamp(1.8rem,4vw,2.8rem) Amiri,serif;color:var(--dark);border-bottom:2px dashed var(--gold);display:inline-block;padding:6px 30px;min-width:240px}.certificate p{font-size:1.17rem;font-weight:700}.certscore{background:var(--green);color:white;border:2px solid var(--gold);border-radius:30px;padding:7px 21px;display:inline-block;font-weight:900}.signatures{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-around;gap:20px;margin-top:32px}.signatures strong{font:700 1.5rem Amiri,serif;color:var(--dark)}.seal{width:95px;height:95px;display:grid;place-items:center;border:3px double var(--gold);border-radius:50%;background:#fbf6e8;color:var(--dark);font-weight:900}.overlay{position:fixed;inset:0;background:#152036a8;z-index:10;display:none;align-items:center;justify-content:center;padding:16px}.overlay.open{display:flex}.dialog{max-width:420px;width:100%;text-align:center}.dialog h2{color:var(--dark)}#confetti{position:fixed;inset:0;pointer-events:none;z-index:9}@media(max-width:550px){.nav-items .pill{font-size:.82rem}.panel{padding:16px}.hero{padding:0}.hero-body{padding:17px}.hero-head{padding:30px 16px}.balance .pan{min-width:92px;padding:8px 5px}.certificate{padding:34px 19px}.cert-name{min-width:0}}@media print{@page{size:A4 landscape;margin:8mm}body{background:white!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}header,.sadu,.no-print,#confetti,.overlay{display:none!important}main{max-width:none;margin:0;padding:0}.screen{display:none!important}#certificate-screen{display:block!important}.certificate{box-shadow:none;margin:0 auto;width:100%;max-width:100%;break-inside:avoid;padding:24px}}
-</style></head><body><canvas id="confetti"></canvas><div class="sadu"></div><header><div class="nav"><div class="brand">🌴 المستكشفة السعودية <small style="display:block;color:#9e7916">رحلة في عالم المعادلات</small></div><div class="nav-items"><span class="pill">👩🏻‍🎓 <span id="navName">ضيفة الرحلة</span> <button class="btn soft" style="padding:2px 7px" onclick="editName()">✏️</button></span><span class="pill goldpill">🎯 <span id="navScore">٠٪ (٠/٢٢)</span></span><button class="btn soft" onclick="toggleSound()" id="soundBtn">🔊</button><button class="btn soft" onclick="askReset()">🔄</button></div></div></header><main>
-<section class="screen active" id="welcome-screen"><div class="panel hero"><div class="hero-head"><div class="emblem">🌴</div><h1>المستكشفة السعودية:<br>رحلة في عالم المعادلات</h1><p>المملكة العربية السعودية • مادة الرياضيات للصف الأول المتوسط</p><p>معادلات الجمع والطرح والضرب والقسمة</p></div><div class="hero-body"><div class="credits"><div><small>إعداد وتصميم الطالبة</small><strong>وتين طه عسيري — الصف الأول المتوسط</strong></div><div><small>إشراف معلمة المادة</small><strong>الأستاذة حسناء كيلاني</strong></div></div><div class="namebox"><label for="welcomeName">✍🏻 اسم المستكشفة (اكتبي اسمك ليظهر في شهادة الإنجاز)</label><input id="welcomeName" placeholder="اكتبي اسمكِ الثلاثي" oninput="setName(this.value)"><p class="muted" style="margin-bottom:0">يمكن تعديل الاسم لاحقًا قبل طباعة الشهادة.</p></div><div class="features"><div class="feature">🗺️ ٥ محطات وطنية</div><div class="feature">⚖️ ميزان المعادلات</div><div class="feature">🎯 ٣ محاولات وتلميحات</div><div class="feature">🏅 شهادة بالاسم والنتيجة</div></div><div class="center topgap"><button class="btn primary" onclick="start()">🚀 انطلقي في رحلة الاستكشاف</button></div></div></div></section>
-<section class="screen" id="map-screen"><div class="panel map-top"><div><h2>🗺️ خريطة محطات الاستكشاف</h2><div class="muted">اختاري المحطة وتعلّمي القاعدة الذهبية ثم أكملي تحديات المعادلات.</div></div><div style="min-width:min(100%,260px);flex:1;max-width:380px"><strong id="progressLabel">٠٪ (٠ من ٢٢)</strong><div class="progress"><div id="progressFill"></div></div></div></div><div class="station-grid" id="stationGrid"></div><div class="panel actions"><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn gold" onclick="openCertificate()">🏅 عرض شهادة الإنجاز</button><button class="btn" id="retryBtn" onclick="retryRemaining()">🎯 إعادة الأسئلة المتبقية</button></div><button class="btn soft" onclick="askReset()">🔄 ابدأ من جديد</button></div></section>
-<section class="screen" id="station-screen"><div class="panel station-banner"><div><span id="stationNumber">المحطة ١</span><h2 id="stationTitle"></h2></div><button class="btn soft" onclick="show('map')">🗺️ العودة إلى الخريطة</button></div><div class="two-col"><div class="panel info"><h3>📜 القاعدة الذهبية</h3><div class="rule" id="rule"></div><p class="muted" id="tip"></p></div><div class="panel info"><h3>✍🏻 مثال محلول خطوة بخطوة</h3><div class="example" id="example"></div></div></div><div class="panel lab"><h3 class="section-title">⚖️ مختبر ميزان المعادلات التفاعلي</h3><p class="muted">طبقي العملية العكسية على الطرفين للمحافظة على المساواة</p><div class="balance"><div class="pan" id="leftPan"></div><strong style="font-size:1.5rem;color:#9e7916">=</strong><div class="pan" id="rightPan"></div></div><div class="base"></div><div class="topgap"><button class="btn primary" id="labBtn" onclick="applyLab()"></button> <button class="btn soft" onclick="resetLab()">إعادة ضبط الميزان</button></div><p id="labMsg" style="font-weight:900;color:var(--green)"></p></div><div class="panel"><div class="actions" style="margin-top:0"><strong id="questionCounter"></strong><span class="pill goldpill" id="attempts"></span></div><div class="question" id="questionText"></div><div class="options" id="optionArea"></div><div id="numericArea" class="numeric-row" style="display:none"><input id="numberAnswer" inputmode="decimal" placeholder="اكتبي الناتج" onkeydown="if(event.key==='Enter')submitNumber()"><button class="btn primary" id="numberBtn" onclick="submitNumber()">تحقق من الإجابة</button></div><div id="feedback" aria-live="polite"></div><div class="quiz-nav"><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn soft" id="prevBtn" onclick="move(-1)">السابق</button><button class="btn primary" id="nextBtn" onclick="move(1)">السؤال التالي</button></div><button class="btn gold" onclick="show('map')">✅ إتمام المحطة والعودة للخريطة</button></div></div></section>
-<section class="screen" id="certificate-screen"><div class="panel actions no-print" style="margin-top:0"><div style="flex:1;min-width:230px"><label>تعديل اسم المستكشفة في الشهادة</label><input id="certInput" oninput="setName(this.value)"></div><div><button class="btn primary" onclick="window.print()">🖨️ طباعة / حفظ PDF</button> <button class="btn" onclick="show('map')">🗺️ الخريطة</button></div></div><div class="certificate"><div style="font-weight:900;color:var(--dark)">المملكة العربية السعودية • وزارة التعليم • مادة الرياضيات (الصف الأول المتوسط)</div><div style="font-size:2.2rem">🏅</div><h1>شهادة إنجاز وتفوّق</h1><div class="pill goldpill">رحلة المستكشفة السعودية في عالم المعادلات</div><p>تُمنح هذه الشهادة بكل فخر واعتزاز للمستكشفة المبدعة:</p><div class="student" id="certName"></div><p>لإتمامها رحلة استكشاف معادلات الجمع والطرح والضرب والقسمة عبر محطات المملكة العربية السعودية (الدرعية، العُلا، نيوم، جدة التاريخية، والرياض)، محققةً نسبة إتقان قدرها:</p><div class="certscore" id="certScore"></div><div class="signatures"><div><small>مصممة الرحلة</small><br><strong>وتين طه عسيري</strong><br>الصف الأول المتوسط</div><div class="seal">🌴<br>ختم التميز</div><div><small>إشراف معلمة المادة</small><br><strong>حسناء كيلاني</strong><br>معلمة الرياضيات</div></div></div></section>
-</main><div class="overlay" id="modal"><div class="panel dialog"><h2 id="modalTitle"></h2><p id="modalText"></p><div id="modalContent"></div><div class="actions" style="justify-content:center" id="modalButtons"></div></div></div>
-<script>
-const STATIONS=[
-{id:'diriyah',num:'المحطة ١',city:'الدرعية التاريخية',topic:'معادلات الجمع',desc:'انطلقي من مهد الدولة السعودية وتعلّمي حل معادلات الجمع باستخدام خاصية الطرح للمساواة.',rule:'لحل معادلة جمع مثل (س + أ = ب)، نطرح العدد (أ) من كلا طرفي المعادلة لعزل المتغير.',tip:'العملية العكسية للجمع هي الطرح، ويجب إجراء العملية نفسها على الطرفين.',example:['س + ٦ = ١٤','س + ٦ - ٦ = ١٤ - ٦','س = ٨'],lab:['س + ٤','١٠','اطرحي ٤ من الطرفين (−٤)','س','٦','أحسنتِ! بطرح ٤ من الطرفين: س = ٦.'],questions:[
-['d1','mcq','حلّي المعادلة: س + ٧ = ١٥',['س = ٨','س = ٢٢','س = ٧','س = ٩'],0,'اطرحي ٧ من كلا الطرفين: ١٥ - ٧.','س = ١٥ - ٧ = ٨.'],
-['d2','mcq','ما قيمة ص في المعادلة: ص + (−٤) = ١٠ ؟',['ص = ٦','ص = −١٤','ص = ١٤','ص = −٦'],2,'طرح (−٤) يكافئ إضافة ٤.','ص = ١٠ + ٤ = ١٤.'],
-['d3','mcq','أوجدي الحل: −٩ + ك = −٣',['ك = −١٢','ك = ٦','ك = −٦','ك = ١٢'],1,'اجمعي ٩ إلى طرفي المعادلة.','ك = −٣ + ٩ = ٦.'],
-['d4','mcq','زار ١٢ طالبًا حي الطريف بالدرعية، ثم انضم إليهم آخرون فأصبحوا ٢٧ طالبًا. كم طالبًا انضم؟',['١٥ طالبًا','٣٩ طالبًا','١٤ طالبًا','١٧ طالبًا'],0,'اكتبي: ١٢ + ز = ٢٧، ثم اطرحي ١٢.','ز = ٢٧ − ١٢ = ١٥ طالبًا.']]},
-{id:'alula',num:'المحطة ٢',city:'العُلا',topic:'معادلات الطرح',desc:'استكشفي جبال العُلا وأتقني حل معادلات الطرح باستخدام خاصية الجمع للمساواة.',rule:'لحل معادلة طرح مثل (س − أ = ب)، نجمع العدد (أ) إلى كلا الطرفين.',tip:'العملية العكسية للطرح هي الجمع، وانتبهي عند طرح عدد سالب.',example:['س − ٥ = ٩','س − ٥ + ٥ = ٩ + ٥','س = ١٤'],lab:['س − ٥','٧','اجمعي ٥ للطرفين (+٥)','س','١٢','رائع! بإضافة ٥ إلى الطرفين: س = ١٢.'],questions:[
-['u1','mcq','حلّي المعادلة: س − ٨ = ١٣',['س = ٥','س = ٢١','س = −٥','س = ١٩'],1,'اجمعي ٨ إلى كلا الطرفين.','س = ١٣ + ٨ = ٢١.'],
-['u2','mcq','ما قيمة م في المعادلة: م − ١١ = −٤ ؟',['م = −١٥','م = −٧','م = ٧','م = ١٥'],2,'اجمعي ١١ إلى −٤.','م = −٤ + ١١ = ٧.'],
-['u3','mcq','أوجدي الحل: ل − (−٦) = ١٥',['ل = ٢١','ل = ٩','ل = −٩','ل = −٢١'],1,'طرح السالب يعني الجمع: ل + ٦ = ١٥.','ل = ١٥ − ٦ = ٩.'],
-['u4','mcq','انخفضت درجة الحرارة في العُلا ٦ درجات فأصبحت ٩ درجات مئوية. كم كانت قبل الانخفاض؟',['٣ درجات','١٥ درجة','١٦ درجة','٦ درجات'],1,'المعادلة د − ٦ = ٩.','د = ٩ + ٦ = ١٥ درجة مئوية.']]},
-{id:'neom',num:'المحطة ٣',city:'نيوم',topic:'معادلات الضرب',desc:'حلّقي نحو مستقبل المملكة في نيوم وتدرّبي على حل معادلات الضرب باستخدام القسمة.',rule:'لحل معادلة ضرب مثل (أ س = ب) حيث أ لا يساوي صفرًا، نقسم الطرفين على معامل س.',tip:'تشابه الإشارات في القسمة يعطي ناتجًا موجبًا واختلافها يعطي سالبًا.',example:['٤س = ٢٤','٤س ÷ ٤ = ٢٤ ÷ ٤','س = ٦'],lab:['٣س','١٥','اقسمي الطرفين على ٣ (÷٣)','س','٥','ممتاز! بقسمة الطرفين على ٣: س = ٥.'],questions:[
-['n1','mcq','حلّي المعادلة: ٥س = ٣٥',['س = ٣٠','س = ٧','س = ٦','س = ١٧٥'],1,'اقسمي الطرفين على ٥.','س = ٣٥ ÷ ٥ = ٧.'],
-['n2','mcq','ما قيمة ص في المعادلة: −٤ص = ٢٨ ؟',['ص = ٧','ص = ٣٢','ص = −٧','ص = −٢٤'],2,'اقسمي على −٤؛ موجب ÷ سالب = سالب.','ص = ٢٨ ÷ (−٤) = −٧.'],
-['n3','mcq','أوجدي الحل: −٦ن = −٤٢',['ن = −٧','ن = ٧','ن = −٣٦','ن = ٦'],1,'سالب ÷ سالب = موجب.','ن = (−٤٢) ÷ (−٦) = ٧.'],
-['n4','mcq','تنتج ٣ ألواح شمسية متطابقة في نيوم ٢٤ كيلوواط. ما إنتاج اللوح الواحد؟',['٧ كيلوواط','٨ كيلوواط','٢١ كيلوواط','٧٢ كيلوواط'],1,'المعادلة ٣ط = ٢٤.','ط = ٢٤ ÷ ٣ = ٨ كيلوواط.']]},
-{id:'jeddah',num:'المحطة ٤',city:'جدة التاريخية',topic:'معادلات القسمة',desc:'تجولي بين رواشين جدة التاريخية وتعلّمي حل معادلات القسمة باستخدام الضرب.',rule:'لحل معادلة قسمة مثل (س ÷ أ = ب)، نضرب كلا الطرفين في أ، بشرط ألا يكون صفرًا.',tip:'العملية العكسية للقسمة هي الضرب مع مراعاة الإشارات.',example:['س ÷ ٣ = ٧','(س ÷ ٣) × ٣ = ٧ × ٣','س = ٢١'],lab:['س ÷ ٢','٦','اضربي الطرفين في ٢ (×٢)','س','١٢','أبدعتِ! بضرب الطرفين في ٢: س = ١٢.'],questions:[
-['j1','mcq','حلّي المعادلة: س ÷ ٤ = ٩',['س = ١٣','س = ٣٦','س = ٥','س = ٢٤'],1,'اضربي الطرفين في ٤.','س = ٩ × ٤ = ٣٦.'],
-['j2','mcq','ما قيمة ع في المعادلة: ع ÷ (−٣) = ٨ ؟',['ع = ٢٤','ع = −٢٤','ع = −٥','ع = ١١'],1,'اضربي ٨ في −٣.','ع = ٨ × (−٣) = −٢٤.'],
-['j3','mcq','أوجدي الحل: ف ÷ (−٥) = −٦',['ف = −٣٠','ف = ٣٠','ف = −١١','ف = ١'],1,'اضربي سالبًا في سالب.','ف = (−٦) × (−٥) = ٣٠.'],
-['j4','mcq','وُزّعت رواشين تراثية على ٤ واجهات في جدة التاريخية وكان نصيب كل واجهة ٧ رواشين. كم العدد الكلي؟',['١١ روشانًا','٢٨ روشانًا','٣ رواشين','٢٤ روشانًا'],1,'اكتبي ر ÷ ٤ = ٧.','ر = ٧ × ٤ = ٢٨ روشانًا.']]},
-{id:'riyadh',num:'المحطة ٥ (الختامية)',city:'الرياض — قصر المصمك',topic:'التحدي الشامل للمعادلات',desc:'اجمعي مهارات الجمع والطرح والضرب والقسمة عبر الإدخال المباشر والاختيار.',rule:'حدّدي العملية المرتبطة بالمتغير ثم طبّقي العملية العكسية على الطرفين بدقة.',tip:'يمكن كتابة الأعداد بالأرقام العربية أو الإنجليزية، مع علامة الناقص قبل العدد السالب.',example:['−٣س = ٢١','−٣س ÷ (−٣) = ٢١ ÷ (−٣)','س = −٧'],lab:['س + ٦','−٢','اطرحي ٦ من الطرفين (−٦)','س','−٨','عمل رائع! −٢ − ٦ = −٨.'],questions:[
-['r1','input','أوجدي قيمة س: س + ١٤ = ٢٣',null,9,'اطرحي ١٤ من ٢٣.','س = ٢٣ − ١٤ = ٩.'],
-['r2','input','أوجدي قيمة ص: ص − ٩ = −٢',null,7,'اجمعي ٩ إلى −٢.','ص = −٢ + ٩ = ٧.'],
-['r3','input','أوجدي قيمة ك: −٧ك = ٤٢',null,-6,'اقسمي ٤٢ على −٧.','ك = ٤٢ ÷ (−٧) = −٦.'],
-['r4','input','أوجدي قيمة م: م ÷ ٦ = −٥',null,-30,'اضربي −٥ في ٦.','م = (−٥) × ٦ = −٣٠.'],
-['r5','mcq','أي المعادلات التالية حلّها يساوي −٤ ؟',['س + ٤ = ٠','س − ٤ = ٠','٣س = ١٢','س ÷ ٢ = −٨'],0,'عوّضي س بـ −٤ في الخيارات.','المعادلة س + ٤ = ٠ تعطي س = −٤.'],
-['r6','input','في احتفال يوم التأسيس بالرياض، وُزّع ٩٦ مشاركًا بالتساوي على ٨ فرق للعرضة السعودية. كم مشاركًا في كل فرقة؟',null,12,'اكتبي ٨ف = ٩٦.','ف = ٩٦ ÷ ٨ = ١٢ مشاركًا.']]}
-];
-const $=id=>document.getElementById(id),ALL=STATIONS.flatMap(s=>s.questions),AR='٠١٢٣٤٥٦٧٨٩';const ad=n=>String(n).replace(/\d/g,x=>AR[+x]);const normalize=s=>String(s).trim().replace(/[٠-٩]/g,c=>String(AR.indexOf(c))).replace(/[−–—]/g,'-').replace(/٫/g,'.').replace(/\s/g,'');
-let state={name:'',si:0,qi:0,status:{},sound:true};function init(){state.status={};ALL.forEach(q=>state.status[q[0]]={tries:3,solved:false,exhausted:false,wrong:[]});}init();
-function sound(ok=true){if(!state.sound)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C(),notes=ok?[523,659,784]:[390,310];notes.forEach((f,i)=>{let o=a.createOscillator(),g=a.createGain(),t=a.currentTime+i*.095;o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(.10,t);g.gain.exponentialRampToValueAtTime(.001,t+.17);o.connect(g).connect(a.destination);o.start(t);o.stop(t+.18)});setTimeout(()=>a.close(),650)}catch(e){}}function toggleSound(){state.sound=!state.sound;$('soundBtn').textContent=state.sound?'🔊':'🔇'}
-function confetti(){let cv=$('confetti'),c=cv.getContext('2d');cv.width=innerWidth;cv.height=innerHeight;let ps=Array.from({length:90},()=>({x:Math.random()*cv.width,y:-Math.random()*cv.height,v:2+Math.random()*5,w:5+Math.random()*8,color:['#006c35','#c59b27','#16a34a','#f59e0b'][Math.floor(Math.random()*4)]})),i=0;function draw(){c.clearRect(0,0,cv.width,cv.height);ps.forEach(p=>{p.y+=p.v;c.fillStyle=p.color;c.fillRect(p.x,p.y,p.w,p.w)});if(i++<160)requestAnimationFrame(draw);else c.clearRect(0,0,cv.width,cv.height)}draw()}
-function setName(v){state.name=v.trim();let name=state.name||'المستكشفة المبدعة';$('navName').textContent=name;$('certName').textContent=name;$('welcomeName').value=v;$('certInput').value=v}function editName(){modal('✏️ تعديل اسم المستكشفة','اكتبي الاسم ليظهر على الشهادة.','<input id="newName" placeholder="الاسم الثلاثي">',[['حفظ',()=>{setName($('newName').value);closeModal()}],['إلغاء',closeModal]]);$('newName').value=state.name}
-function modal(title,msg,content,buttons){$('modalTitle').textContent=title;$('modalText').textContent=msg;$('modalContent').innerHTML=content;$('modalButtons').innerHTML='';buttons.forEach(([name,fn],i)=>{let b=document.createElement('button');b.className='btn '+(i===0?'primary':'soft');b.textContent=name;b.onclick=fn;$('modalButtons').appendChild(b)});$('modal').classList.add('open')}function closeModal(){$('modal').classList.remove('open')}function askReset(){modal('🔄 بدء الرحلة من جديد','هل تريدين تصفير النتائج والمحاولات؟ سيبقى الاسم كما هو.','',[['نعم، ابدأ من جديد',()=>{init();closeModal();show('welcome')}],['إلغاء',closeModal]])}
-function show(scr){document.querySelectorAll('.screen').forEach(el=>el.classList.remove('active'));$(scr+'-screen').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});if(scr==='map')renderMap();if(scr==='certificate')renderCert();}function start(){setName($('welcomeName').value);show('map')}
-function score(){let n=Object.values(state.status).filter(v=>v.solved).length;return {n,total:ALL.length,p:Math.round(n/ALL.length*100)}}function header(){let x=score();$('navScore').textContent=ad(x.p)+'٪ ('+ad(x.n)+'/'+ad(x.total)+')'}
-function renderMap(){header();let sc=score();$('progressLabel').textContent=`${ad(sc.p)}٪ (${ad(sc.n)} من ${ad(sc.total)} سؤالًا)`;$('progressFill').style.width=sc.p+'%';$('retryBtn').style.display=sc.n===sc.total?'none':'inline-flex';$('stationGrid').innerHTML='';STATIONS.forEach((s,i)=>{let n=s.questions.filter(q=>state.status[q[0]].solved).length,done=n===s.questions.length;let div=document.createElement('div');div.className='panel station-card'+(done?' done':'');div.innerHTML=`<div><div class="sthead"><span class="tag">${s.num}</span><span class="pill">${done?'✅ مكتملة':ad(n)+' / '+ad(s.questions.length)}</span></div><h3>${s.city}</h3><h4>${s.topic}</h4><p class="muted">${s.desc}</p></div><button class="btn ${done?'':'primary'}" onclick="openStation(${i})">${done?'🔁 مراجعة المحطة':'🧭 ابدئي الاستكشاف'}</button>`;$('stationGrid').appendChild(div)})}
-function openStation(i,q=0){state.si=i;state.qi=q;let s=STATIONS[i];$('stationNumber').textContent=s.num;$('stationTitle').textContent=s.city+' — '+s.topic;$('rule').textContent=s.rule;$('tip').textContent='💡 '+s.tip;$('example').innerHTML=s.example.map((x,i)=>`<div>${['المعادلة:','العملية العكسية:','الحل:'][i]} <span class="math">${x}</span></div>`).join('');resetLab();renderQ();show('station')}
-function resetLab(){let l=STATIONS[state.si].lab;$('leftPan').textContent=l[0];$('rightPan').textContent=l[1];$('labBtn').textContent=l[2];$('labBtn').disabled=false;$('labMsg').textContent=''}function applyLab(){let l=STATIONS[state.si].lab;$('leftPan').textContent=l[3];$('rightPan').textContent=l[4];$('labBtn').disabled=true;$('labMsg').textContent=l[5];sound()}
-function renderQ(){header();let s=STATIONS[state.si],q=s.questions[state.qi],t=state.status[q[0]];$('questionCounter').textContent=`السؤال ${ad(state.qi+1)} من ${ad(s.questions.length)}`;$('questionText').textContent=q[2];$('attempts').textContent=t.solved?'✅ إجابة صحيحة':t.exhausted?'انتهت المحاولات':`❤️ ${ad(t.tries)} من ٣ محاولات`;$('optionArea').innerHTML='';$('feedback').innerHTML='';$('numericArea').style.display=q[1]==='input'?'flex':'none';$('optionArea').style.display=q[1]==='mcq'?'grid':'none';if(q[1]==='mcq')q[3].forEach((txt,j)=>{let b=document.createElement('button');b.className='option'+((t.solved||t.exhausted)&&j===q[4]?' correct':'')+(t.wrong.includes(j)?' wrong':'');b.textContent=txt;b.disabled=t.solved||t.exhausted||t.wrong.includes(j);b.onclick=()=>answer(j);$('optionArea').appendChild(b)});else{$('numberAnswer').value=t.solved?ad(q[4]):'';$('numberAnswer').disabled=t.solved||t.exhausted;$('numberBtn').disabled=t.solved||t.exhausted}if(t.solved)feedback('good','🎉 إجابة صحيحة! '+q[6]);else if(t.exhausted)feedback('bad','انتهت المحاولات. الحل: '+q[6]+' يمكنك إعادة المحاولة من الخريطة.');$('prevBtn').disabled=state.qi===0;$('nextBtn').textContent=state.qi===s.questions.length-1?'🗺️ العودة للخريطة':'السؤال التالي'}
-function feedback(type,msg){let d=$('feedback');d.className='feedback '+type;d.textContent=msg}
-function answer(value){let q=STATIONS[state.si].questions[state.qi],t=state.status[q[0]];if(t.solved||t.exhausted)return;if(value===q[4]){t.solved=true;sound();renderQ();if(score().n===ALL.length){sound();confetti()}}else{t.tries--;if(q[1]==='mcq')t.wrong.push(value);if(t.tries===0)t.exhausted=true;sound(false);renderQ();if(!t.exhausted)feedback('hint',`💡 حاولي مجددًا. تلميح: ${q[5]}`)}}
-function submitNumber(){let q=STATIONS[state.si].questions[state.qi],v=normalize($('numberAnswer').value);if(!/^-?\d+(\.\d+)?$/.test(v)){feedback('hint','اكتبي عددًا صحيحًا أو سالبًا، مثل ٩ أو −٦.');return}answer(Number(v))}
-function move(d){let next=state.qi+d;if(next<0)return;if(next>=STATIONS[state.si].questions.length){show('map');return}state.qi=next;renderQ();window.scrollTo({top:Math.max(0,$('questionText').getBoundingClientRect().top+scrollY-170),behavior:'smooth'})}
-function retryRemaining(){for(let s of STATIONS){for(let i=0;i<s.questions.length;i++){let q=s.questions[i],t=state.status[q[0]];if(!t.solved){t.tries=3;t.exhausted=false;t.wrong=[];openStation(STATIONS.indexOf(s),i);return}}}show('map')}
-function renderCert(){let s=score();$('certScore').textContent=`${ad(s.p)}٪ (${ad(s.n)} من ${ad(s.total)} نقطة)`;$('certInput').value=state.name;$('certName').textContent=state.name||'المستكشفة المبدعة';if(s.n===s.total)confetti()}
-function openCertificate(){show('certificate')}
-header();setName('');
-</script></body></html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المستكشفة السعودية: رحلة في عالم المعادلات</title>
+
+  <!-- استيراد خطوط Google العربية: Tajawal للنصوص والأزرار، و Amiri للعناوين الرسمية والشهادة -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- مكتبة Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- تخصيص لوحة الألوان الوطنية السعودية والخطوط -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            saudi: {
+              green: '#006C35',
+              dark: '#004D25',
+              light: '#E6F4EC',
+              gold: '#D4AF37',
+              antique: '#B8860B',
+              goldLight: '#FDF8E7',
+              sand: '#FAF7F0',
+              sandDark: '#F1ECE1',
+              ink: '#1A2421'
+            }
+          },
+          fontFamily: {
+            tajawal: ['Tajawal', 'sans-serif'],
+            amiri: ['Amiri', 'serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* الإعدادات الأساسية للخطوط والخلفية الرملية الدافئة */
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #FAF7F0;
+      color: #1A2421;
+      overflow-x: hidden;
+    }
+
+    .font-amiri {
+      font-family: 'Amiri', serif;
+    }
+
+    /* شريط زخرفة السدو التراثية الهندسية (SVG Data URI) */
+    .sadu-ribbon {
+      height: 18px;
+      width: 100%;
+      background-color: #004D25;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='18' viewBox='0 0 48 18'%3E%3Crect width='48' height='18' fill='%23004D25'/%3E%3Cpolygon points='24,2 34,9 24,16 14,9' fill='%23D4AF37'/%3E%3Cpolygon points='24,5 29,9 24,13 19,9' fill='%23FAF7F0'/%3E%3Cpolygon points='0,2 10,9 0,16' fill='%23B8860B'/%3E%3Cpolygon points='48,2 38,9 48,16' fill='%23B8860B'/%3E%3Ccircle cx='12' cy='9' r='1.5' fill='%23FFFFFF'/%3E%3Ccircle cx='36' cy='9' r='1.5' fill='%23FFFFFF'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+    }
+
+    /* خلفية نقوش هندسية نجدية خفيفة */
+    .najdi-pattern {
+      background-color: #FAF7F0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6 L38 16 L26 16 Z M32 24 L40 36 L24 36 Z M12 46 L18 56 L6 56 Z M52 46 L58 56 L46 56 Z' fill='%23B8860B' fill-opacity='0.07'/%3E%3C/svg%3E");
+    }
+
+    /* حركات انتقالية وتفاعلية ناعمة */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-enter {
+      animation: fadeSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float {
+      animation: floatGentle 3.6s ease-in-out infinite;
+    }
+
+    @keyframes pulseGold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.45); }
+      50% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+    }
+    .pulse-gold {
+      animation: pulseGold 2.2s infinite;
+    }
+
+    @keyframes shakeGentle {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+    .animate-shake {
+      animation: shakeGentle 0.35s ease-in-out;
+    }
+
+    /* حركة ذراع الميزان التفاعلي */
+    .scale-beam {
+      transition: transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* تنسيق التعبيرات الجبرية والأرقام */
+    .math-expr {
+      direction: rtl;
+      unicode-bidi: isolate;
+      font-feature-settings: "tnum";
+    }
+
+    /* تنسيقات الطباعة المخصصة لطباعة شهادة الإنجاز في صفحة واحدة نظيفة */
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 8mm;
+      }
+      body {
+        background: #FFFFFF !important;
+      }
+      body * {
+        visibility: hidden;
+      }
+      #certificate-printable, #certificate-printable * {
+        visibility: visible;
+      }
+      #certificate-printable {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #FFFFFF !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 9999;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="najdi-pattern min-h-screen flex flex-col text-saudi-ink selection:bg-saudi-green selection:text-white">
+
+  <!-- لوحة القصاصات الاحتفالية (Confetti Canvas) -->
+  <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-50 no-print"></canvas>
+
+  <!-- شريط السدو العلوي -->
+  <div class="sadu-ribbon no-print"></div>
+
+  <!-- الشريط العلوي الثابت -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-saudi-gold/50 shadow-xs no-print">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-2">
+      <!-- شعار التطبيق والعودة للرئيسية -->
+      <button onclick="navigateTo('home')" class="flex items-center gap-2.5 text-right group focus:outline-none">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-saudi-green to-saudi-dark flex items-center justify-center text-saudi-gold shadow-md border border-saudi-gold group-hover:scale-105 transition-transform">
+          <!-- شعار النخلة والسيفين -->
+          <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M16 18V7" stroke-linecap="round"/>
+            <path d="M16 7C12 4 8 5 6 7C9 7 12 8 16 9" fill="currentColor" fill-opacity="0.35"/>
+            <path d="M16 7C20 4 24 5 26 7C23 7 20 8 16 9" fill="currentColor" fill-opacity="0.35"/>
+            <path d="M16 7C13 2 10 2 8 3" stroke-linecap="round"/>
+            <path d="M16 7C19 2 22 2 24 3" stroke-linecap="round"/>
+            <path d="M7 26L25 16" stroke-linecap="round"/>
+            <path d="M25 26L7 16" stroke-linecap="round"/>
+            <path d="M6 24L9 27" stroke-linecap="round"/>
+            <path d="M26 24L23 27" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <span class="block text-sm sm:text-base font-black text-saudi-dark leading-tight">المستكشفة السعودية</span>
+          <span class="block text-[11px] sm:text-xs font-bold text-saudi-antique">رحلة في عالم المعادلات</span>
+        </div>
+      </button>
+
+      <!-- عناصر الشريط العلوي: اسم المستكشفة، عدّاد التقدم والنتيجة المئوية، الصوت، وزر ابدأ من جديد -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 flex-wrap">
+        <!-- زر عرض وتعديل اسم المستكشفة -->
+        <button onclick="openNameEditModal()" class="flex items-center gap-1.5 bg-saudi-goldLight hover:bg-saudi-gold/25 border border-saudi-antique/50 px-2.5 sm:px-3 py-1.5 rounded-xl transition text-xs sm:text-sm" title="تعديل اسم المستكشفة">
+          <span>👩‍🎓</span>
+          <span class="text-slate-600 font-bold hidden xl:inline">المستكشفة:</span>
+          <span id="header-explorer-name" class="font-extrabold text-saudi-dark max-w-[115px] sm:max-w-[170px] truncate">ضيفة الرحلة</span>
+          <span class="text-[11px] text-saudi-antique">✏️</span>
+        </button>
+
+        <!-- عدّاد التقدم والنتيجة المئوية الحي (من 0% إلى 100%) وعدد الأسئلة المتقنة -->
+        <div class="flex items-center gap-2 bg-saudi-light border border-saudi-green/35 px-2.5 sm:px-3 py-1.5 rounded-xl" title="تقدمكِ نحو تحقيق ١٠٠٪ (٢٢ سؤالاً)">
+          <span class="text-sm sm:text-base">🎯</span>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-1.5 text-xs sm:text-sm font-black text-saudi-dark leading-none">
+              <span id="header-progress-text" class="text-saudi-green">٠٪</span>
+              <span class="text-[11px] font-bold text-slate-600">(<span id="header-mastered-count">٠</span>/٢٢ سؤالاً)</span>
+            </div>
+            <div class="w-20 sm:w-28 h-2 bg-white rounded-full overflow-hidden mt-1 border border-saudi-green/20">
+              <div id="header-progress-bar" class="h-full bg-gradient-to-l from-saudi-gold to-saudi-green rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- النجوم -->
+        <div class="hidden sm:flex items-center gap-1 bg-saudi-goldLight border border-saudi-gold/50 px-2.5 py-1.5 rounded-xl" title="النجوم المكتسبة">
+          <span class="text-sm">⭐</span>
+          <span id="header-stars" class="font-extrabold text-saudi-antique text-xs sm:text-sm">٠/١٥</span>
+        </div>
+
+        <!-- زر الخريطة -->
+        <button onclick="navigateTo('home')" class="px-2.5 py-1.5 rounded-xl bg-white hover:bg-saudi-light text-saudi-dark border border-slate-200 text-xs sm:text-sm font-bold transition flex items-center gap-1 shadow-2xs">
+          <span>🗺️</span>
+          <span class="hidden md:inline">الخريطة</span>
+        </button>
+
+        <!-- زر الشهادة -->
+        <button onclick="navigateTo('certificate')" class="px-2.5 py-1.5 rounded-xl bg-gradient-to-l from-saudi-gold to-saudi-antique text-white text-xs sm:text-sm font-bold shadow-xs hover:opacity-95 transition flex items-center gap-1">
+          <span>📜</span>
+          <span class="hidden md:inline">الشهادة</span>
+        </button>
+
+        <!-- زر ابدأ من جديد (Start Over) بارز في الشريط العلوي -->
+        <button onclick="confirmStartOver()" class="px-2.5 sm:px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-300 text-xs sm:text-sm font-extrabold transition flex items-center gap-1 shadow-2xs" title="إعادة تعيين الرحلة وبدء محاولة جديدة">
+          <span>🔄</span>
+          <span>ابدأ من جديد</span>
+        </button>
+
+        <!-- زر كتم / تشغيل الصوت -->
+        <button id="sound-toggle-btn" onclick="toggleSound()" class="p-1.5 sm:p-2 rounded-xl bg-saudi-sandDark hover:bg-saudi-goldLight border border-saudi-gold/40 text-saudi-dark transition" title="تشغيل / كتم المؤثرات الصوتية" aria-label="التحكم بالصوت">
+          <span id="sound-icon" class="text-sm sm:text-base">🔊</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- حاوية المحتوى الرئيسي المتغير -->
+  <main id="app-container" class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-6 sm:py-8">
+    <!-- يتم توليد المحتوى ديناميكياً عبر JavaScript -->
+  </main>
+
+  <!-- التذييل الوطني الرسمي -->
+  <footer class="bg-saudi-dark text-white mt-12 border-t-4 border-saudi-gold no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-right">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-saudi-green border-2 border-saudi-gold flex items-center justify-center text-saudi-gold shadow-md shrink-0">
+            <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M16 18V7" stroke-linecap="round"/>
+              <path d="M16 7C12 4 8 5 6 7C9 7 12 8 16 9" fill="currentColor" fill-opacity="0.35"/>
+              <path d="M16 7C20 4 24 5 26 7C23 7 20 8 16 9" fill="currentColor" fill-opacity="0.35"/>
+              <path d="M7 26L25 16" stroke-linecap="round"/>
+              <path d="M25 26L7 16" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-base sm:text-lg text-saudi-gold">المستكشفة السعودية: رحلة في عالم المعادلات</h3>
+            <p class="text-xs sm:text-sm text-emerald-100">مادة الرياضيات — الصف الأول المتوسط (معادلات الجمع والطرح والضرب والقسمة)</p>
+          </div>
+        </div>
+
+        <div class="bg-saudi-green/60 border border-saudi-gold/50 rounded-2xl px-4 py-3 text-xs sm:text-sm font-bold text-emerald-50">
+          إعداد وتصميم الطالبة: <span class="text-saudi-gold">وتين طه عسيري</span> — <span class="text-white">الصف الأول المتوسط</span> | إشراف معلمة المادة: <span class="text-saudi-gold">حسناء كيلاني</span>
+        </div>
+      </div>
+    </div>
+    <div class="sadu-ribbon"></div>
+  </footer>
+
+  <!-- نافذة منبثقة مخصصة للإشعارات، وتعديل الاسم، وتأكيد "ابدأ من جديد" (بديلة لـ alert و confirm) -->
+  <div id="custom-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4 no-print">
+    <div class="bg-white rounded-3xl max-w-md w-full border-2 border-saudi-gold shadow-2xl overflow-hidden animate-enter">
+      <div class="sadu-ribbon"></div>
+      <div class="p-6 text-center space-y-4">
+        <div id="modal-badge-icon" class="w-20 h-20 mx-auto rounded-full bg-saudi-goldLight border-4 border-saudi-gold flex items-center justify-center text-4xl shadow-inner">
+          🏅
+        </div>
+        <h3 id="modal-title" class="text-xl sm:text-2xl font-extrabold text-saudi-dark">أحسنتِ يا بطلة!</h3>
+        <p id="modal-message" class="text-sm sm:text-base text-slate-600 leading-relaxed"></p>
+
+        <!-- حقل تعديل اسم المستكشفة داخل النافذة -->
+        <div id="modal-name-editor" class="hidden space-y-2 text-right">
+          <label for="modal-name-input" class="block text-xs font-extrabold text-saudi-dark">اسم المستكشفة الكامل:</label>
+          <input id="modal-name-input" type="text" placeholder="مثال: سارة أحمد العتيبي"
+            onkeydown="if(event.key === 'Enter') saveExplorerNameFromModal()"
+            class="w-full px-4 py-3 rounded-xl border-2 border-saudi-gold/60 focus:border-saudi-green focus:outline-none text-saudi-dark font-bold text-sm" />
+          <p id="modal-name-error" class="hidden text-xs font-bold text-rose-600">يرجى كتابة اسم المستكشفة أولاً ✨</p>
+        </div>
+
+        <div id="modal-extra" class="bg-saudi-light/70 rounded-2xl p-3 text-sm font-bold text-saudi-green border border-saudi-green/20"></div>
+
+        <!-- أزرار النافذة المنبثقة -->
+        <div id="modal-actions" class="pt-2 flex flex-wrap justify-center gap-3">
+          <button id="modal-save-name-btn" onclick="saveExplorerNameFromModal()" class="hidden px-6 py-2.5 rounded-xl bg-gradient-to-l from-saudi-gold to-saudi-antique text-white font-bold shadow-md hover:opacity-95 transition">
+            حفظ الاسم ✔
+          </button>
+          <button id="modal-confirm-btn" onclick="executeModalConfirm()" class="hidden px-6 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-extrabold shadow-md transition">
+            نعم، ابدأ من جديد 🔄
+          </button>
+          <button id="modal-cancel-btn" onclick="closeModal()" class="hidden px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold transition">
+            إلغاء
+          </button>
+          <button id="modal-close-btn" onclick="closeModal()" class="px-6 py-2.5 rounded-xl bg-gradient-to-l from-saudi-green to-saudi-dark text-white font-bold shadow-md hover:opacity-95 transition">
+            متابعة الرحلة ✨
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- منطق التطبيق الكامل -->
+  <script>
+    /*************************************************************************
+     * 1. أدوات مساعدة: تحويل الأرقام العربية والمؤثرات الصوتية والقصاصات الاحتفالية
+     *************************************************************************/
+    const MAX_ATTEMPTS_PER_QUESTION = 3;
+
+    function toArabicDigits(input) {
+      const str = String(input);
+      const arabicNums = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+      return str.replace(/[0-9]/g, (d) => arabicNums[Number(d)]);
+    }
+
+    function toWesternDigits(input) {
+      const str = String(input).trim().replace(/[−–—]/g, '-');
+      const arabicNums = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+      return str.replace(/[٠-٩]/g, (d) => String(arabicNums.indexOf(d)));
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    // نظام المؤثرات الصوتية التفاعلية عبر Web Audio API
+    const SoundFX = {
+      enabled: true,
+      ctx: null,
+      init() {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) this.ctx = new AudioCtx();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      },
+      playTone(freq, type = 'sine', duration = 0.25, delay = 0, volume = 0.14) {
+        if (!this.enabled) return;
+        try {
+          this.init();
+          if (!this.ctx) return;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, this.ctx.currentTime + delay);
+          gain.gain.setValueAtTime(volume, this.ctx.currentTime + delay);
+          gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + delay + duration);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(this.ctx.currentTime + delay);
+          osc.stop(this.ctx.currentTime + delay + duration);
+        } catch (e) {}
+      },
+      click() {
+        this.playTone(520, 'triangle', 0.08, 0, 0.07);
+      },
+      success() {
+        this.playTone(523.25, 'sine', 0.18, 0, 0.14);
+        this.playTone(659.25, 'sine', 0.18, 0.09, 0.14);
+        this.playTone(783.99, 'sine', 0.3, 0.18, 0.16);
+      },
+      error() {
+        // نغمة تنبيه لطيفة ومشجعة عند المحاولة الخاطئة
+        this.playTone(340, 'sine', 0.16, 0, 0.09);
+        this.playTone(290, 'sine', 0.22, 0.12, 0.08);
+      },
+      fanfare() {
+        const notes = [523.25, 659.25, 783.99, 1046.5];
+        notes.forEach((n, idx) => {
+          this.playTone(n, 'triangle', 0.34, idx * 0.11, 0.16);
+        });
+      }
+    };
+
+    function toggleSound() {
+      SoundFX.enabled = !SoundFX.enabled;
+      const icon = document.getElementById('sound-icon');
+      if (icon) icon.textContent = SoundFX.enabled ? '🔊' : '🔇';
+      if (SoundFX.enabled) SoundFX.click();
+    }
+
+    // تأثير القصاصات الاحتفالية (Confetti) بالألوان السعودية (أخضر، ذهبي، أبيض)
+    function launchConfetti(intensity = 120) {
+      const canvas = document.getElementById('confetti-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const colors = ['#006C35', '#D4AF37', '#B8860B', '#10B981', '#FDE68A', '#FFFFFF'];
+      const particles = [];
+      for (let i = 0; i < intensity; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          w: Math.random() * 10 + 6,
+          h: Math.random() * 6 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 4.5,
+          vy: Math.random() * 4 + 2.5,
+          angle: Math.random() * 360,
+          spin: (Math.random() - 0.5) * 10
+        });
+      }
+
+      let frame = 0;
+      function animateConfetti() {
+        frame++;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.angle += p.spin;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.angle * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          ctx.restore();
+        });
+        if (frame < 150) {
+          requestAnimationFrame(animateConfetti);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+
+    /*************************************************************************
+     * 2. الرسومات المتجهة لمعالم المملكة وشعار النخلة والسيفين
+     *************************************************************************/
+    const SAUDI_EMBLEM_SVG = `
+      <svg viewBox="0 0 80 80" class="w-full h-full" fill="none">
+        <circle cx="40" cy="40" r="37" fill="#004D25" stroke="#D4AF37" stroke-width="2.5"/>
+        <circle cx="40" cy="40" r="32" stroke="#B8860B" stroke-width="1" stroke-dasharray="3 2"/>
+        <!-- جذع النخلة -->
+        <path d="M40 46V23" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"/>
+        <!-- سعف النخلة -->
+        <path d="M40 23C31 16 22 18 18 22C24 22 31 24 40 26" fill="#D4AF37" fill-opacity="0.85"/>
+        <path d="M40 23C49 16 58 18 62 22C56 22 49 24 40 26" fill="#D4AF37" fill-opacity="0.85"/>
+        <path d="M40 22C33 13 26 13 22 15" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M40 22C47 13 54 13 58 15" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- السيفان المتقاطعان -->
+        <path d="M20 60L60 40" stroke="#FAF7F0" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M60 60L20 40" stroke="#FAF7F0" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M18 56L24 62" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M62 56L56 62" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    `;
+
+    const LANDMARK_SVGS = {
+      diriyah: `
+        <svg viewBox="0 0 120 80" class="w-full h-full">
+          <rect width="120" height="80" rx="12" fill="#FDF8E7"/>
+          <circle cx="95" cy="20" r="10" fill="#D4AF37" fill-opacity="0.35"/>
+          <path d="M18 68 V34 L23 29 L28 34 L33 29 L38 34 L43 29 L48 34 V68 Z" fill="#D8B07A" stroke="#8C6239" stroke-width="1.5"/>
+          <path d="M46 68 V26 L52 20 L58 26 L64 20 L70 26 L76 20 L82 26 V68 Z" fill="#C89D66" stroke="#8C6239" stroke-width="1.5"/>
+          <polygon points="56,36 60,42 52,42" fill="#5C3A21"/>
+          <polygon points="70,36 74,42 66,42" fill="#5C3A21"/>
+          <polygon points="30,44 34,50 26,50" fill="#5C3A21"/>
+          <rect x="60" y="52" width="8" height="16" rx="4" fill="#5C3A21"/>
+          <path d="M96 68 Q94 52 96 40" stroke="#6B4423" stroke-width="3" fill="none"/>
+          <path d="M96 40 Q86 34 80 40 M96 40 Q106 34 112 40 M96 40 Q88 28 84 31 M96 40 Q104 28 108 31" stroke="#006C35" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <rect x="0" y="68" width="120" height="12" fill="#006C35" fill-opacity="0.16"/>
+        </svg>`,
+      alula: `
+        <svg viewBox="0 0 120 80" class="w-full h-full">
+          <rect width="120" height="80" rx="12" fill="#FCEEE3"/>
+          <circle cx="28" cy="22" r="11" fill="#E07A5F" fill-opacity="0.3"/>
+          <path d="M22 68 C22 40, 34 24, 58 24 C82 24, 96 34, 96 52 C96 60, 92 68, 86 68 L80 68 L80 48 C80 42, 72 42, 72 48 L72 68 L48 68 L48 52 C48 44, 38 44, 38 54 L38 68 Z" fill="#C86D51" stroke="#8E412E" stroke-width="1.5"/>
+          <path d="M26 62 Q60 56 98 64 L120 68 L0 68 Z" fill="#E6B89C"/>
+        </svg>`,
+      neom: `
+        <svg viewBox="0 0 120 80" class="w-full h-full">
+          <rect width="120" height="80" rx="12" fill="#E6F4F1"/>
+          <polygon points="10,68 35,28 60,68" fill="#94A3B8" fill-opacity="0.45"/>
+          <polygon points="65,68 92,24 115,68" fill="#64748B" fill-opacity="0.4"/>
+          <rect x="22" y="22" width="76" height="46" rx="4" fill="#0F172A" stroke="#D4AF37" stroke-width="2"/>
+          <line x1="35" y1="22" x2="35" y2="68" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.7"/>
+          <line x1="60" y1="22" x2="60" y2="68" stroke="#D4AF37" stroke-width="1.5"/>
+          <line x1="85" y1="22" x2="85" y2="68" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.7"/>
+          <circle cx="60" cy="14" r="5" fill="#D4AF37"/>
+        </svg>`,
+      jeddah: `
+        <svg viewBox="0 0 120 80" class="w-full h-full">
+          <rect width="120" height="80" rx="12" fill="#E0F2FE"/>
+          <rect x="26" y="18" width="32" height="44" rx="2" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+          <rect x="62" y="24" width="32" height="38" rx="2" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+          <rect x="32" y="25" width="20" height="11" rx="1" fill="#8B5A2B"/>
+          <rect x="32" y="40" width="20" height="11" rx="1" fill="#8B5A2B"/>
+          <rect x="68" y="31" width="20" height="10" rx="1" fill="#A0522D"/>
+          <path d="M0 64 Q15 58 30 64 T60 64 T90 64 T120 64 V80 H0 Z" fill="#0284C7" fill-opacity="0.75"/>
+          <path d="M0 70 Q15 65 30 70 T60 70 T90 70 T120 70 V80 H0 Z" fill="#0369A1"/>
+        </svg>`,
+      riyadh: `
+        <svg viewBox="0 0 120 80" class="w-full h-full">
+          <rect width="120" height="80" rx="12" fill="#E6F4EC"/>
+          <rect x="24" y="28" width="72" height="40" fill="#D6B07A" stroke="#78532A" stroke-width="1.5"/>
+          <rect x="18" y="18" width="16" height="50" fill="#C99E63" stroke="#78532A" stroke-width="1.5"/>
+          <rect x="86" y="18" width="16" height="50" fill="#C99E63" stroke="#78532A" stroke-width="1.5"/>
+          <path d="M18 18 L22 13 L26 18 L30 13 L34 18 M86 18 L90 13 L94 18 L98 13 L102 18" stroke="#78532A" stroke-width="1.5" fill="none"/>
+          <path d="M52 68 V48 A8 8 0 0 1 68 48 V68 Z" fill="#5C3A21"/>
+          <circle cx="60" cy="36" r="5" fill="#006C35"/>
+        </svg>`
+    };
+
+    /*************************************************************************
+     * 3. قاعدة البيانات التعليمية الكاملة (٥ محطات + ٢٢ سؤالاً + تلميحات ذكية)
+     *************************************************************************/
+    const STATIONS = [
+      {
+        id: 'diriyah',
+        number: 1,
+        city: 'الدرعية التاريخية (حي الطريف)',
+        title: 'معادلات الجمع',
+        subtitle: 'حل معادلات الجمع باستعمال الطرح',
+        landmarkKey: 'diriyah',
+        badgeName: 'وسام مستكشفة الدرعية',
+        badgeIcon: '🏰',
+        ruleTitle: 'القاعدة الذهبية لمعادلات الجمع',
+        ruleSummary: 'لحل معادلة جمع مثل (س + أ = ب) أو (ب = ص + أ)، نستعمل العملية العكسية للجمع وهي «الطرح»، فنطرح العدد (أ) من كلا طرفي المعادلة ليبقى المتغير وحده في طرف.',
+        ruleFormula: 'س + ٥ = ١٢   ⟹   س + ٥ - ٥ = ١٢ - ٥   ⟹   س = ٧',
+        workedExample: {
+          equation: '١٤ = ص + ٩',
+          steps: [
+            'نلاحظ أن المتغير (ص) في الطرف الأيسر ومضاف إليه العدد ٩.',
+            'نستعمل العملية العكسية للجمع: نطرح ٩ من كلا الطرفين (خاصية الطرح للمساواة).',
+            '١٤ - ٩ = ص + ٩ - ٩  ←  ٥ = ص (أي ص = ٥).',
+            'التحقق: نعوض عن ص بالعدد ٥:  ٥ + ٩ = ١٤ (العبارة صحيحة ✔).'
+          ]
+        },
+        labPresets: [
+          {
+            id: 'd1',
+            label: 'س + ٥ = ١٢',
+            rightExpr: 'س + ٥',
+            leftExpr: '١٢',
+            solvedRight: 'س',
+            solvedLeft: '٧',
+            correctOp: 'sub',
+            num: 5,
+            varName: 'س',
+            solution: 7,
+            hint: 'المتغير (س) مضاف إليه ٥. اطرحي ٥ من الطرفين!'
+          },
+          {
+            id: 'd2',
+            label: 'س + (-٣) = ٧',
+            rightExpr: 'س + (-٣)',
+            leftExpr: '٧',
+            solvedRight: 'س',
+            solvedLeft: '١٠',
+            correctOp: 'add',
+            num: 3,
+            varName: 'س',
+            solution: 10,
+            hint: 'إضافة (-٣) تكافئ طرح ٣؛ لذلك نجمع ٣ إلى كلا الطرفين!'
+          },
+          {
+            id: 'd3',
+            label: '١٤ = ص + ٩',
+            rightExpr: '١٤',
+            leftExpr: 'ص + ٩',
+            solvedRight: '٥',
+            solvedLeft: 'ص',
+            correctOp: 'sub',
+            num: 9,
+            varName: 'ص',
+            solution: 5,
+            hint: 'المتغير (ص) مضاف إليه ٩. اطرحي ٩ من كلا كفتي الميزان!'
+          }
+        ],
+        questions: [
+          {
+            type: 'mcq',
+            q: 'ما حل المعادلة: س + ٥ = ١٢ ؟',
+            options: ['س = ٧', 'س = ١٧', 'س = ٦', 'س = ٨'],
+            correctIndex: 0,
+            smartHint: 'المتغير (س) مضاف إليه ٥؛ استخدمي العملية العكسية للجمع وهي الطرح: اطرحي ٥ من العدد ١٢.',
+            explanation: 'نطرح ٥ من كلا الطرفين: س = ١٢ - ٥ = ٧. (التحقق: ٧ + ٥ = ١٢).'
+          },
+          {
+            type: 'mcq',
+            q: 'أوجدي قيمة (س) التي تجعل المعادلة صحيحة: س + (-٣) = ٧',
+            options: ['س = ٤', 'س = -٤', 'س = ١٠', 'س = -١٠'],
+            correctIndex: 2,
+            smartHint: 'انتبهي للإشارة السالبة! إضافة (-٣) تعني (س - ٣ = ٧)، لذا اجمعي ٣ إلى الطرفين للتخلص من (-٣).',
+            explanation: 'بما أن س + (-٣) = س - ٣، نجمع ٣ إلى كلا الطرفين: س = ٧ + ٣ = ١٠.'
+          },
+          {
+            type: 'mcq',
+            q: 'ما حل المعادلة: ١٤ = ص + ٩ ؟',
+            options: ['ص = ٢٣', 'ص = ٥', 'ص = -٥', 'ص = ٦'],
+            correctIndex: 1,
+            smartHint: 'العملية مع (ص) هي (+ ٩)؛ اطرحي ٩ من الطرفين (١٤ - ٩) بدلاً من جمعهما.',
+            explanation: 'نطرح ٩ من كلا الطرفين: ١٤ - ٩ = ص  ←  ص = ٥.'
+          },
+          {
+            type: 'mcq',
+            q: 'من بيئة الدرعية التاريخية: أُضيفت ١٨ قطعة أثرية إلى أحد متاحف حي الطريف فأصبح مجموع القطع ٤٥ قطعة (ن + ١٨ = ٤٥). فما عدد القطع الأصلية (ن)؟',
+            options: ['ن = ٦٣', 'ن = ٢٧', 'ن = ٣٧', 'ن = ٢٣'],
+            correctIndex: 1,
+            smartHint: 'المعادلة هي ن + ١٨ = ٤٥؛ اطرحي ١٨ من ٤٥ لإيجاد عدد القطع الأصلية (ن).',
+            explanation: 'نطرح ١٨ من طرفي المعادلة ن + ١٨ = ٤٥: ن = ٤٥ - ١٨ = ٢٧ قطعة أثرية.'
+          }
+        ]
+      },
+      {
+        id: 'alula',
+        number: 2,
+        city: 'العُلا (جبل الفيل والحِجر)',
+        title: 'معادلات الطرح',
+        subtitle: 'حل معادلات الطرح باستعمال الجمع',
+        landmarkKey: 'alula',
+        badgeName: 'وسام مستكشفة العُلا',
+        badgeIcon: '🏜️',
+        ruleTitle: 'القاعدة الذهبية لمعادلات الطرح',
+        ruleSummary: 'لحل معادلة طرح مثل (س - أ = ب) أو (ب = م - أ)، نستعمل العملية العكسية للطرح وهي «الجمع»، فنجمع العدد (أ) إلى كلا طرفي المعادلة للحفاظ على التوازن.',
+        ruleFormula: 'س - ٤ = ٩   ⟹   س - ٤ + ٤ = ٩ + ٤   ⟹   س = ١٣',
+        workedExample: {
+          equation: '١٥ = م - ٦',
+          steps: [
+            'نلاحظ أن العدد ٦ مطروح من المتغير (م) في الطرف الأيسر.',
+            'نستعمل العملية العكسية للطرح: نجمع ٦ إلى كلا الطرفين (خاصية الجمع للمساواة).',
+            '١٥ + ٦ = م - ٦ + ٦  ←  ٢١ = م (أي م = ٢١).',
+            'التحقق: نعوض عن م بالعدد ٢١:  ٢١ - ٦ = ١٥ (العبارة صحيحة ✔).'
+          ]
+        },
+        labPresets: [
+          {
+            id: 'a1',
+            label: 'س - ٤ = ٩',
+            rightExpr: 'س - ٤',
+            leftExpr: '٩',
+            solvedRight: 'س',
+            solvedLeft: '١٣',
+            correctOp: 'add',
+            num: 4,
+            varName: 'س',
+            solution: 13,
+            hint: 'المتغير (س) مطروح منه ٤. اجمعي ٤ إلى الطرفين!'
+          },
+          {
+            id: 'a2',
+            label: 'ص - ٧ = -٢',
+            rightExpr: 'ص - ٧',
+            leftExpr: '-٢',
+            solvedRight: 'ص',
+            solvedLeft: '٥',
+            correctOp: 'add',
+            num: 7,
+            varName: 'ص',
+            solution: 5,
+            hint: 'اجمعي ٧ لكلا كفتي الميزان: -٢ + ٧ = ٥.'
+          },
+          {
+            id: 'a3',
+            label: '١٥ = م - ٦',
+            rightExpr: '١٥',
+            leftExpr: 'م - ٦',
+            solvedRight: '٢١',
+            solvedLeft: 'م',
+            correctOp: 'add',
+            num: 6,
+            varName: 'م',
+            solution: 21,
+            hint: 'للتخلص من (- ٦) مع المتغير (م)، اجمعي ٦ للطرفين!'
+          }
+        ],
+        questions: [
+          {
+            type: 'mcq',
+            q: 'ما حل المعادلة: س - ٤ = ٩ ؟',
+            options: ['س = ٥', 'س = ١٣', 'س = -٥', 'س = ٣٦'],
+            correctIndex: 1,
+            smartHint: 'العملية العكسية للطرح (- ٤) هي الجمع (+ ٤)؛ اجمعي ٤ إلى العدد ٩.',
+            explanation: 'نجمع ٤ إلى كلا الطرفين: س = ٩ + ٤ = ١٣. (التحقق: ١٣ - ٤ = ٩).'
+          },
+          {
+            type: 'mcq',
+            q: 'أوجدي قيمة (ص) في المعادلة: ص - ٧ = -٢',
+            options: ['ص = -٩', 'ص = ٩', 'ص = ٥', 'ص = -٥'],
+            correctIndex: 2,
+            smartHint: 'اجمعي ٧ إلى الطرفين: (-٢ + ٧). تذكري عند جمع عددين مختلفي الإشارة نطرح ونأخذ إشارة الأكبر (+).',
+            explanation: 'نجمع ٧ إلى كلا الطرفين: ص = -٢ + ٧ = ٥. (التحقق: ٥ - ٧ = -٢).'
+          },
+          {
+            type: 'mcq',
+            q: 'ما حل المعادلة: ١٥ = م - ٦ ؟',
+            options: ['م = ٩', 'م = ٢١', 'م = -٩', 'م = ٩٠'],
+            correctIndex: 1,
+            smartHint: 'العدد ٦ مطروح من (م)؛ اجمعي ٦ إلى ١٥ بدلاً من طرحه.',
+            explanation: 'نجمع ٦ إلى كلا الطرفين: ١٥ + ٦ = م  ←  م = ٢١.'
+          },
+          {
+            type: 'mcq',
+            q: 'في مهرجان شتاء طنطورة بالعُلا، انخفضت درجة الحرارة ليلاً بمقدار ٩ درجات فأصبحت ١٣ درجة مئوية (د - ٩ = ١٣). كم كانت درجة الحرارة نهاراً (د)؟',
+            options: ['٢٢ درجة', '٤ درجات', '٢١ درجة', '١٩ درجة'],
+            correctIndex: 0,
+            smartHint: 'المعادلة هي د - ٩ = ١٣؛ اجمعي ٩ إلى ١٣ لمعرفة درجة الحرارة قبل الانخفاض.',
+            explanation: 'نجمع ٩ إلى طرفي المعادلة د - ٩ = ١٣: د = ١٣ + ٩ = ٢٢ درجة مئوية.'
+          }
+        ]
+      },
+      {
+        id: 'neom',
+        number: 3,
+        city: 'نيوم (المستقبل والابتكار)',
+        title: 'معادلات الضرب',
+        subtitle: 'حل معادلات الضرب باستعمال القسمة',
+        landmarkKey: 'neom',
+        badgeName: 'وسام مستكشفة نيوم',
+        badgeIcon: '🚀',
+        ruleTitle: 'القاعدة الذهبية لمعادلات الضرب',
+        ruleSummary: 'في معادلة الضرب مثل (٣س = ٢١)، العدد ٣ مضروب في المتغير (س). لحلها نستعمل العملية العكسية للضرب وهي «القسمة»، فنقسم كلا الطرفين على المعامل ٣ (مع الانتباه لإشارة المعامل).',
+        ruleFormula: '٣س = ٢١   ⟹   ٣س ÷ ٣ = ٢١ ÷ ٣   ⟹   س = ٧',
+        workedExample: {
+          equation: '-٤ص = ٢٤',
+          steps: [
+            'المتغير (ص) مضروب في المعامل (-٤).',
+            'نستعمل العملية العكسية للضرب: نقسم كلا الطرفين على (-٤) (خاصية القسمة للمساواة).',
+            '-٤ص ÷ (-٤) = ٢٤ ÷ (-٤)  ←  ص = -٦ (موجب ÷ سالب = سالب).',
+            'التحقق: (-٤) × (-٦) = ٢٤ (العبارة صحيحة ✔).'
+          ]
+        },
+        labPresets: [
+          {
+            id: 'n1',
+            label: '٣س = ٢١',
+            rightExpr: '٣س',
+            leftExpr: '٢١',
+            solvedRight: 'س',
+            solvedLeft: '٧',
+            correctOp: 'div',
+            num: 3,
+            varName: 'س',
+            solution: 7,
+            hint: 'المتغير (س) مضروب في ٣. اقسمي الطرفين على ٣!'
+          },
+          {
+            id: 'n2',
+            label: '-٤ص = ٢٤',
+            rightExpr: '-٤ص',
+            leftExpr: '٢٤',
+            solvedRight: 'ص',
+            solvedLeft: '-٦',
+            correctOp: 'divNeg',
+            num: -4,
+            varName: 'ص',
+            solution: -6,
+            hint: 'المتغير (ص) مضروب في (-٤). اقسمي كلا الطرفين على (-٤)!'
+          },
+          {
+            id: 'n3',
+            label: '-٥س = -٣٥',
+            rightExpr: '-٥س',
+            leftExpr: '-٣٥',
+            solvedRight: 'س',
+            solvedLeft: '٧',
+            correctOp: 'divNeg',
+            num: -5,
+            varName: 'س',
+            solution: 7,
+            hint: 'اقسمي الطرفين على (-٥): (-٣٥) ÷ (-٥) = +٧.'
+          }
+        ],
+        questions: [
+          {
+            type: 'mcq',
+            q: 'ما حل المعادلة: ٣س = ٢١ ؟',
+            options: ['س = ١٨', 'س = ٧', 'س = ٢٤', 'س = ٦٣'],
+            correctIndex: 1,
+            smartHint: '٣س تعني ٣ × س؛ استخدمي العملية العكسية للضرب وهي القسمة: اقسمي ٢١ على ٣.',
+            explanation: 'نقسم كلا الطرفين على ٣: س = ٢١ ÷ ٣ = ٧. (التحقق: ٣ × ٧ = ٢١).'
+          },
+          {
+            type: 'mcq',
+            q: 'أوجدي قيمة (ص) في المعادلة: -٤ص = ٢٤',
+            options: ['ص = ٦', 'ص = -٦', 'ص = ٢٨', 'ص = -٢٠'],
+            correctIndex: 1,
+            smartHint: 'انتبهي لقاعدة الإشارات في القسمة! موجب ÷ سالب = سالب (٢٤ ÷ -٤).',
+            explanation: 'نقسم الطرفين على (-٤): ص = ٢٤ ÷ (-٤) = -٦. (موجب ÷ سالب = سالب).'
+          },
+          {
+            type: 'mcq',
+            q: 'ما حل المعادلة: -٥س = -٣٥ ؟',
+            options: ['س = -٧', 'س = ٧', 'س = -٣٠', 'س = ٤٠'],
+            correctIndex: 1,
+            smartHint: 'عند قسمة عدد سالب على عدد سالب تكون النتيجة موجبة دائماً! (-٣٥) ÷ (-٥).',
+            explanation: 'نقسم الطرفين على (-٥): س = -٣٥ ÷ (-٥) = +٧. (سالب ÷ سالب = موجب).'
+          },
+          {
+            type: 'mcq',
+            q: 'في مشروع الطاقة النظيفة بنيوم، تنتج ٥ ألواح شمسية متطابقة ٤٥ كيلوواط في الساعة (٥ط = ٤٥). كم ينتج اللوح الواحد (ط)؟',
+            options: ['٩ كيلوواط', '٤٠ كيلوواط', '٥٠ كيلوواط', '٨ كيلوواط'],
+            correctIndex: 0,
+            smartHint: 'المعادلة ٥ط = ٤٥ تعني ٥ × ط = ٤٥؛ اقسمي ٤٥ على ٥.',
+            explanation: 'بقسمة طرفي المعادلة ٥ط = ٤٥ على ٥: ط = ٤٥ ÷ ٥ = ٩ كيلوواط.'
+          }
+        ]
+      },
+      {
+        id: 'jeddah',
+        number: 4,
+        city: 'جدة التاريخية (البلد)',
+        title: 'معادلات القسمة',
+        subtitle: 'حل معادلات القسمة باستعمال الضرب',
+        landmarkKey: 'jeddah',
+        badgeName: 'وسام مستكشفة جدة التاريخية',
+        badgeIcon: '⛵',
+        ruleTitle: 'القاعدة الذهبية لمعادلات القسمة',
+        ruleSummary: 'في معادلة القسمة مثل (س ÷ ٤ = ٦)، المتغير (س) مقسوم على ٤. لحلها نستعمل العملية العكسية للقسمة وهي «الضرب»، فنضرب كلا الطرفين في العدد المقسوم عليه.',
+        ruleFormula: 'س ÷ ٤ = ٦   ⟹   (س ÷ ٤) × ٤ = ٦ × ٤   ⟹   س = ٢٤',
+        workedExample: {
+          equation: 'ص ÷ (-٣) = ٥',
+          steps: [
+            'المتغير (ص) مقسوم على العدد (-٣).',
+            'نستعمل العملية العكسية للقسمة: نضرب كلا الطرفين في (-٣) (خاصية الضرب للمساواة).',
+            '(ص ÷ (-٣)) × (-٣) = ٥ × (-٣)  ←  ص = -١٥.',
+            'التحقق: (-١٥) ÷ (-٣) = +٥ (العبارة صحيحة ✔).'
+          ]
+        },
+        labPresets: [
+          {
+            id: 'j1',
+            label: 'س ÷ ٤ = ٦',
+            rightExpr: 'س ÷ ٤',
+            leftExpr: '٦',
+            solvedRight: 'س',
+            solvedLeft: '٢٤',
+            correctOp: 'mul',
+            num: 4,
+            varName: 'س',
+            solution: 24,
+            hint: 'المتغير (س) مقسوم على ٤. اضربي الطرفين في ٤!'
+          },
+          {
+            id: 'j2',
+            label: 'ص ÷ (-٣) = ٥',
+            rightExpr: 'ص ÷ (-٣)',
+            leftExpr: '٥',
+            solvedRight: 'ص',
+            solvedLeft: '-١٥',
+            correctOp: 'mulNeg',
+            num: -3,
+            varName: 'ص',
+            solution: -15,
+            hint: 'المتغير (ص) مقسوم على (-٣). اضربي كلا الطرفين في (-٣)!'
+          },
+          {
+            id: 'j3',
+            label: 'م ÷ ٧ = -٤',
+            rightExpr: 'م ÷ ٧',
+            leftExpr: '-٤',
+            solvedRight: 'م',
+            solvedLeft: '-٢٨',
+            correctOp: 'mul',
+            num: 7,
+            varName: 'م',
+            solution: -28,
+            hint: 'اضربي الطرفين في ٧: (-٤) × ٧ = -٢٨.'
+          }
+        ],
+        questions: [
+          {
+            type: 'mcq',
+            q: 'ما حل المعادلة: س ÷ ٤ = ٦ ؟',
+            options: ['س = ١٠', 'س = ٢٤', 'س = ٢', 'س = ١٦'],
+            correctIndex: 1,
+            smartHint: 'العملية العكسية للقسمة (÷ ٤) هي الضرب (× ٤)؛ اضربي ٦ × ٤.',
+            explanation: 'نضرب كلا الطرفين في ٤: س = ٦ × ٤ = ٢٤. (التحقق: ٢٤ ÷ ٤ = ٦).'
+          },
+          {
+            type: 'mcq',
+            q: 'أوجدي قيمة (ص) في المعادلة: ص ÷ (-٣) = ٥',
+            options: ['ص = -١٥', 'ص = ١٥', 'ص = ٢', 'ص = -٨'],
+            correctIndex: 0,
+            smartHint: 'اضربي كلا الطرفين في (-٣)؛ وتذكري أن موجب × سالب = سالب (٥ × -٣).',
+            explanation: 'نضرب كلا الطرفين في (-٣): ص = ٥ × (-٣) = -١٥.'
+          },
+          {
+            type: 'mcq',
+            q: 'ما حل المعادلة: م ÷ ٧ = -٤ ؟',
+            options: ['م = ٢٨', 'م = -٢٨', 'م = ٣', 'م = -١١'],
+            correctIndex: 1,
+            smartHint: 'اضربي الطرفين في ٧: (-٤) × ٧، وانتبهي لإشارة السالب!',
+            explanation: 'نضرب الطرفين في ٧: م = (-٤) × ٧ = -٢٨.'
+          },
+          {
+            type: 'mcq',
+            q: 'في رحلة بحرية قبالة ساحل جدة، تم توزيع عدد من الغواصين (غ) بالتساوي على ٤ قوارب، فكان في كل قارب ٦ غواصين (غ ÷ ٤ = ٦). كم إجمالي الغواصين؟',
+            options: ['١٠ غواصين', '٢٤ غواصاً', '١٨ غواصاً', '٢ غواصين'],
+            correctIndex: 1,
+            smartHint: 'لإيجاد العدد الكلي (غ) في المعادلة غ ÷ ٤ = ٦، اضربي ٦ في ٤.',
+            explanation: 'نضرب طرفي المعادلة غ ÷ ٤ = ٦ في ٤: غ = ٦ × ٤ = ٢٤ غواصاً.'
+          }
+        ]
+      },
+      {
+        id: 'riyadh',
+        number: 5,
+        city: 'الرياض (قصر المصمك - التحدي الختامي الشامل)',
+        title: 'تحدي المستكشفة الشامل',
+        subtitle: 'مراجعة شاملة للمعادلات الأربع وأسئلة إدخال رقمي مباشر',
+        landmarkKey: 'riyadh',
+        badgeName: 'وسام بطلة المعادلات السعودية',
+        badgeIcon: '👑',
+        ruleTitle: 'خريطة الحل السريع للمعادلات ذات الخطوة الواحدة',
+        ruleSummary: 'حددي العملية المرتبطة بالمتغير أولاً، ثم طبّقي العملية العكسية على كلا الطرفين: الجمع ⇄ الطرح، والضرب ⇄ القسمة، مع الانتباه لقواعد إشارات الأعداد الصحيحة.',
+        ruleFormula: 'الجمع ⇄ الطرح   |   الضرب ⇄ القسمة',
+        workedExample: {
+          equation: 'مقارنة سريعة بين الأنواع الأربعة',
+          steps: [
+            '١) معادلة جمع (س + ٤ = ١٠)  ←  نطرح ٤  ←  س = ٦.',
+            '٢) معادلة طرح (س - ٤ = ١٠)  ←  نجمع ٤  ←  س = ١٤.',
+            '٣) معادلة ضرب (٤س = ٢٠)  ←  نقسم على ٤  ←  س = ٥.',
+            '٤) معادلة قسمة (س ÷ ٤ = ٥)  ←  نضرب في ٤  ←  س = ٢٠.'
+          ]
+        },
+        labPresets: [
+          {
+            id: 'r1',
+            label: 'س + ١٣ = ٢٥',
+            rightExpr: 'س + ١٣',
+            leftExpr: '٢٥',
+            solvedRight: 'س',
+            solvedLeft: '١٢',
+            correctOp: 'sub',
+            num: 13,
+            varName: 'س',
+            solution: 12,
+            hint: 'معادلة جمع: اطرحي ١٣ من كلا الطرفين!'
+          },
+          {
+            id: 'r2',
+            label: '٧ع = ٥٦',
+            rightExpr: '٧ع',
+            leftExpr: '٥٦',
+            solvedRight: 'ع',
+            solvedLeft: '٨',
+            correctOp: 'div',
+            num: 7,
+            varName: 'ع',
+            solution: 8,
+            hint: 'معادلة ضرب: اقسمي كلا الطرفين على ٧!'
+          },
+          {
+            id: 'r3',
+            label: 'ك ÷ ٦ = ٩',
+            rightExpr: 'ك ÷ ٦',
+            leftExpr: '٩',
+            solvedRight: 'ك',
+            solvedLeft: '٥٤',
+            correctOp: 'mul',
+            num: 6,
+            varName: 'ك',
+            solution: 54,
+            hint: 'معادلة قسمة: اضربي كلا الطرفين في ٦!'
+          }
+        ],
+        questions: [
+          {
+            type: 'mcq',
+            q: 'أيٌّ من المعادلات التالية حلها يساوي العدد (٦)؟',
+            options: ['س + ٩ = ١٢', '٣س = ١٨', 'س - ٤ = ١٠', 'س ÷ ٢ = ١٢'],
+            correctIndex: 1,
+            smartHint: 'جرّبي تعويض س = ٦ في كل معادلة: هل ٣ × ٦ = ١٨؟',
+            explanation: 'في المعادلة ٣س = ١٨، بقسمة الطرفين على ٣ نحصل على س = ١٨ ÷ ٣ = ٦.'
+          },
+          {
+            type: 'numeric',
+            q: 'إدخال رقمي مباشر: أوجدي قيمة (ص) التي تحقق المعادلة: ص - ١٥ = -٧',
+            varLabel: 'ص =',
+            correctNumber: 8,
+            smartHint: 'هذه معادلة طرح (ص - ١٥ = -٧)؛ اجمعي ١٥ إلى (-٧): احسبي (-٧ + ١٥).',
+            explanation: 'نجمع ١٥ إلى كلا الطرفين: ص = -٧ + ١٥ = ٨.'
+          },
+          {
+            type: 'mcq',
+            q: 'المسافة بين الرياض والدمام ٤٠٠ كم تقريباً. إذا قطعت حافلة المسافة في ٤ ساعات بسرعة ثابتة (٤ع = ٤٠٠)، فما سرعتها (ع)؟',
+            options: ['١٠٠ كم/ساعة', '٩٠ كم/ساعة', '١٢٠ كم/ساعة', '٨٠ كم/ساعة'],
+            correctIndex: 0,
+            smartHint: 'المعادلة ٤ع = ٤٠٠؛ اقسمي المسافة ٤٠٠ على الزمن ٤.',
+            explanation: 'نقسم طرفي المعادلة ٤ع = ٤٠٠ على ٤: ع = ٤٠٠ ÷ ٤ = ١٠٠ كم/ساعة.'
+          },
+          {
+            type: 'numeric',
+            q: 'إدخال رقمي مباشر: ما قيمة (س) في المعادلة: س ÷ ٨ = -٤ ؟',
+            varLabel: 'س =',
+            correctNumber: -32,
+            smartHint: 'هذه معادلة قسمة؛ اضربي (-٤) في ٨، ولا تنسي إشارة السالب (-) أمام الناتج!',
+            explanation: 'نضرب كلا الطرفين في ٨: س = (-٤) × ٨ = -٣٢.'
+          },
+          {
+            type: 'numeric',
+            q: 'إدخال رقمي مباشر: اشترت المستكشفة كتاباً بـ ٢٤ ريالاً وبقي معها ٣٦ ريالاً (ص - ٢٤ = ٣٦). كم ريالاً كان معها في البداية (ص)؟',
+            varLabel: 'ص =',
+            correctNumber: 60,
+            smartHint: 'لحل المعادلة ص - ٢٤ = ٣٦، اجمعي ٢٤ إلى ٣٦.',
+            explanation: 'نجمع ٢٤ لطرفي المعادلة ص - ٢٤ = ٣٦: ص = ٣٦ + ٢٤ = ٦٠ ريالاً.'
+          },
+          {
+            type: 'mcq',
+            q: 'ما حل المعادلة: -٩س = -٦٣ ؟',
+            options: ['س = -٧', 'س = ٧', 'س = ٥٤', 'س = -٥٤'],
+            correctIndex: 1,
+            smartHint: 'اقسمي الطرفين على (-٩): وتذكري أن سالب ÷ سالب = موجب!',
+            explanation: 'نقسم الطرفين على (-٩): س = -٦٣ ÷ (-٩) = ٧.'
+          }
+        ]
+      }
+    ];
+
+    /*************************************************************************
+     * 4. إدارة حالة التطبيق ونظام تعدد المحاولات والتخزين المحلي
+     *************************************************************************/
+    const STORAGE_KEY = 'saudi_math_explorer_wateen_multi_v2';
+
+    function createEmptyStationProgress() {
+      return {
+        diriyah: { questions: {}, stars: 0, completed: false },
+        alula:   { questions: {}, stars: 0, completed: false },
+        neom:    { questions: {}, stars: 0, completed: false },
+        jeddah:  { questions: {}, stars: 0, completed: false },
+        riyadh:  { questions: {}, stars: 0, completed: false }
+      };
+    }
+
+    let appState = {
+      explorerName: '',
+      freeExploreMode: false,
+      view: 'home', // 'home' | 'station' | 'certificate'
+      activeStationId: 'diriyah',
+      activeTab: 'rule', // 'rule' | 'lab' | 'quiz'
+      stationProgress: createEmptyStationProgress(),
+      labState: {
+        presetIndex: 0,
+        solved: false,
+        tiltAngle: 0,
+        feedback: ''
+      }
+    };
+
+    // دالة مساعدة لجلب حالة محاولات سؤال محدد
+    function getQuestionState(stationId, qIdx) {
+      const prog = appState.stationProgress[stationId];
+      if (!prog.questions) prog.questions = {};
+      if (!prog.questions[qIdx]) {
+        prog.questions[qIdx] = {
+          attemptsUsed: 0,
+          wrongChoices: [],
+          solved: false,
+          lastInput: null
+        };
+      }
+      return prog.questions[qIdx];
+    }
+
+    function loadState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (parsed && typeof parsed.explorerName === 'string') {
+            appState.explorerName = parsed.explorerName;
+          }
+          if (parsed && typeof parsed.freeExploreMode === 'boolean') {
+            appState.freeExploreMode = parsed.freeExploreMode;
+          }
+          if (parsed && parsed.stationProgress) {
+            STATIONS.forEach((st) => {
+              if (parsed.stationProgress[st.id]) {
+                appState.stationProgress[st.id] = {
+                  questions: parsed.stationProgress[st.id].questions || {},
+                  stars: parsed.stationProgress[st.id].stars || 0,
+                  completed: Boolean(parsed.stationProgress[st.id].completed)
+                };
+              }
+            });
+          }
+        }
+      } catch (e) {}
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          explorerName: appState.explorerName,
+          freeExploreMode: appState.freeExploreMode,
+          stationProgress: appState.stationProgress
+        }));
+      } catch (e) {}
+    }
+
+    function getExplorerDisplayName() {
+      return appState.explorerName && appState.explorerName.trim()
+        ? appState.explorerName.trim()
+        : 'ضيفة الرحلة';
+    }
+
+    function isStationUnlocked(stationIndex) {
+      if (appState.freeExploreMode || stationIndex === 0) return true;
+      const prevStation = STATIONS[stationIndex - 1];
+      return prevStation ? Boolean(appState.stationProgress[prevStation.id].completed) : true;
+    }
+
+    function toggleFreeExploreMode() {
+      SoundFX.click();
+      appState.freeExploreMode = !appState.freeExploreMode;
+      saveState();
+      render();
+    }
+
+    function getStats() {
+      let totalCorrect = 0;
+      let totalQuestions = 0;
+      let totalStars = 0;
+      let badgesEarned = 0;
+
+      STATIONS.forEach((st) => {
+        const prog = appState.stationProgress[st.id];
+        totalQuestions += st.questions.length;
+        st.questions.forEach((q, idx) => {
+          const qState = getQuestionState(st.id, idx);
+          if (qState.solved) {
+            totalCorrect++;
+          }
+        });
+        totalStars += prog.stars || 0;
+        if (prog.completed) badgesEarned++;
+      });
+
+      const points = totalCorrect * 50 + totalStars * 20;
+      const percentage = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+
+      return {
+        totalCorrect,
+        totalQuestions,
+        totalStars,
+        maxStars: STATIONS.length * 3,
+        badgesEarned,
+        points,
+        percentage
+      };
+    }
+
+    function updateHeaderStats() {
+      const stats = getStats();
+      const nameEl = document.getElementById('header-explorer-name');
+      const starsEl = document.getElementById('header-stars');
+      const barEl = document.getElementById('header-progress-bar');
+      const txtEl = document.getElementById('header-progress-text');
+      const masteredEl = document.getElementById('header-mastered-count');
+
+      if (nameEl) nameEl.textContent = getExplorerDisplayName();
+      if (starsEl) starsEl.textContent = `${toArabicDigits(stats.totalStars)}/${toArabicDigits(stats.maxStars)}`;
+      if (barEl) barEl.style.width = `${stats.percentage}%`;
+      if (txtEl) txtEl.textContent = `${toArabicDigits(stats.percentage)}٪`;
+      if (masteredEl) masteredEl.textContent = toArabicDigits(stats.totalCorrect);
+    }
+
+    /*************************************************************************
+     * 5. التنقل والنوافذ التفاعلية وخيار "ابدأ من جديد"
+     *************************************************************************/
+    let pendingModalConfirmAction = null;
+
+    function navigateTo(view, stationId = null, tab = 'rule') {
+      if (view === 'station' && stationId) {
+        const idx = STATIONS.findIndex(s => s.id === stationId);
+        if (idx !== -1 && !isStationUnlocked(idx)) {
+          SoundFX.error();
+          const prev = STATIONS[idx - 1];
+          openModal({
+            icon: '🔒',
+            title: 'محطة مقفلة مؤقتاً',
+            message: `لفتح محطة «${STATIONS[idx].city}»، أكملي أولاً تحدي محطة «${prev.city}» أو فعّلي وضع الاستكشاف الحر من الخريطة.`,
+            extra: 'رحلتنا منظمة خطوة بخطوة لإتقان المهارات!'
+          });
+          return;
+        }
+      }
+
+      SoundFX.click();
+      appState.view = view;
+      if (stationId) {
+        appState.activeStationId = stationId;
+        appState.labState = { presetIndex: 0, solved: false, tiltAngle: 0, feedback: '' };
+      }
+      if (tab) {
+        appState.activeTab = tab;
+      }
+      render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openModal({ icon = '🏅', title = '', message = '', extra = '', showNameEditor = false, confirmMode = false, onConfirm = null }) {
+      const modal = document.getElementById('custom-modal');
+      document.getElementById('modal-badge-icon').textContent = icon;
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-message').textContent = message;
+
+      const nameEditor = document.getElementById('modal-name-editor');
+      const saveNameBtn = document.getElementById('modal-save-name-btn');
+      const nameError = document.getElementById('modal-name-error');
+      const nameInput = document.getElementById('modal-name-input');
+      const confirmBtn = document.getElementById('modal-confirm-btn');
+      const cancelBtn = document.getElementById('modal-cancel-btn');
+      const closeBtn = document.getElementById('modal-close-btn');
+
+      pendingModalConfirmAction = onConfirm;
+
+      if (showNameEditor) {
+        nameEditor.classList.remove('hidden');
+        saveNameBtn.classList.remove('hidden');
+        nameError.classList.add('hidden');
+        nameInput.value = appState.explorerName || '';
+      } else {
+        nameEditor.classList.add('hidden');
+        saveNameBtn.classList.add('hidden');
+      }
+
+      if (confirmMode) {
+        confirmBtn.classList.remove('hidden');
+        cancelBtn.classList.remove('hidden');
+        closeBtn.classList.add('hidden');
+      } else {
+        confirmBtn.classList.add('hidden');
+        cancelBtn.classList.add('hidden');
+        closeBtn.classList.remove('hidden');
+      }
+
+      const extraEl = document.getElementById('modal-extra');
+      if (extra) {
+        extraEl.textContent = extra;
+        extraEl.classList.remove('hidden');
+      } else {
+        extraEl.classList.add('hidden');
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      if (showNameEditor && nameInput) {
+        setTimeout(() => nameInput.focus(), 100);
+      }
+    }
+
+    function closeModal() {
+      SoundFX.click();
+      pendingModalConfirmAction = null;
+      const modal = document.getElementById('custom-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function executeModalConfirm() {
+      const action = pendingModalConfirmAction;
+      closeModal();
+      if (typeof action === 'function') {
+        action();
+      }
+    }
+
+    // خيار "ابدأ من جديد" مع نافذة تأكيد أنيقة
+    function confirmStartOver() {
+      SoundFX.click();
+      openModal({
+        icon: '🔄',
+        title: 'ابدأ من جديد',
+        message: 'هل تريدين بدء الرحلة من جديد؟ سيتم إعادة تعيين النقاط والمحطات لبدء محاولة جديدة.',
+        extra: 'سيبقى اسم المستكشفة محفوظاً ويمكنكِ تعديله في أي وقت.',
+        confirmMode: true,
+        onConfirm: () => {
+          performStartOver();
+        }
+      });
+    }
+
+    function performStartOver() {
+      SoundFX.success();
+      appState.stationProgress = createEmptyStationProgress();
+      appState.activeStationId = 'diriyah';
+      appState.activeTab = 'rule';
+      appState.view = 'home';
+      appState.labState = { presetIndex: 0, solved: false, tiltAngle: 0, feedback: '' };
+      saveState();
+      updateHeaderStats();
+      render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openNameEditModal() {
+      SoundFX.click();
+      openModal({
+        icon: '👩‍🎓',
+        title: 'بيانات المستكشفة',
+        message: 'اكتبي أو عدّلي اسمكِ ليظهر في الشريط العلوي وفي شهادة الإنجاز النهائية:',
+        extra: '',
+        showNameEditor: true
+      });
+    }
+
+    function saveExplorerNameFromModal() {
+      const input = document.getElementById('modal-name-input');
+      const errorEl = document.getElementById('modal-name-error');
+      const val = input ? input.value.trim() : '';
+      if (!val) {
+        SoundFX.error();
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      SoundFX.success();
+      appState.explorerName = val;
+      saveState();
+      updateHeaderStats();
+      closeModal();
+      render();
+    }
+
+    function handleHeroNameInput(val) {
+      appState.explorerName = val;
+      saveState();
+      updateHeaderStats();
+      const warn = document.getElementById('hero-name-warning');
+      if (warn && val.trim()) {
+        warn.classList.add('hidden');
+      }
+    }
+
+    function startExplorationJourney() {
+      const input = document.getElementById('hero-explorer-name-input');
+      const warn = document.getElementById('hero-name-warning');
+      const card = document.getElementById('hero-name-card');
+      const val = input ? input.value.trim() : appState.explorerName.trim();
+
+      if (!val) {
+        SoundFX.error();
+        if (warn) warn.classList.remove('hidden');
+        if (card) {
+          card.classList.remove('animate-shake');
+          void card.offsetWidth;
+          card.classList.add('animate-shake');
+        }
+        if (input) input.focus();
+        return;
+      }
+
+      appState.explorerName = val;
+      saveState();
+      updateHeaderStats();
+      SoundFX.success();
+      navigateTo('station', 'diriyah', 'rule');
+    }
+
+    function updateCertificateNameLive(val) {
+      appState.explorerName = val;
+      saveState();
+      updateHeaderStats();
+      const certDisplay = document.getElementById('certificate-student-name');
+      if (certDisplay) {
+        certDisplay.textContent = val.trim() || 'المستكشفة المبدعة';
+      }
+    }
+
+    // الانتقال السريع لأول محطة تحتوي على أسئلة غير متقنة لإعادة محاولتها والوصول إلى 100%
+    function goToRetryRemainingQuestions() {
+      SoundFX.click();
+      for (let i = 0; i < STATIONS.length; i++) {
+        const st = STATIONS[i];
+        const hasUnsolved = st.questions.some((_, qIdx) => !getQuestionState(st.id, qIdx).solved);
+        if (hasUnsolved) {
+          // إعادة فتح المحاولات للأسئلة غير المتقنة فقط في هذه المحطة
+          st.questions.forEach((_, qIdx) => {
+            const qState = getQuestionState(st.id, qIdx);
+            if (!qState.solved && qState.attemptsUsed >= MAX_ATTEMPTS_PER_QUESTION) {
+              qState.attemptsUsed = 0;
+              qState.wrongChoices = [];
+              qState.lastInput = null;
+            }
+          });
+          saveState();
+          appState.freeExploreMode = true;
+          navigateTo('station', st.id, 'quiz');
+          return;
+        }
+      }
+      navigateTo('certificate');
+    }
+
+    /*************************************************************************
+     * 6. واجهة الشاشة الرئيسية وخريطة الاستكشاف (Home & Map View)
+     *************************************************************************/
+    function renderHomeView() {
+      const stats = getStats();
+      const hasAnyProgress = stats.totalCorrect > 0 || stats.badgesEarned > 0;
+
+      return `
+        <div class="space-y-8 animate-enter">
+          <!-- بطاقة الترحيب بالهوية الوطنية السعودية -->
+          <section class="relative overflow-hidden rounded-3xl bg-gradient-to-bl from-saudi-dark via-saudi-green to-emerald-800 text-white shadow-xl border-2 border-saudi-gold">
+            <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#D4AF37 1.5px, transparent 1.5px); background-size: 24px 24px;"></div>
+
+            <div class="relative z-10 p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div class="lg:col-span-8 space-y-4">
+                <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-xs border border-saudi-gold/60 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold text-saudi-gold">
+                  <span>🇸🇦</span>
+                  <span>المملكة العربية السعودية • مادة الرياضيات للصف الأول المتوسط</span>
+                </div>
+
+                <h1 class="font-amiri text-3xl sm:text-5xl font-bold leading-tight">
+                  المستكشفة السعودية:
+                  <span class="block text-saudi-gold mt-1">رحلة في عالم المعادلات</span>
+                </h1>
+
+                <p class="text-sm sm:text-base text-emerald-50 max-w-2xl leading-relaxed">
+                  انطلقي في رحلة تعليمية تفاعلية عبر ربوع وطننا الغالي لإتقان مهارات حل
+                  <strong class="text-saudi-gold">معادلات الجمع والطرح والضرب والقسمة</strong>
+                  مع نظام <strong class="text-white underline decoration-saudi-gold">تعدد المحاولات والتلميحات الذكية</strong> حتى تصلي إلى نتيجة <strong class="text-saudi-gold">١٠٠٪</strong>!
+                </p>
+
+                <!-- خانة إدخال اسم المستكشفة البارزة -->
+                <div id="hero-name-card" class="bg-white/95 text-saudi-ink rounded-2xl p-4 sm:p-5 border-2 border-saudi-gold shadow-lg space-y-3">
+                  <div class="flex items-center justify-between gap-2">
+                    <label for="hero-explorer-name-input" class="text-sm sm:text-base font-black text-saudi-dark flex items-center gap-2">
+                      <span class="text-xl">✍️</span>
+                      <span>اسم المستكشفة (اكتبي اسمكِ ليظهر في شهادة الإنجاز)</span>
+                    </label>
+                    ${appState.explorerName.trim() ? '<span class="text-xs font-extrabold text-saudi-green bg-saudi-light px-2.5 py-1 rounded-full">تم الحفظ ✔</span>' : ''}
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-2.5">
+                    <input
+                      id="hero-explorer-name-input"
+                      type="text"
+                      value="${escapeHtml(appState.explorerName)}"
+                      oninput="handleHeroNameInput(this.value)"
+                      onkeydown="if(event.key === 'Enter') startExplorationJourney()"
+                      placeholder="اكتبي اسمكِ الثلاثي هنا..."
+                      class="flex-1 px-4 py-3 rounded-xl bg-saudi-sand border-2 border-saudi-antique/50 focus:border-saudi-green focus:bg-white focus:outline-none text-saudi-dark font-extrabold text-sm sm:text-base transition"
+                    />
+                    <button onclick="startExplorationJourney()" class="pulse-gold px-6 py-3 rounded-xl bg-gradient-to-l from-saudi-gold to-saudi-antique text-white font-black text-sm sm:text-base shadow-md hover:opacity-95 active:scale-95 transition flex items-center justify-center gap-2 shrink-0">
+                      <span>ابدئي رحلة الاستكشاف</span>
+                      <span>🧭</span>
+                    </button>
+                  </div>
+
+                  <div id="hero-name-warning" class="hidden flex items-center justify-between flex-wrap gap-2 bg-amber-50 border border-amber-300 text-amber-900 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold">
+                    <span>🌟 إرشاد لطيف: اكتبي اسمكِ الجميل في الخانة أعلاه ليزيّن شهادة الإنجاز الخاصة بكِ!</span>
+                    <button onclick="navigateTo('station', 'diriyah', 'rule')" class="underline text-saudi-green hover:text-saudi-dark font-extrabold">
+                      أو تابعي كضيفة مؤقتاً ⬅️
+                    </button>
+                  </div>
+                </div>
+
+                <!-- بطاقة التوثيق الأكاديمي المطلوبة -->
+                <div class="bg-saudi-dark/75 border border-saudi-gold/50 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-bold text-emerald-50">
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg">👩‍🎓</span>
+                    <span>إعداد وتصميم الطالبة: <strong class="text-saudi-gold">وتين طه عسيري</strong> — <strong class="text-white">الصف الأول المتوسط</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg">👩‍🏫</span>
+                    <span>إشراف معلمة المادة: <strong class="text-saudi-gold">حسناء كيلاني</strong></span>
+                  </div>
+                </div>
+
+                <!-- أزرار الوصول السريع وزر "ابدأ من جديد" -->
+                <div class="pt-1 flex flex-wrap items-center gap-2.5">
+                  <button onclick="navigateTo('station', 'diriyah', 'lab')" class="px-4 py-2.5 rounded-2xl bg-white/15 hover:bg-white/25 border border-white/40 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2">
+                    <span>⚖️</span>
+                    <span>مختبر الميزان التفاعلي</span>
+                  </button>
+                  <button onclick="navigateTo('certificate')" class="px-4 py-2.5 rounded-2xl bg-white/15 hover:bg-white/25 border border-saudi-gold/50 text-saudi-gold font-bold text-xs sm:text-sm transition flex items-center gap-2">
+                    <span>📜</span>
+                    <span>معاينة شهادة الإنجاز</span>
+                  </button>
+                  ${hasAnyProgress && stats.percentage < 100 ? `
+                    <button onclick="goToRetryRemainingQuestions()" class="px-4 py-2.5 rounded-2xl bg-amber-400 text-saudi-dark font-black text-xs sm:text-sm shadow-sm hover:bg-amber-300 transition flex items-center gap-1.5">
+                      <span>🎯</span>
+                      <span>إكمال الأسئلة للوصول إلى ١٠٠٪</span>
+                    </button>
+                  ` : ''}
+                  <button onclick="confirmStartOver()" class="px-4 py-2.5 rounded-2xl bg-rose-600/90 hover:bg-rose-600 border border-rose-300/60 text-white font-extrabold text-xs sm:text-sm transition flex items-center gap-1.5">
+                    <span>🔄</span>
+                    <span>ابدأ من جديد</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- بطاقة المستكشفة الجانبية -->
+              <div class="lg:col-span-4">
+                <div class="bg-white/10 backdrop-blur-md border-2 border-saudi-gold/60 rounded-3xl p-5 text-center space-y-4 animate-float">
+                  <div class="w-20 h-20 mx-auto shadow-lg">
+                    ${SAUDI_EMBLEM_SVG}
+                  </div>
+                  <div>
+                    <h2 class="text-lg font-extrabold text-saudi-gold">بطاقة المستكشفة</h2>
+                    <p class="text-base font-black text-white mt-0.5">${escapeHtml(getExplorerDisplayName())}</p>
+                    <p class="text-xs text-emerald-200 mt-0.5">الصف الأول المتوسط</p>
+                  </div>
+
+                  <div class="grid grid-cols-3 gap-2 bg-saudi-dark/65 rounded-2xl p-3 border border-white/10">
+                    <div>
+                      <span class="block text-lg sm:text-xl font-black text-saudi-gold">${toArabicDigits(stats.percentage)}٪</span>
+                      <span class="text-[11px] text-emerald-100">الإنجاز</span>
+                    </div>
+                    <div class="border-x border-white/15">
+                      <span class="block text-lg sm:text-xl font-black text-amber-300">${toArabicDigits(stats.totalCorrect)}/${toArabicDigits(stats.totalQuestions)}</span>
+                      <span class="text-[11px] text-emerald-100">سؤال متقن</span>
+                    </div>
+                    <div>
+                      <span class="block text-lg sm:text-xl font-black text-emerald-300">${toArabicDigits(stats.badgesEarned)}/٥</span>
+                      <span class="text-[11px] text-emerald-100">أوسمة</span>
+                    </div>
+                  </div>
+
+                  <button onclick="navigateTo('certificate')" class="w-full py-2.5 rounded-xl bg-white text-saudi-dark font-extrabold text-xs sm:text-sm hover:bg-saudi-goldLight transition shadow-xs">
+                    عرض شهادة الإنجاز والطباعة 📜
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- خريطة الاستكشاف التفاعلية (5 محطات في مناطق المملكة) -->
+          <section class="bg-white rounded-3xl border-2 border-saudi-gold/40 shadow-md p-5 sm:p-7 space-y-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-saudi-sandDark pb-4">
+              <div>
+                <h2 class="font-amiri text-2xl sm:text-3xl font-bold text-saudi-dark flex items-center gap-2">
+                  <span>🗺️</span>
+                  <span>خريطة الاستكشاف في مناطق المملكة</span>
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">لكل سؤال ٣ محاولات مع تلميحات ذكية لمساعدتكِ على الوصول إلى ١٠٠٪</p>
+              </div>
+
+              <div class="flex items-center gap-2.5 flex-wrap text-xs font-bold">
+                <span class="flex items-center gap-1 text-saudi-green"><span class="w-3 h-3 rounded-full bg-saudi-green inline-block"></span> مكتملة</span>
+                <span class="flex items-center gap-1 text-saudi-antique"><span class="w-3 h-3 rounded-full bg-saudi-gold inline-block"></span> متاحة</span>
+                <button onclick="toggleFreeExploreMode()" class="px-3 py-1.5 rounded-xl border ${appState.freeExploreMode ? 'bg-saudi-green text-white border-saudi-dark' : 'bg-saudi-sandDark text-saudi-dark border-saudi-antique/40'} transition">
+                  ${appState.freeExploreMode ? '🔓 الاستكشاف الحر مفعّل' : '🔒 فتح جميع المحطات'}
+                </button>
+                <button onclick="confirmStartOver()" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-300 font-extrabold transition flex items-center gap-1">
+                  <span>🔄</span>
+                  <span>ابدأ من جديد</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- مسار بصري تفاعلي SVG يربط المحطات الخمس -->
+            <div class="relative w-full bg-gradient-to-b from-saudi-sand to-saudi-sandDark/80 rounded-2xl border border-saudi-gold/30 p-3 sm:p-6 overflow-hidden">
+              <svg viewBox="0 0 800 370" class="w-full h-auto max-h-[330px] select-none">
+                <path d="M 0,120 L 180,350 L 0,370 Z" fill="#BAE6FD" fill-opacity="0.45"/>
+                <path d="M 560,0 L 800,0 L 800,220 L 660,170 Z" fill="#BAE6FD" fill-opacity="0.45"/>
+
+                <path d="M 135,75 L 260,45 L 430,85 L 575,145 L 665,185 L 705,260 L 580,315 L 430,335 L 315,355 L 255,335 L 185,250 L 125,130 Z"
+                      fill="#E6F4EC" stroke="#006C35" stroke-width="3.5" stroke-linejoin="round"/>
+
+                <!-- المسار الذهبي المتقطع -->
+                <path d="M 495,195 Q 370,130 265,135 Q 200,115 180,95 Q 210,185 265,255 Q 395,240 545,175"
+                      fill="none" stroke="#D4AF37" stroke-width="4" stroke-dasharray="10 7" stroke-linecap="round"/>
+
+                ${[
+                  { id: 'diriyah', x: 495, y: 195, label: '١. الدرعية (الجمع)', align: 'middle', dy: 34 },
+                  { id: 'alula',   x: 265, y: 135, label: '٢. العُلا (الطرح)', align: 'middle', dy: 34 },
+                  { id: 'neom',    x: 180, y: 95,  label: '٣. نيوم (الضرب)', align: 'start', dy: -22 },
+                  { id: 'jeddah',  x: 265, y: 255, label: '٤. جدة (القسمة)', align: 'middle', dy: 34 },
+                  { id: 'riyadh',  x: 545, y: 175, label: '٥. الرياض (التحدي)', align: 'start', dy: -22 }
+                ].map((pt, idx) => {
+                  const st = STATIONS.find(s => s.id === pt.id);
+                  const prog = appState.stationProgress[pt.id];
+                  const unlocked = isStationUnlocked(idx);
+                  const fillColor = prog.completed ? '#006C35' : unlocked ? '#D4AF37' : '#94A3B8';
+                  return `
+                    <g class="cursor-pointer" onclick="navigateTo('station', '${pt.id}', 'rule')">
+                      <circle cx="${pt.x}" cy="${pt.y}" r="22" fill="${fillColor}" fill-opacity="0.22"/>
+                      <circle cx="${pt.x}" cy="${pt.y}" r="14" fill="${fillColor}" stroke="#FFFFFF" stroke-width="3"/>
+                      <text x="${pt.x}" y="${pt.y + 5}" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="800" font-family="Tajawal">${unlocked ? toArabicDigits(st.number) : '🔒'}</text>
+                      <rect x="${pt.align === 'start' ? pt.x - 10 : pt.x - 70}" y="${pt.y + pt.dy - 16}" width="140" height="24" rx="12" fill="#FFFFFF" stroke="${fillColor}" stroke-width="1.5"/>
+                      <text x="${pt.align === 'start' ? pt.x + 60 : pt.x}" y="${pt.y + pt.dy}" text-anchor="middle" fill="#1A2421" font-size="12" font-weight="800" font-family="Tajawal">${pt.label}</text>
+                    </g>
+                  `;
+                }).join('')}
+              </svg>
+            </div>
+
+            <!-- بطاقات المحطات الخمس -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-2">
+              ${STATIONS.map((station, idx) => {
+                const prog = appState.stationProgress[station.id];
+                const unlocked = isStationUnlocked(idx);
+                const totalQ = station.questions.length;
+                const solvedCount = station.questions.filter((_, qIdx) => getQuestionState(station.id, qIdx).solved).length;
+                const isPerfect = solvedCount === totalQ;
+
+                return `
+                  <div class="group bg-saudi-sand rounded-3xl border-2 ${isPerfect ? 'border-saudi-green' : unlocked ? 'border-saudi-gold/50 hover:border-saudi-gold' : 'border-slate-200 opacity-80'} shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+                    <div>
+                      <div class="relative h-36 p-3 pb-0">
+                        <div class="w-full h-full rounded-2xl overflow-hidden border border-saudi-gold/30 shadow-inner ${!unlocked ? 'grayscale' : ''}">
+                          ${LANDMARK_SVGS[station.landmarkKey]}
+                        </div>
+                        <span class="absolute top-5 right-5 px-3 py-1 rounded-full text-xs font-extrabold bg-saudi-dark text-saudi-gold shadow">
+                          المحطة ${toArabicDigits(station.number)}
+                        </span>
+                        <span class="absolute top-5 left-5 px-2.5 py-1 rounded-full text-xs font-extrabold ${isPerfect ? 'bg-saudi-green text-white' : unlocked ? 'bg-white/95 text-saudi-antique border border-saudi-gold/40' : 'bg-slate-700 text-white'} shadow-2xs">
+                          ${isPerfect ? 'متقنة ١٠٠٪ ✔' : unlocked ? `${toArabicDigits(solvedCount)}/${toArabicDigits(totalQ)} متقنة` : 'مقفلة 🔒'}
+                        </span>
+                      </div>
+
+                      <div class="p-5 space-y-2">
+                        <div class="text-xs font-bold text-saudi-antique">${station.city}</div>
+                        <h3 class="text-lg sm:text-xl font-black text-saudi-dark group-hover:text-saudi-green transition-colors">
+                          ${station.title}
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          ${station.subtitle}
+                        </p>
+
+                        <div class="pt-2 flex items-center justify-between text-xs border-t border-saudi-sandDark">
+                          <span class="font-bold text-slate-600 flex items-center gap-1">
+                            <span>${station.badgeIcon}</span>
+                            <span>${station.badgeName}</span>
+                          </span>
+                          <span class="text-sm tracking-widest">
+                            ${[1, 2, 3].map(s => (s <= prog.stars ? '⭐' : '☆')).join('')}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="px-5 pb-5 grid grid-cols-2 gap-2">
+                      <button onclick="navigateTo('station', '${station.id}', 'rule')" class="py-2.5 px-3 rounded-xl ${unlocked ? 'bg-saudi-green hover:bg-saudi-dark text-white' : 'bg-slate-200 text-slate-600'} font-bold text-xs sm:text-sm transition flex items-center justify-center gap-1.5 shadow-2xs">
+                        <span>${unlocked ? '📖' : '🔒'}</span>
+                        <span>${unlocked ? 'ادخلي المحطة' : 'مقفلة'}</span>
+                      </button>
+                      <button onclick="navigateTo('station', '${station.id}', 'quiz')" class="py-2.5 px-3 rounded-xl bg-saudi-goldLight hover:bg-saudi-gold/30 text-saudi-dark border border-saudi-gold/60 font-bold text-xs sm:text-sm transition flex items-center justify-center gap-1.5">
+                        <span>🎯</span>
+                        <span>التحدي (${toArabicDigits(totalQ)})</span>
+                      </button>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
+    /*************************************************************************
+     * 7. واجهة المحطة التعليمية (بطاقة الاستكشاف + مختبر الميزان + تحدي المحطة)
+     *************************************************************************/
+    function renderStationView() {
+      const station = STATIONS.find(s => s.id === appState.activeStationId) || STATIONS[0];
+      const prog = appState.stationProgress[station.id];
+
+      return `
+        <div class="space-y-6 animate-enter">
+          <!-- شريط التنقل العلوي للمحطات -->
+          <div class="flex flex-wrap items-center justify-between gap-3 bg-white p-3.5 rounded-2xl border border-saudi-gold/40 shadow-2xs">
+            <button onclick="navigateTo('home')" class="px-3.5 py-2 rounded-xl bg-saudi-sandDark hover:bg-saudi-goldLight text-saudi-dark font-bold text-xs sm:text-sm transition flex items-center gap-1.5">
+              <span>➡️</span>
+              <span>العودة للخريطة</span>
+            </button>
+
+            <div class="flex items-center gap-1.5 overflow-x-auto py-1">
+              ${STATIONS.map((s, idx) => {
+                const isActive = s.id === station.id;
+                const isDone = appState.stationProgress[s.id].completed;
+                const unlocked = isStationUnlocked(idx);
+                return `
+                  <button onclick="navigateTo('station', '${s.id}', '${appState.activeTab}')"
+                    class="px-3 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition flex items-center gap-1
+                    ${isActive ? 'bg-saudi-green text-white shadow-2xs' : isDone ? 'bg-saudi-light text-saudi-dark border border-saudi-green/30' : unlocked ? 'bg-saudi-sandDark text-slate-700 hover:bg-saudi-goldLight' : 'bg-slate-100 text-slate-400'}">
+                    <span>${toArabicDigits(s.number)}.</span>
+                    <span>${s.title.replace('معادلات ', '')}</span>
+                    ${isDone ? '<span>✔</span>' : !unlocked ? '<span>🔒</span>' : ''}
+                  </button>
+                `;
+              }).join('')}
+            </div>
+          </div>
+
+          <!-- بطاقة تعريف المحطة -->
+          <div class="bg-gradient-to-l from-saudi-dark to-saudi-green text-white rounded-3xl p-5 sm:p-7 border-2 border-saudi-gold shadow-lg grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+            <div class="md:col-span-3 h-32 rounded-2xl overflow-hidden border-2 border-saudi-gold shadow-md bg-white">
+              ${LANDMARK_SVGS[station.landmarkKey]}
+            </div>
+            <div class="md:col-span-9 space-y-2">
+              <div class="inline-flex items-center gap-2 bg-white/15 px-3 py-1 rounded-full text-xs font-bold text-saudi-gold">
+                <span>المحطة ${toArabicDigits(station.number)} من ٥</span>
+                <span>•</span>
+                <span>${station.city}</span>
+              </div>
+              <h1 class="font-amiri text-2xl sm:text-4xl font-bold">${station.title}</h1>
+              <p class="text-sm sm:text-base text-emerald-100">${station.subtitle}</p>
+              <div class="pt-1 flex flex-wrap items-center gap-3 text-xs font-bold">
+                <span class="bg-saudi-dark/65 px-3 py-1.5 rounded-xl border border-saudi-gold/40">
+                  الوسام المستهدف: ${station.badgeIcon} ${station.badgeName}
+                </span>
+                <span class="bg-saudi-dark/65 px-3 py-1.5 rounded-xl border border-saudi-gold/40">
+                  النجوم المكتسبة: ${[1, 2, 3].map(n => (n <= prog.stars ? '⭐' : '☆')).join('')}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- التبويبات الثلاثة التفاعلية داخل المحطة -->
+          <div class="grid grid-cols-3 gap-2 sm:gap-4 bg-white p-2 rounded-2xl border border-saudi-gold/40 shadow-2xs">
+            <button onclick="switchStationTab('rule')"
+              class="py-3 px-2 sm:px-4 rounded-xl font-extrabold text-xs sm:text-base transition flex items-center justify-center gap-2
+              ${appState.activeTab === 'rule' ? 'bg-saudi-green text-white shadow-md' : 'text-slate-700 hover:bg-saudi-sandDark'}">
+              <span>📜</span>
+              <span>بطاقة الاستكشاف</span>
+            </button>
+
+            <button onclick="switchStationTab('lab')"
+              class="py-3 px-2 sm:px-4 rounded-xl font-extrabold text-xs sm:text-base transition flex items-center justify-center gap-2
+              ${appState.activeTab === 'lab' ? 'bg-saudi-green text-white shadow-md' : 'text-slate-700 hover:bg-saudi-sandDark'}">
+              <span>⚖️</span>
+              <span>مختبر الميزان</span>
+            </button>
+
+            <button onclick="switchStationTab('quiz')"
+              class="py-3 px-2 sm:px-4 rounded-xl font-extrabold text-xs sm:text-base transition flex items-center justify-center gap-2
+              ${appState.activeTab === 'quiz' ? 'bg-saudi-green text-white shadow-md' : 'text-slate-700 hover:bg-saudi-sandDark'}">
+              <span>🎯</span>
+              <span>تحدي المحطة (${toArabicDigits(station.questions.length)})</span>
+            </button>
+          </div>
+
+          <div>
+            ${appState.activeTab === 'rule' ? renderGoldenRuleTab(station) : ''}
+            ${appState.activeTab === 'lab' ? renderEquationLabTab(station) : ''}
+            ${appState.activeTab === 'quiz' ? renderQuizTab(station) : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    function switchStationTab(tab) {
+      SoundFX.click();
+      appState.activeTab = tab;
+      render();
+    }
+
+    /* --- القسم الأول: بطاقة الاستكشاف (القاعدة الذهبية والمثال المحلول) --- */
+    function renderGoldenRuleTab(station) {
+      return `
+        <div class="bg-white rounded-3xl border-2 border-saudi-gold/50 shadow-md p-6 sm:p-8 space-y-6 animate-enter">
+          <div class="flex items-center gap-3 border-b border-saudi-sandDark pb-4">
+            <div class="w-12 h-12 rounded-2xl bg-saudi-goldLight border border-saudi-gold flex items-center justify-center text-2xl">💡</div>
+            <div>
+              <h2 class="text-xl sm:text-2xl font-black text-saudi-dark">${station.ruleTitle}</h2>
+              <p class="text-xs sm:text-sm text-saudi-antique font-bold">شرح مبسط للقاعدة الذهبية (العملية العكسية)</p>
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed bg-saudi-sand p-5 rounded-2xl border-r-4 border-saudi-green">
+            ${station.ruleSummary}
+          </p>
+
+          <div class="bg-gradient-to-l from-saudi-dark to-saudi-green text-white rounded-2xl p-5 text-center border-2 border-saudi-gold shadow-inner">
+            <span class="block text-xs text-saudi-gold font-bold mb-2">القاعدة الذهبية بالرموز</span>
+            <div class="text-lg sm:text-2xl font-black tracking-wide math-expr">
+              ${station.ruleFormula}
+            </div>
+          </div>
+
+          <div class="bg-saudi-light/60 rounded-2xl p-5 sm:p-6 border border-saudi-green/30 space-y-4">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <h3 class="text-lg font-extrabold text-saudi-dark flex items-center gap-2">
+                <span>✍️</span>
+                <span>مثال محلول خطوة بخطوة:</span>
+              </h3>
+              <span class="px-4 py-1.5 rounded-xl bg-white border border-saudi-green text-saudi-dark font-black text-base sm:text-lg math-expr">
+                ${station.workedExample.equation}
+              </span>
+            </div>
+
+            <ol class="space-y-2.5">
+              ${station.workedExample.steps.map((step, i) => `
+                <li class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-2xs">
+                  <span class="w-7 h-7 rounded-full bg-saudi-green text-white text-xs font-extrabold flex items-center justify-center shrink-0 mt-0.5">
+                    ${toArabicDigits(i + 1)}
+                  </span>
+                  <span class="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">${step}</span>
+                </li>
+              `).join('')}
+            </ol>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <button onclick="switchStationTab('lab')" class="px-6 py-3 rounded-2xl bg-saudi-gold text-saudi-dark font-black text-sm sm:text-base shadow-md hover:opacity-95 transition flex items-center gap-2">
+              <span>⚖️</span>
+              <span>انتقلي لمختبر الميزان التفاعلي</span>
+            </button>
+
+            <button onclick="switchStationTab('quiz')" class="px-6 py-3 rounded-2xl bg-saudi-green text-white font-black text-sm sm:text-base shadow-md hover:bg-saudi-dark transition flex items-center gap-2">
+              <span>🎯</span>
+              <span>ابدئي تحدي المحطة</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    /* --- القسم الثاني: مختبر الميزان التفاعلي --- */
+    function getLabActionsForPreset(preset) {
+      const absNum = toArabicDigits(Math.abs(preset.num));
+      const signedNum = preset.num < 0 ? `(${toArabicDigits(preset.num)})` : toArabicDigits(preset.num);
+
+      const actionBank = {
+        add: {
+          label: `اجمعي ${absNum} للطرفين (+ ${absNum})`,
+          okMsg: `رائع! بجمع ${absNum} لكلا الطرفين نعزل المتغير (${preset.varName}) وتصبح قيمته ${toArabicDigits(preset.solution)} والميزان متوازن تماماً.`
+        },
+        sub: {
+          label: `اطرحي ${absNum} من الطرفين (- ${absNum})`,
+          okMsg: `أحسنتِ! بطرح ${absNum} من كلا الطرفين نعزل المتغير (${preset.varName}) وتصبح قيمته ${toArabicDigits(preset.solution)} والميزان متوازن تماماً.`
+        },
+        div: {
+          label: `اقسمي الطرفين على ${absNum} (÷ ${absNum})`,
+          okMsg: `ممتاز! بقسمة كلا الطرفين على ${absNum} يصبح معامل (${preset.varName}) يساوي ١، وتكون قيمته ${toArabicDigits(preset.solution)}.`
+        },
+        divNeg: {
+          label: `اقسمي الطرفين على ${signedNum}`,
+          okMsg: `عمل رائع! بقسمة كلا الطرفين على ${signedNum} نحصل على (${preset.varName} = ${toArabicDigits(preset.solution)}) مع الحفاظ على توازن الميزان.`
+        },
+        mul: {
+          label: `اضربي الطرفين في ${absNum} (× ${absNum})`,
+          okMsg: `إجابة ذكية! بضرب كلا الطرفين في ${absNum} نتخلص من القسمة وتصبح قيمة (${preset.varName}) تساوي ${toArabicDigits(preset.solution)}.`
+        },
+        mulNeg: {
+          label: `اضربي الطرفين في ${signedNum}`,
+          okMsg: `أحسنتِ يا بطلة! بضرب كلا الطرفين في ${signedNum} نتخلص من المقام السالب وتصبح قيمة (${preset.varName}) تساوي ${toArabicDigits(preset.solution)}.`
+        }
+      };
+
+      const distractors = [
+        { key: 'add', label: `اجمعي ${absNum} للطرفين (+ ${absNum})`, errMsg: `تأملي العملية المرتبطة بالمتغير! جمع ${absNum} هنا لن يعزل المتغير وحده.` },
+        { key: 'sub', label: `اطرحي ${absNum} من الطرفين (- ${absNum})`, errMsg: `تذكري القاعدة الذهبية: اختاري دائماً العملية العكسية للعملية الموجودة مع المتغير!` },
+        { key: 'mul', label: `اضربي الطرفين في ${absNum} (× ${absNum})`, errMsg: `الضرب في ${absNum} ليس العملية العكسية المناسبة لهذه المعادلة. حاولي مرة أخرى!` },
+        { key: 'div', label: `اقسمي الطرفين على ${absNum} (÷ ${absNum})`, errMsg: `القسمة على ${absNum} لن تحذف العدد الموجود مع المتغير هنا. جربي العملية العكسية!` }
+      ];
+
+      const result = [
+        {
+          isCorrect: true,
+          label: actionBank[preset.correctOp].label,
+          message: actionBank[preset.correctOp].okMsg
+        }
+      ];
+
+      distractors.forEach((d) => {
+        if (d.key !== preset.correctOp && result.length < 4) {
+          result.push({
+            isCorrect: false,
+            label: d.label,
+            message: d.errMsg
+          });
+        }
+      });
+
+      return result.sort((a, b) => a.label.localeCompare(b.label, 'ar'));
+    }
+
+    function renderEquationLabTab(station) {
+      const presets = station.labPresets;
+      const preset = presets[appState.labState.presetIndex] || presets[0];
+      const isSolved = appState.labState.solved;
+      const tilt = appState.labState.tiltAngle;
+
+      const rightPanText = isSolved ? preset.solvedRight : preset.rightExpr;
+      const leftPanText = isSolved ? preset.solvedLeft : preset.leftExpr;
+      const actions = getLabActionsForPreset(preset);
+
+      return `
+        <div class="bg-white rounded-3xl border-2 border-saudi-gold/50 shadow-md p-6 sm:p-8 space-y-6 animate-enter">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-saudi-sandDark pb-4">
+            <div>
+              <h2 class="text-xl sm:text-2xl font-black text-saudi-dark flex items-center gap-2">
+                <span>⚖️</span>
+                <span>مختبر ميزان المعادلات التفاعلي</span>
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">اختاري العملية الحسابية المناسبة لتطبيقها على كلا الطرفين وعزل المتغير</p>
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-xs font-bold text-slate-500">اختاري معادلة:</span>
+              ${presets.map((p, idx) => `
+                <button onclick="selectLabPreset(${idx})"
+                  class="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold border transition math-expr
+                  ${appState.labState.presetIndex === idx ? 'bg-saudi-dark text-saudi-gold border-saudi-gold' : 'bg-saudi-sandDark text-saudi-dark border-slate-300 hover:bg-saudi-goldLight'}">
+                  ${p.label}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-b from-saudi-sand to-saudi-goldLight/60 rounded-3xl border-2 border-saudi-gold/40 p-6 text-center space-y-4">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-white border border-saudi-green/30 text-xs sm:text-sm font-extrabold text-saudi-green">
+              ${isSolved ? `🎉 أحسنتِ يا ${escapeHtml(getExplorerDisplayName())}! تم عزل المتغير والميزان متوازن!` : `تلميح: ${preset.hint}`}
+            </div>
+
+            <!-- رسم SVG للميزان ذي الكفتين -->
+            <div class="max-w-lg mx-auto py-2">
+              <svg viewBox="0 0 400 210" class="w-full h-auto overflow-visible">
+                <path d="M 140,195 L 260,195 L 235,175 L 165,175 Z" fill="#004D25"/>
+                <rect x="193" y="55" width="14" height="122" rx="4" fill="#006C35"/>
+                <circle cx="200" cy="55" r="12" fill="#D4AF37" stroke="#004D25" stroke-width="3"/>
+
+                <g class="scale-beam" style="transform: rotate(${tilt}deg); transform-origin: 200px 55px;">
+                  <rect x="65" y="50" width="270" height="10" rx="5" fill="#B8860B"/>
+                  <circle cx="75" cy="55" r="6" fill="#004D25"/>
+                  <circle cx="325" cy="55" r="6" fill="#004D25"/>
+
+                  <!-- الكفة اليمنى -->
+                  <g transform="translate(75, 55)">
+                    <line x1="0" y1="0" x2="-35" y2="65" stroke="#64748B" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="35" y2="65" stroke="#64748B" stroke-width="2"/>
+                    <path d="M -54,65 Q 0,82 54,65 Z" fill="#006C35"/>
+                    <rect x="-50" y="25" width="100" height="38" rx="10" fill="#FFFFFF" stroke="#006C35" stroke-width="2.5"/>
+                    <text x="0" y="49" text-anchor="middle" fill="#004D25" font-size="16" font-weight="900" font-family="Tajawal">${rightPanText}</text>
+                  </g>
+
+                  <!-- الكفة اليسرى -->
+                  <g transform="translate(325, 55)">
+                    <line x1="0" y1="0" x2="-35" y2="65" stroke="#64748B" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="35" y2="65" stroke="#64748B" stroke-width="2"/>
+                    <path d="M -54,65 Q 0,82 54,65 Z" fill="#D4AF37"/>
+                    <rect x="-50" y="25" width="100" height="38" rx="10" fill="#FFFFFF" stroke="#B8860B" stroke-width="2.5"/>
+                    <text x="0" y="49" text-anchor="middle" fill="#1A2421" font-size="16" font-weight="900" font-family="Tajawal">${leftPanText}</text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <div class="text-2xl sm:text-3xl font-black text-saudi-dark math-expr">
+              ${rightPanText} <span class="text-saudi-gold mx-2">=</span> ${leftPanText}
+            </div>
+
+            ${appState.labState.feedback ? `
+              <div class="max-w-xl mx-auto p-3.5 rounded-2xl text-sm font-bold ${isSolved ? 'bg-saudi-light text-saudi-dark border border-saudi-green' : 'bg-amber-50 text-amber-900 border border-amber-300'}">
+                ${appState.labState.feedback}
+              </div>
+            ` : ''}
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-sm sm:text-base font-extrabold text-slate-700 text-center">
+              اختاري العملية الحسابية لتطبيقها على <span class="text-saudi-green underline">كلا طرفي المعادلة</span>:
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              ${actions.map((act, idx) => `
+                <button onclick="applyLabAction(${idx})"
+                  class="p-3.5 rounded-2xl border-2 font-extrabold text-sm transition shadow-2xs
+                  ${isSolved && act.isCorrect
+                    ? 'bg-saudi-green text-white border-saudi-dark'
+                    : 'bg-white hover:bg-saudi-goldLight text-saudi-dark border-saudi-gold/50 hover:border-saudi-gold'}">
+                  ${act.label}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="pt-2 flex justify-between items-center border-t border-saudi-sandDark">
+            <button onclick="selectLabPreset(appState.labState.presetIndex)" class="px-4 py-2 rounded-xl bg-saudi-sandDark hover:bg-saudi-goldLight text-slate-700 font-bold text-xs sm:text-sm transition">
+              🔄 إعادة ضبط الميزان
+            </button>
+            <button onclick="switchStationTab('quiz')" class="px-6 py-3 rounded-2xl bg-saudi-green hover:bg-saudi-dark text-white font-black text-sm sm:text-base shadow-md transition flex items-center gap-2">
+              <span>جاهزة لتحدي المحطة!</span>
+              <span>🎯</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectLabPreset(idx) {
+      SoundFX.click();
+      appState.labState = {
+        presetIndex: idx,
+        solved: false,
+        tiltAngle: 0,
+        feedback: ''
+      };
+      render();
+    }
+
+    function applyLabAction(actionIndex) {
+      const station = STATIONS.find(s => s.id === appState.activeStationId) || STATIONS[0];
+      const preset = station.labPresets[appState.labState.presetIndex] || station.labPresets[0];
+      const actions = getLabActionsForPreset(preset);
+      const chosen = actions[actionIndex];
+      if (!chosen) return;
+
+      if (chosen.isCorrect) {
+        SoundFX.success();
+        appState.labState.solved = true;
+        appState.labState.tiltAngle = 0;
+        appState.labState.feedback = chosen.message;
+      } else {
+        SoundFX.error();
+        appState.labState.solved = false;
+        appState.labState.tiltAngle = -7;
+        appState.labState.feedback = chosen.message;
+      }
+      render();
+    }
+
+    /* --- القسم الثالث: تحدي المحطة بنظام تعدد المحاولات (٣ محاولات لكل سؤال) --- */
+    function renderQuizTab(station) {
+      const totalQ = station.questions.length;
+      let solvedCount = 0;
+      let finishedCount = 0;
+      station.questions.forEach((_, i) => {
+        const qState = getQuestionState(station.id, i);
+        if (qState.solved) solvedCount++;
+        if (qState.solved || qState.attemptsUsed >= MAX_ATTEMPTS_PER_QUESTION) finishedCount++;
+      });
+
+      const hasUnmasteredQuestions = solvedCount < totalQ && finishedCount > solvedCount;
+
+      return `
+        <div class="space-y-5 animate-enter">
+          <!-- شريط حالة التحدي وخيار إعادة محاولة الأسئلة المتبقية للوصول إلى 100% -->
+          <div class="bg-white rounded-2xl border border-saudi-gold/50 p-4 sm:p-5 flex flex-wrap items-center justify-between gap-3 shadow-2xs">
+            <div>
+              <h2 class="text-lg sm:text-xl font-black text-saudi-dark">تحدي ${station.city}</h2>
+              <p class="text-xs sm:text-sm text-slate-600">لديكِ <strong>٣ محاولات</strong> لكل سؤال مع تلميحات ذكية حتى تصلي للإجابة الصحيحة وتحققي ١٠٠٪!</p>
+            </div>
+
+            <div class="flex items-center gap-2.5 flex-wrap">
+              <div class="bg-saudi-light px-3.5 py-2 rounded-xl text-xs sm:text-sm font-extrabold text-saudi-dark border border-saudi-green/30">
+                الأسئلة المتقنة: ${toArabicDigits(solvedCount)} من ${toArabicDigits(totalQ)}
+              </div>
+              ${hasUnmasteredQuestions ? `
+                <button onclick="retryRemainingInStation('${station.id}')" class="px-3.5 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-400 text-xs sm:text-sm font-extrabold transition flex items-center gap-1.5">
+                  <span>🎯</span>
+                  <span>إعادة محاولة الأسئلة المتبقية للوصول إلى ١٠٠٪</span>
+                </button>
+              ` : ''}
+            </div>
+          </div>
+
+          <!-- قائمة الأسئلة بنظام تعدد المحاولات -->
+          <div class="space-y-5">
+            ${station.questions.map((item, qIdx) => {
+              const qState = getQuestionState(station.id, qIdx);
+              const remainingAttempts = Math.max(0, MAX_ATTEMPTS_PER_QUESTION - qState.attemptsUsed);
+              const isSolved = qState.solved;
+              const isExhausted = !isSolved && qState.attemptsUsed >= MAX_ATTEMPTS_PER_QUESTION;
+              const isRetryAvailable = !isSolved && qState.attemptsUsed > 0 && qState.attemptsUsed < MAX_ATTEMPTS_PER_QUESTION;
+
+              // شارة المحاولات المتبقية
+              let attemptsBadgeHtml = '';
+              if (isSolved) {
+                attemptsBadgeHtml = `
+                  <span class="px-3 py-1 rounded-full bg-saudi-light text-saudi-green border border-saudi-green/40 text-xs font-extrabold">
+                    ✔ تم الإتقان (المحاولة ${toArabicDigits(qState.attemptsUsed)} من ٣)
+                  </span>
+                `;
+              } else if (isExhausted) {
+                attemptsBadgeHtml = `
+                  <span class="px-3 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-300 text-xs font-extrabold">
+                    انتهت المحاولات (٠ من ٣)
+                  </span>
+                `;
+              } else {
+                const hearts = Array.from({ length: MAX_ATTEMPTS_PER_QUESTION }, (_, i) =>
+                  i < remainingAttempts ? '🟢' : '⚪'
+                ).join('');
+                attemptsBadgeHtml = `
+                  <span class="px-3 py-1 rounded-full bg-saudi-goldLight text-saudi-dark border border-saudi-gold/60 text-xs font-extrabold flex items-center gap-1.5">
+                    <span>المحاولات المتبقية: ${toArabicDigits(remainingAttempts)} من ٣</span>
+                    <span class="text-[10px]">${hearts}</span>
+                  </span>
+                `;
+              }
+
+              return `
+                <div class="bg-white rounded-3xl border-2 ${isSolved ? 'border-saudi-green' : isExhausted ? 'border-rose-400' : isRetryAvailable ? 'border-amber-400' : 'border-saudi-gold/40'} p-5 sm:p-6 shadow-xs space-y-4">
+                  <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div class="flex items-start gap-3 flex-1">
+                      <span class="w-8 h-8 rounded-xl bg-saudi-dark text-saudi-gold font-black text-sm flex items-center justify-center shrink-0 mt-0.5">
+                        ${toArabicDigits(qIdx + 1)}
+                      </span>
+                      <h3 class="text-base sm:text-lg font-extrabold text-saudi-ink leading-relaxed math-expr">
+                        ${item.q}
+                      </h3>
+                    </div>
+                    <div class="shrink-0">
+                      ${attemptsBadgeHtml}
+                    </div>
+                  </div>
+
+                  ${item.type === 'numeric' ? `
+                    <div class="pt-1 space-y-3">
+                      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-md">
+                        <div class="flex items-center gap-2 flex-1 bg-saudi-sand px-4 py-2.5 rounded-2xl border-2 ${isSolved ? 'border-saudi-green bg-saudi-light/50' : isExhausted ? 'border-rose-400 bg-rose-50' : 'border-saudi-gold/60 focus-within:border-saudi-green'}">
+                          <span class="font-black text-saudi-dark text-base math-expr">${item.varLabel || 'الحل ='}</span>
+                          <input
+                            id="numeric-q-${station.id}-${qIdx}"
+                            type="text"
+                            inputmode="numeric"
+                            ${(isSolved || isExhausted) ? 'disabled' : ''}
+                            value="${isSolved ? toArabicDigits(item.correctNumber) : ''}"
+                            onkeydown="if(event.key === 'Enter') submitNumericQuizAnswer('${station.id}', ${qIdx})"
+                            placeholder="اكتبي قيمة المتغير..."
+                            class="w-full bg-transparent focus:outline-none font-black text-lg text-saudi-dark math-expr"
+                          />
+                        </div>
+                        ${(!isSolved && !isExhausted) ? `
+                          <button onclick="submitNumericQuizAnswer('${station.id}', ${qIdx})" class="px-5 py-3 rounded-2xl bg-saudi-green hover:bg-saudi-dark text-white font-extrabold text-sm transition shadow-2xs">
+                            تحققي من الإجابة ✔
+                          </button>
+                        ` : isSolved ? `
+                          <span class="px-3.5 py-2 rounded-xl text-xs font-extrabold bg-saudi-light text-saudi-green">
+                            ✔ إجابة صحيحة (${toArabicDigits(item.correctNumber)})
+                          </span>
+                        ` : `
+                          <span class="px-3.5 py-2 rounded-xl text-xs font-extrabold bg-rose-100 text-rose-800">
+                            الإجابة الصحيحة: ${toArabicDigits(item.correctNumber)}
+                          </span>
+                        `}
+                      </div>
+                      ${qState.wrongChoices.length > 0 && !isSolved ? `
+                        <div class="text-xs font-bold text-rose-700">
+                          محاولاتكِ السابقة: ${qState.wrongChoices.map(w => `<span class="inline-block bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-lg mx-1 math-expr">${toArabicDigits(w)}</span>`).join('')}
+                        </div>
+                      ` : ''}
+                    </div>
+                  ` : `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                      ${item.options.map((opt, optIdx) => {
+                        const wasTriedWrong = qState.wrongChoices.includes(optIdx);
+                        const isThisCorrect = optIdx === item.correctIndex;
+                        const lockOption = isSolved || isExhausted || wasTriedWrong;
+
+                        let btnStyle = 'bg-saudi-sand hover:bg-saudi-goldLight border-slate-200 text-saudi-ink';
+                        let badge = '';
+
+                        if (isSolved && isThisCorrect) {
+                          btnStyle = 'bg-saudi-light border-saudi-green text-saudi-dark ring-2 ring-saudi-green/30';
+                          badge = '✔ الإجابة الصحيحة';
+                        } else if (isExhausted && isThisCorrect) {
+                          btnStyle = 'bg-saudi-light border-saudi-green text-saudi-dark';
+                          badge = '✔ الحل الصحيح';
+                        } else if (wasTriedWrong) {
+                          btnStyle = 'bg-rose-50 border-rose-300 text-rose-800 opacity-85';
+                          badge = '✖ حاولي خياراً آخر';
+                        } else if (isSolved || isExhausted) {
+                          btnStyle = 'bg-slate-50 border-slate-200 text-slate-400 opacity-70';
+                        }
+
+                        return `
+                          <button ${lockOption ? 'disabled' : ''} onclick="submitQuizAnswer('${station.id}', ${qIdx}, ${optIdx})"
+                            class="p-3.5 rounded-2xl border-2 text-right font-extrabold text-sm sm:text-base transition flex items-center justify-between gap-2 math-expr ${btnStyle} ${!lockOption ? 'cursor-pointer active:scale-[0.99]' : 'cursor-default'}">
+                            <span>${opt}</span>
+                            ${badge ? `<span class="text-xs font-bold px-2 py-0.5 rounded-lg bg-white/90">${badge}</span>` : ''}
+                          </button>
+                        `;
+                      }).join('')}
+                    </div>
+                  `}
+
+                  <!-- التغذية الراجعة الفورية: تلميح ذكي عند المحاولة الخاطئة (1 أو 2) أو شرح تفصيلي عند النجاح / انتهاء المحاولات -->
+                  ${isSolved ? `
+                    <div class="p-4 rounded-2xl bg-saudi-light/85 border border-saudi-green/40 text-saudi-dark text-xs sm:text-sm leading-relaxed flex items-start gap-2.5">
+                      <span class="text-lg">🌟</span>
+                      <div>
+                        <strong class="block font-extrabold mb-0.5">إجابة صحيحة! أحسنتِ يا ${escapeHtml(getExplorerDisplayName())} (نلتِ الدرجة الكاملة للسؤال):</strong>
+                        <span>${item.explanation}</span>
+                      </div>
+                    </div>
+                  ` : isRetryAvailable ? `
+                    <div class="p-4 rounded-2xl bg-amber-50 border-2 border-amber-300 text-amber-950 text-xs sm:text-sm leading-relaxed flex items-start gap-2.5 animate-enter">
+                      <span class="text-xl">💡</span>
+                      <div>
+                        <strong class="block font-extrabold text-amber-900 mb-0.5">
+                          محاولة قريبة يا ${escapeHtml(getExplorerDisplayName())}! تبقّى لديكِ ${toArabicDigits(remainingAttempts)} ${remainingAttempts === 2 ? 'محاولتان' : 'محاولة واحدة'} — تلميح تعليمي ذكي:
+                        </strong>
+                        <span>${item.smartHint}</span>
+                      </div>
+                    </div>
+                  ` : isExhausted ? `
+                    <div class="p-4 rounded-2xl bg-rose-50 border border-rose-300 text-rose-950 text-xs sm:text-sm leading-relaxed space-y-3">
+                      <div class="flex items-start gap-2.5">
+                        <span class="text-lg">📘</span>
+                        <div>
+                          <strong class="block font-extrabold mb-0.5">تعلّمي خطوات الحل الصحيح:</strong>
+                          <span>${item.explanation}</span>
+                        </div>
+                      </div>
+                      <div class="flex justify-end">
+                        <button onclick="retrySingleQuestion('${station.id}', ${qIdx})" class="px-4 py-2 rounded-xl bg-saudi-green hover:bg-saudi-dark text-white font-extrabold text-xs sm:text-sm transition flex items-center gap-1.5 shadow-2xs">
+                          <span>🔄</span>
+                          <span>إعادة محاولة هذا السؤال الآن</span>
+                        </button>
+                      </div>
+                    </div>
+                  ` : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- لوحة إتمام المحطة عند الانتهاء من جميع أسئلتها -->
+          ${finishedCount === totalQ ? renderStationCompletionBanner(station, solvedCount, totalQ) : ''}
+        </div>
+      `;
+    }
+
+    function renderStationCompletionBanner(station, solvedCount, totalQ) {
+      const currentIdx = STATIONS.findIndex(s => s.id === station.id);
+      const nextStation = STATIONS[currentIdx + 1];
+      const stats = getStats();
+      const isStation100 = solvedCount === totalQ;
+
+      return `
+        <div class="bg-gradient-to-l from-saudi-dark to-saudi-green text-white rounded-3xl p-6 border-2 border-saudi-gold shadow-xl text-center space-y-4">
+          <div class="text-4xl">${isStation100 ? '🏆' : station.badgeIcon}</div>
+          <h3 class="font-amiri text-2xl sm:text-3xl font-bold text-saudi-gold">
+            ${isStation100
+              ? `إتقان كامل ١٠٠٪ في ${station.city} يا ${escapeHtml(getExplorerDisplayName())}!`
+              : `أتممتِ تحدي ${station.city} يا ${escapeHtml(getExplorerDisplayName())}!`}
+          </h3>
+          <p class="text-sm sm:text-base text-emerald-100">
+            أتقنتِ <strong>${toArabicDigits(solvedCount)} من ${toArabicDigits(totalQ)}</strong> أسئلة، ونلتِ <strong>${station.badgeName}</strong>!
+            ${stats.percentage === 100 ? ' 🎉 لقد وصلتِ إلى نتيجة ١٠٠٪ في الرحلة كاملة!' : ''}
+          </p>
+          <div class="flex flex-wrap justify-center gap-3 pt-2">
+            ${!isStation100 ? `
+              <button onclick="retryRemainingInStation('${station.id}')" class="px-5 py-3 rounded-2xl bg-amber-400 hover:bg-amber-300 text-saudi-dark font-black text-sm sm:text-base shadow-md transition">
+                🎯 إعادة محاولة الأسئلة المتبقية للوصول إلى ١٠٠٪
+              </button>
+            ` : ''}
+            ${nextStation ? `
+              <button onclick="navigateTo('station', '${nextStation.id}', 'rule')" class="px-6 py-3 rounded-2xl bg-saudi-gold text-saudi-dark font-black text-sm sm:text-base shadow-md hover:opacity-95 transition">
+                انطلقي إلى المحطة التالية: ${nextStation.city} ⬅️
+              </button>
+            ` : `
+              <button onclick="navigateTo('certificate')" class="px-6 py-3 rounded-2xl bg-saudi-gold text-saudi-dark font-black text-sm sm:text-base shadow-md hover:opacity-95 transition">
+                استلمي شهادة الإنجاز النهائية 📜
+              </button>
+            `}
+            <button onclick="navigateTo('certificate')" class="px-5 py-3 rounded-2xl bg-white text-saudi-dark font-extrabold text-sm shadow-xs hover:bg-saudi-goldLight transition">
+              معاينة الشهادة 📜
+            </button>
+            <button onclick="navigateTo('home')" class="px-5 py-3 rounded-2xl bg-white/15 hover:bg-white/25 text-white font-bold text-sm transition">
+              العودة للخريطة 🗺️
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function evaluateStationAndCelebrate(station) {
+      const prog = appState.stationProgress[station.id];
+      const totalQ = station.questions.length;
+      let solvedCount = 0;
+      let finishedCount = 0;
+
+      station.questions.forEach((_, idx) => {
+        const qState = getQuestionState(station.id, idx);
+        if (qState.solved) solvedCount++;
+        if (qState.solved || qState.attemptsUsed >= MAX_ATTEMPTS_PER_QUESTION) finishedCount++;
+      });
+
+      const statsBefore = getStats();
+      const wasCompleted = prog.completed;
+
+      if (finishedCount === totalQ) {
+        const ratio = solvedCount / totalQ;
+        prog.stars = ratio === 1 ? 3 : ratio >= 0.5 ? 2 : 1;
+        prog.completed = true;
+      }
+
+      saveState();
+      updateHeaderStats();
+      const statsAfter = getStats();
+
+      // احتفالية كبرى عند الوصول إلى 100% في كامل الرحلة (22 من 22 سؤالاً)
+      if (statsAfter.percentage === 100 && statsBefore.percentage < 100) {
+        SoundFX.fanfare();
+        launchConfetti(180);
+        setTimeout(() => {
+          openModal({
+            icon: '👑',
+            title: `إنجاز تاريخي ١٠٠٪ يا ${getExplorerDisplayName()}!`,
+            message: `مبارك لكِ! لقد أتقنتِ جميع أسئلة الرحلة الـ ٢٢ بنجاح باهر وحصلتِ على الدرجة الكاملة ١٠٠٪ وجميع الأوسمة الوطنية الخمسة.`,
+            extra: 'شهادة الإنجاز الذهبية جاهزة الآن باسمكِ للطباعة!'
+          });
+        }, 350);
+        render();
+        return;
+      }
+
+      // احتفالية عند إتمام المحطة لأول مرة أو عند إتقان المحطة بنسبة 100%
+      if (finishedCount === totalQ && (!wasCompleted || (solvedCount === totalQ && prog.stars === 3))) {
+        SoundFX.fanfare();
+        launchConfetti(120);
+        setTimeout(() => {
+          openModal({
+            icon: station.badgeIcon,
+            title: `مبارك يا ${getExplorerDisplayName()}! حصلتِ على ${station.badgeName}`,
+            message: `لقد أنهيتِ تحديات ${station.city} وأتقنتِ ${toArabicDigits(solvedCount)} من ${toArabicDigits(totalQ)} أسئلة.`,
+            extra: `النجوم المكتسبة في هذه المحطة: ${'⭐'.repeat(prog.stars)}`
+          });
+        }, 350);
+      }
+
+      render();
+    }
+
+    function submitQuizAnswer(stationId, qIdx, optIdx) {
+      const station = STATIONS.find(s => s.id === stationId);
+      if (!station) return;
+      const qState = getQuestionState(stationId, qIdx);
+
+      if (qState.solved || qState.attemptsUsed >= MAX_ATTEMPTS_PER_QUESTION) return;
+      if (qState.wrongChoices.includes(optIdx)) return;
+
+      qState.attemptsUsed += 1;
+      qState.lastInput = optIdx;
+
+      if (optIdx === station.questions[qIdx].correctIndex) {
+        qState.solved = true;
+        SoundFX.success();
+      } else {
+        qState.wrongChoices.push(optIdx);
+        SoundFX.error();
+      }
+
+      evaluateStationAndCelebrate(station);
+    }
+
+    function submitNumericQuizAnswer(stationId, qIdx) {
+      const station = STATIONS.find(s => s.id === stationId);
+      if (!station) return;
+      const qState = getQuestionState(stationId, qIdx);
+
+      if (qState.solved || qState.attemptsUsed >= MAX_ATTEMPTS_PER_QUESTION) return;
+
+      const inputEl = document.getElementById(`numeric-q-${stationId}-${qIdx}`);
+      const rawVal = inputEl ? toWesternDigits(inputEl.value) : '';
+      if (rawVal === '' || isNaN(Number(rawVal))) {
+        SoundFX.error();
+        if (inputEl) inputEl.focus();
+        return;
+      }
+
+      const numVal = Number(rawVal);
+      qState.attemptsUsed += 1;
+      qState.lastInput = numVal;
+
+      if (numVal === Number(station.questions[qIdx].correctNumber)) {
+        qState.solved = true;
+        SoundFX.success();
+      } else {
+        if (!qState.wrongChoices.includes(numVal)) {
+          qState.wrongChoices.push(numVal);
+        }
+        SoundFX.error();
+      }
+
+      evaluateStationAndCelebrate(station);
+    }
+
+    // إعادة محاولة سؤال واحد استُنفدت محاولاته الثلاث
+    function retrySingleQuestion(stationId, qIdx) {
+      SoundFX.click();
+      const station = STATIONS.find(s => s.id === stationId);
+      if (!station) return;
+      const prog = appState.stationProgress[stationId];
+      prog.questions[qIdx] = {
+        attemptsUsed: 0,
+        wrongChoices: [],
+        solved: false,
+        lastInput: null
+      };
+      saveState();
+      updateHeaderStats();
+      render();
+    }
+
+    // إعادة محاولة الأسئلة غير المتقنة فقط داخل المحطة للوصول إلى 100%
+    function retryRemainingInStation(stationId) {
+      SoundFX.click();
+      const station = STATIONS.find(s => s.id === stationId);
+      if (!station) return;
+      const prog = appState.stationProgress[stationId];
+
+      station.questions.forEach((_, idx) => {
+        const qState = getQuestionState(stationId, idx);
+        if (!qState.solved) {
+          prog.questions[idx] = {
+            attemptsUsed: 0,
+            wrongChoices: [],
+            solved: false,
+            lastInput: null
+          };
+        }
+      });
+
+      saveState();
+      updateHeaderStats();
+      render();
+    }
+
+    /*************************************************************************
+     * 8. واجهة شهادة الإنجاز القابلة للطباعة (Certificate View)
+     *************************************************************************/
+    function renderCertificateView() {
+      const stats = getStats();
+      const today = new Intl.DateTimeFormat('ar-SA', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }).format(new Date());
+
+      const explorerNameDisplay = appState.explorerName.trim() || 'المستكشفة المبدعة';
+      const is100Percent = stats.percentage === 100;
+
+      return `
+        <div class="space-y-6 animate-enter">
+          <!-- شريط التحكم العلوي وتعديل الاسم السريع وزر "ابدأ من جديد" -->
+          <div class="bg-white p-4 sm:p-5 rounded-2xl border-2 border-saudi-gold/50 shadow-2xs space-y-4 no-print">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex flex-wrap items-center gap-2">
+                <button onclick="navigateTo('home')" class="px-4 py-2 rounded-xl bg-saudi-sandDark hover:bg-saudi-goldLight text-saudi-dark font-bold text-xs sm:text-sm transition">
+                  ➡️ العودة للخريطة
+                </button>
+                <button onclick="confirmStartOver()" class="px-4 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-300 font-extrabold text-xs sm:text-sm transition flex items-center gap-1.5">
+                  <span>🔄</span>
+                  <span>ابدأ من جديد</span>
+                </button>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-2">
+                ${!is100Percent ? `
+                  <button onclick="goToRetryRemainingQuestions()" class="px-4 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 border border-amber-400 text-amber-950 font-extrabold text-xs sm:text-sm transition">
+                    🎯 إكمال الأسئلة للوصول إلى ١٠٠٪
+                  </button>
+                ` : ''}
+                <button onclick="launchConfetti(150); SoundFX.fanfare();" class="px-4 py-2 rounded-xl bg-saudi-goldLight border border-saudi-gold text-saudi-dark font-bold text-xs sm:text-sm hover:bg-saudi-gold/25 transition">
+                  🎉 احتفال بالإنجاز
+                </button>
+                <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-gradient-to-l from-saudi-green to-saudi-dark text-white font-black text-xs sm:text-sm shadow-md hover:opacity-95 transition flex items-center gap-2">
+                  <span>🖨️</span>
+                  <span>طباعة الشهادة</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- حقل تعديل اسم المستكشفة مباشرة على الشهادة قبل الطباعة -->
+            <div class="bg-saudi-goldLight/70 border border-saudi-antique/40 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center gap-3">
+              <label for="cert-quick-name-input" class="text-xs sm:text-sm font-extrabold text-saudi-dark shrink-0 flex items-center gap-1.5">
+                <span>✏️</span>
+                <span>تعديل اسم المستكشفة في الشهادة قبل الطباعة:</span>
+              </label>
+              <input
+                id="cert-quick-name-input"
+                type="text"
+                value="${escapeHtml(appState.explorerName)}"
+                oninput="updateCertificateNameLive(this.value)"
+                placeholder="اكتبي اسمكِ الثلاثي هنا..."
+                class="flex-1 px-4 py-2 rounded-xl bg-white border-2 border-saudi-gold/60 focus:border-saudi-green focus:outline-none text-saudi-dark font-extrabold text-sm"
+              />
+            </div>
+          </div>
+
+          <!-- لوحة الأوسمة المكتسبة -->
+          <section class="bg-white rounded-3xl border border-saudi-gold/40 p-6 shadow-xs space-y-4 no-print">
+            <h2 class="text-lg sm:text-xl font-black text-saudi-dark flex items-center gap-2">
+              <span>🎖️</span>
+              <span>خزانة الأوسمة الوطنية (${toArabicDigits(stats.badgesEarned)} من ٥)</span>
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              ${STATIONS.map((st) => {
+                const earned = appState.stationProgress[st.id].completed;
+                return `
+                  <div class="p-4 rounded-2xl border-2 text-center transition ${earned ? 'bg-saudi-goldLight border-saudi-gold shadow-2xs' : 'bg-slate-50 border-slate-200 opacity-60 grayscale'}">
+                    <div class="text-3xl mb-1.5">${st.badgeIcon}</div>
+                    <div class="text-xs font-extrabold text-saudi-dark">${st.badgeName}</div>
+                    <div class="text-[11px] font-bold mt-1 ${earned ? 'text-saudi-green' : 'text-slate-400'}">
+                      ${earned ? 'مكتسب ✔' : 'لم يُفتح بعد'}
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </section>
+
+          <!-- وثيقة شهادة الإنجاز القابلة للطباعة -->
+          <section id="certificate-printable" class="relative bg-white rounded-3xl border-[8px] border-double border-saudi-green shadow-2xl overflow-hidden max-w-4xl mx-auto">
+            <div class="sadu-ribbon"></div>
+
+            <div class="p-6 sm:p-10 text-center space-y-5 relative border-4 border-saudi-gold/50 m-2 sm:m-3 rounded-2xl">
+              <!-- علامة مائية خفيفة لشعار النخلة والسيفين -->
+              <div class="absolute inset-0 flex items-center justify-center opacity-[0.05] pointer-events-none">
+                <div class="w-72 h-72">${SAUDI_EMBLEM_SVG}</div>
+              </div>
+
+              <!-- ترويسة الشهادة -->
+              <div class="space-y-1.5 relative z-10">
+                <div class="w-16 h-16 mx-auto mb-1">
+                  ${SAUDI_EMBLEM_SVG}
+                </div>
+                <div class="text-sm sm:text-base font-black text-saudi-green">
+                  المملكة العربية السعودية • وزارة التعليم
+                </div>
+                <h1 class="font-amiri text-3xl sm:text-5xl font-bold text-saudi-dark tracking-tight pt-1">
+                  شهادة شكر وتقدير وإنجاز
+                </h1>
+                ${is100Percent ? `
+                  <div class="inline-block px-4 py-1 rounded-full bg-saudi-gold text-saudi-dark font-black text-xs sm:text-sm shadow-2xs">
+                    👑 وسام التميز الكامل — نسبة الإنجاز ١٠٠٪ 👑
+                  </div>
+                ` : ''}
+                <div class="w-36 h-1 bg-gradient-to-l from-saudi-gold via-saudi-antique to-saudi-gold mx-auto rounded-full my-2"></div>
+              </div>
+
+              <!-- نص التكريم -->
+              <div class="space-y-3.5 max-w-2xl mx-auto relative z-10">
+                <p class="text-base sm:text-xl text-slate-700 font-bold">
+                  تُمنح هذه الشهادة للمستكشفة المبدعة:
+                </p>
+
+                <div class="py-3 px-8 rounded-2xl bg-saudi-goldLight border-2 border-saudi-gold inline-block shadow-2xs">
+                  <span id="certificate-student-name" class="font-amiri text-2xl sm:text-4xl font-bold text-saudi-dark">
+                    ${escapeHtml(explorerNameDisplay)}
+                  </span>
+                </div>
+
+                <p class="text-sm sm:text-lg text-slate-800 leading-relaxed font-semibold pt-1">
+                  لإتمامها بنجاح رحلة الاستكشاف التفاعلية وإتقانها مهارات حل:
+                  <strong class="text-saudi-green">معادلات الجمع والطرح والضرب والقسمة</strong>
+                  في مادة الرياضيات للصف الأول المتوسط، وحصولها على نسبة إنجاز
+                  <strong class="text-saudi-antique">${toArabicDigits(stats.percentage)}٪</strong>
+                  بإتقان
+                  <strong class="text-saudi-green">${toArabicDigits(stats.totalCorrect)} من ${toArabicDigits(stats.totalQuestions)}</strong>
+                  سؤالاً و
+                  <strong class="text-saudi-antique">${toArabicDigits(stats.totalStars)}</strong>
+                  نجمة.
+                </p>
+              </div>
+
+              <!-- ملخص الدرجة والإحصائيات داخل الشهادة -->
+              <div class="grid grid-cols-3 gap-3 max-w-xl mx-auto bg-saudi-sand rounded-2xl p-3.5 border border-saudi-gold/60 relative z-10">
+                <div>
+                  <span class="block text-xs text-slate-500 font-bold">النسبة المئوية</span>
+                  <strong class="text-lg sm:text-2xl font-black text-saudi-dark">${toArabicDigits(stats.percentage)}٪</strong>
+                </div>
+                <div class="border-x border-saudi-gold/40">
+                  <span class="block text-xs text-slate-500 font-bold">النجوم المكتسبة</span>
+                  <strong class="text-lg sm:text-2xl font-black text-saudi-antique">${toArabicDigits(stats.totalStars)} / ${toArabicDigits(stats.maxStars)} ⭐</strong>
+                </div>
+                <div>
+                  <span class="block text-xs text-slate-500 font-bold">الأسئلة المتقنة</span>
+                  <strong class="text-lg sm:text-2xl font-black text-saudi-green">${toArabicDigits(stats.totalCorrect)} / ${toArabicDigits(stats.totalQuestions)}</strong>
+                </div>
+              </div>
+
+              <!-- التوقيعان المتقابلان في أسفل الشهادة بوضوح -->
+              <div class="pt-5 grid grid-cols-2 gap-6 items-start text-sm sm:text-base border-t-2 border-saudi-gold/40 relative z-10">
+                <!-- يميناً -->
+                <div class="space-y-1 text-center">
+                  <span class="block text-xs sm:text-sm text-saudi-green font-extrabold">مصممة الرحلة:</span>
+                  <strong class="block text-saudi-dark font-black text-base sm:text-lg">وتين طه عسيري</strong>
+                  <span class="block text-xs sm:text-sm text-slate-600 font-bold">الصف الأول المتوسط</span>
+                </div>
+
+                <!-- يساراً -->
+                <div class="space-y-1 text-center">
+                  <span class="block text-xs sm:text-sm text-saudi-green font-extrabold">إشراف معلمة المادة:</span>
+                  <strong class="block text-saudi-dark font-black text-base sm:text-lg">حسناء كيلاني</strong>
+                  <span class="block text-[11px] text-slate-500 font-semibold mt-1">${today}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sadu-ribbon"></div>
+          </section>
+        </div>
+      `;
+    }
+
+    /*************************************************************************
+     * 9. التهيئة والتشغيل الرئيسي عند تحميل الصفحة
+     *************************************************************************/
+    function render() {
+      const container = document.getElementById('app-container');
+      if (!container) return;
+
+      if (appState.view === 'home') {
+        container.innerHTML = renderHomeView();
+      } else if (appState.view === 'station') {
+        container.innerHTML = renderStationView();
+      } else if (appState.view === 'certificate') {
+        container.innerHTML = renderCertificateView();
+      }
+      updateHeaderStats();
+    }
+
+    window.onload = function () {
+      loadState();
+      render();
+    };
+  </script>
+</body>
+</html>
