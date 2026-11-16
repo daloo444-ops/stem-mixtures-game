@@ -1,390 +1,60 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>تحدي المخاليط | STEM</title>
-  <style>
-    :root{
-      --bg1:#c9ecff;
-      --bg2:#eef9ff;
-      --card:#ffffffee;
-      --ink:#234;
-      --accent:#ffb84d;
-      --accent2:#7f72ff;
-      --good:#1a9b62;
-      --bad:#d35a74;
-      --soft:#e6f4ff;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-      min-height:100vh;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at top right, #fff7cb 0, #fff7cb 12%, transparent 13%),
-        radial-gradient(circle at 15% 15%, #dff6ff 0, #dff6ff 18%, transparent 19%),
-        linear-gradient(180deg,var(--bg1),var(--bg2));
-      overflow-x:hidden;
-      display:grid;
-      place-items:center;
-      padding:22px;
-    }
-    .floaters span{
-      position:fixed;
-      z-index:0;
-      font-size:34px;
-      opacity:.26;
-      animation: drift linear infinite;
-      user-select:none;
-      pointer-events:none;
-    }
-    .floaters span:nth-child(1){right:8%; top:14%; animation-duration:8s}
-    .floaters span:nth-child(2){left:7%; top:18%; animation-duration:10s}
-    .floaters span:nth-child(3){right:16%; bottom:12%; animation-duration:9s}
-    .floaters span:nth-child(4){left:12%; bottom:18%; animation-duration:11s}
-    .floaters span:nth-child(5){right:44%; top:8%; animation-duration:12s}
-    .floaters span:nth-child(6){left:40%; bottom:8%; animation-duration:8.5s}
-    @keyframes drift {
-      0%,100%{transform:translateY(0) rotate(0deg)}
-      50%{transform:translateY(-12px) rotate(6deg)}
-    }
-    main{
-      position:relative;
-      z-index:1;
-      width:min(660px,95vw);
-      background:var(--card);
-      border:2px solid #dcefff;
-      border-radius:28px;
-      box-shadow:0 18px 45px rgba(76,113,157,.18);
-      padding:20px 18px 22px;
-      backdrop-filter: blur(7px);
-    }
-    .top-row{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-bottom:8px;
-    }
-    .pill{
-      background:#f2f8ff;
-      border:1px solid #d3e8ff;
-      color:#4b5f77;
-      border-radius:999px;
-      padding:8px 14px;
-      font-size:14px;
-      font-weight:700;
-    }
-    header{
-      text-align:center;
-      margin:8px 0 16px;
-    }
-    h1{
-      margin:8px 0 10px;
-      color:#5c54db;
-      font-size:clamp(27px,5vw,39px);
-      line-height:1.25;
-    }
-    .sub{
-      margin:0 auto 10px;
-      color:#516579;
-      line-height:1.8;
-      font-size:15px;
-      max-width:540px;
-    }
-    .credit{
-      background:linear-gradient(90deg,#fff8dd,#f3f7ff);
-      border:1px dashed #dfd3a5;
-      border-radius:18px;
-      padding:12px 14px;
-      margin:14px auto 10px;
-      max-width:580px;
-      line-height:1.9;
-      font-size:15px;
-      color:#4e5564;
-    }
-    .bar{
-      height:12px;
-      background:#e8f2fb;
-      border-radius:999px;
-      overflow:hidden;
-      margin-top:10px;
-    }
-    .fill{
-      height:100%;
-      width:0;
-      background:linear-gradient(90deg,#7f72ff,#ffb84d);
-      transition:.35s;
-      border-radius:999px;
-    }
-    .meta{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      margin:16px 0;
-      flex-wrap:wrap;
-      font-weight:800;
-      color:#4a6073;
-    }
-    .meta span{
-      background:#f4fbff;
-      border:1px solid #d7edff;
-      border-radius:14px;
-      padding:8px 12px;
-    }
-    .domain{
-      text-align:center;
-      color:#7a56c8;
-      font-weight:800;
-      margin-bottom:10px;
-    }
-    h2{
-      text-align:center;
-      font-size:clamp(20px,4vw,28px);
-      line-height:1.8;
-      min-height:76px;
-      margin:10px 0 14px;
-      color:#294257;
-    }
-    button{font:inherit; cursor:pointer}
-    .opt{
-      display:block;
-      width:100%;
-      text-align:right;
-      background:#f7fbff;
-      border:2px solid #d7eaf8;
-      color:#23384f;
-      padding:15px 14px;
-      border-radius:18px;
-      margin:11px 0;
-      line-height:1.7;
-      transition:.2s ease;
-      font-weight:700;
-    }
-    .opt:hover{transform:translateY(-1px); background:#f0f8ff}
-    .opt:disabled{cursor:default; opacity:1}
-    .opt.good{border-color:#7fd7ae; background:#e9fff3}
-    .opt.bad{border-color:#f3a7b6; background:#fff1f5}
-    .feedback{
-      background:#eef8ff;
-      border:1px solid #cde4f6;
-      padding:14px;
-      border-radius:16px;
-      line-height:1.9;
-      margin-top:14px;
-      color:#355066;
-      font-weight:700;
-    }
-    .next{
-      width:100%;
-      border:0;
-      background:linear-gradient(90deg,var(--accent2),var(--accent));
-      color:#fff;
-      border-radius:16px;
-      padding:15px;
-      font-weight:900;
-      margin-top:15px;
-      box-shadow:0 10px 20px rgba(127,114,255,.18);
-    }
-    .hidden{display:none}
-    .final{text-align:center; line-height:1.9}
-    .big{font-size:65px; animation:drift 2.8s ease-in-out infinite}
-    .result-box{
-      background:#f8fbff;
-      border:1px solid #dbeeff;
-      border-radius:18px;
-      padding:14px;
-      margin:14px 0;
-    }
-    footer{
-      text-align:center;
-      color:#6f8799;
-      font-size:13px;
-      margin-top:16px;
-      line-height:1.8;
-    }
-  </style>
-</head>
-<body>
-  <div class="floaters" aria-hidden="true">
-    <span>🧪</span>
-    <span>💧</span>
-    <span>⚗️</span>
-    <span>🥛</span>
-    <span>🫧</span>
-    <span>🔬</span>
-  </div>
-
-  <main>
-    <div class="top-row">
-      <div class="pill">العلوم | الصف الأول المتوسط</div>
-      <div class="pill">STEM</div>
-    </div>
-
-    <header>
-      <h1>🏆 تحدي المخاليط الذكية</h1>
-      <p class="sub">لعبة تفاعلية ممتعة عن <strong>المخلوط المتجانس</strong> و<strong>المخلوط غير المتجانس</strong>، مع لمسة STEM تناسب طالبات الصف الأول المتوسط.</p>
-      <div class="credit">
-        <strong>من تصميم الطالبة:</strong> وتين عسيري<br>
-        <strong>بإشراف المعلمة:</strong> نعمة هرشان
-      </div>
-    </header>
-
-    <div class="bar"><div id="fill" class="fill"></div></div>
-
-    <div class="meta">
-      <span id="count">السؤال ١ من ٦</span>
-      <span id="points">⭐ ٠ نقطة</span>
-    </div>
-
-    <section id="game">
-      <div class="domain" id="domain"></div>
-      <h2 id="question"></h2>
-      <div id="options"></div>
-      <div id="feedback" class="feedback hidden" aria-live="polite"></div>
-      <button id="next" class="next hidden">السؤال التالي ←</button>
-    </section>
-
-    <section class="final hidden" id="final">
-      <div class="big">🏆</div>
-      <h2 id="award"></h2>
-      <div class="result-box">
-        <h1 id="result"></h1>
-        <p id="message"></p>
-      </div>
-      <button class="next" onclick="restart()">🔄 ابدئي التحدي من جديد</button>
-    </section>
-
-    <footer>
-      مشروع تفاعلي صغير لدرس المخاليط المتجانسة وغير المتجانسة<br>
-      التعلم بالمرح • التفكير العلمي • الملاحظة • الاختبار
-    </footer>
-  </main>
-
-  <script>
-    const qs = [
-      {
-        q:'أي المخاليط التالية يُعد مخلوطًا متجانسًا؟',
-        a:['الماء والرمل','الماء والملح بعد الذوبان','الماء والزيت'],
-        c:1,
-        d:'🔬 العلوم',
-        e:'لأن الملح يذوب تمامًا في الماء ويصبح المخلوط ذا شكل واحد.'
-      },
-      {
-        q:'إذا خلطنا الرمل بالماء، فما نوع المخلوط الناتج؟',
-        a:['متجانس','غير متجانس','عنصر نقي'],
-        c:1,
-        d:'🔬 العلوم',
-        e:'لأننا نستطيع رؤية الرمل منفصلًا عن الماء.'
-      },
-      {
-        q:'ما الطريقة المناسبة لفصل الرمل عن الماء؟',
-        a:['الترشيح','التجميد','المغناطيس'],
-        c:0,
-        d:'🛠️ الهندسة',
-        e:'الترشيح يساعدنا على فصل المواد الصلبة غير الذائبة عن السوائل.'
-      },
-      {
-        q:'عندما صوّرت الطالبة خطوات التجربة بالجوال، فهي استخدمت مجال…',
-        a:['الرياضيات','التقنية','الفن فقط'],
-        c:1,
-        d:'📱 التقنية',
-        e:'استخدام الجوال للتوثيق والعرض يُعد مثالًا على التقنية في STEM.'
-      },
-      {
-        q:'إذا كان لدينا 100 مل من المخلوط، وبعد الترشيح حصلنا على 80 مل، فما الفرق؟',
-        a:['10 مل','20 مل','30 مل'],
-        c:1,
-        d:'🔢 الرياضيات',
-        e:'نطرح: 100 - 80 = 20 مل.'
-      },
-      {
-        q:'أي تصرف يدل على التفكير الهندسي عند تصميم المرشح؟',
-        a:['إعادة ترتيب الطبقات وتجربتها مرة أخرى','إيقاف التجربة مباشرة','شرب الماء بعد ترشيحه'],
-        c:0,
-        d:'🧠 STEM',
-        e:'التفكير الهندسي يعني: نصمم، نختبر، ثم نحسن التصميم. والماء المرشَّح غير صالح للشرب.'
-      }
-    ];
-
-    let i = 0, score = 0, answered = false;
-    const $ = id => document.getElementById(id);
-
-    function render(){
-      $('count').textContent = `السؤال ${i+1} من ٦`;
-      $('points').textContent = `⭐ ${score} نقطة`;
-      $('fill').style.width = `${(i/qs.length)*100}%`;
-      $('domain').textContent = qs[i].d;
-      $('question').textContent = qs[i].q;
-      $('options').innerHTML = '';
-      $('feedback').classList.add('hidden');
-      $('next').classList.add('hidden');
-      answered = false;
-
-      qs[i].a.forEach((ans, j) => {
-        let b = document.createElement('button');
-        b.className = 'opt';
-        b.textContent = 'أبج'[j] + ' - ' + ans;
-        b.onclick = () => choose(j);
-        $('options').appendChild(b);
-      });
-    }
-
-    function choose(j){
-      if(answered) return;
-      answered = true;
-      let q = qs[i];
-      if(j === q.c) score++;
-
-      [...$('options').children].forEach((b,k) => {
-        b.disabled = true;
-        if(k === q.c) b.classList.add('good');
-        else if(k === j) b.classList.add('bad');
-      });
-
-      $('points').textContent = `⭐ ${score} نقطة`;
-      $('feedback').textContent = (j === q.c ? '🎉 أحسنتِ يا بطلة! ' : '💡 الإجابة الصحيحة: ') + q.e;
-      $('feedback').classList.remove('hidden');
-      $('next').textContent = i === 5 ? 'شاهدي نتيجتك ووسامك 🏆' : 'السؤال التالي ←';
-      $('next').classList.remove('hidden');
-    }
-
-    function finish(){
-      $('game').classList.add('hidden');
-      $('final').classList.remove('hidden');
-      $('fill').style.width = '100%';
-      $('count').textContent = 'انتهى التحدي';
-
-      $('award').textContent = score === 6
-        ? '🥇 وسام خبيرة المخاليط'
-        : score >= 4
-        ? '🥈 وسام الباحثة المبدعة'
-        : '🌷 وسام المتعلمة الصغيرة';
-
-      $('result').textContent = `${score} / ٦`;
-      $('message').textContent = score === 6
-        ? 'رائعة جدًا! أتقنتِ التحدي كاملًا وأثبتِّ فهمك للمخاليط وSTEM.'
-        : score >= 4
-        ? 'أداء جميل! لديك فهم ممتاز، واصلي التألق.'
-        : 'بداية موفقة! أعيدي المحاولة وستتقنين الدرس أكثر بإذن الله.';
-    }
-
-    $('next').onclick = () => {
-      if(i === 5) finish();
-      else { i++; render(); }
-    };
-
-    function restart(){
-      i = 0;
-      score = 0;
-      $('game').classList.remove('hidden');
-      $('final').classList.add('hidden');
-      render();
-    }
-
-    render();
-  </script>
-</body>
-</html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>المستكشفة السعودية: رحلة في عالم المعادلات</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet"><style>
+:root{--green:#006c35;--dark:#004b24;--gold:#c59b27;--paper:#faf7f0;--line:#e2ddd2;--mint:#e8f5ee;--ink:#1e293b}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 15%,#e7f2e9,transparent 42%),var(--paper);font-family:Tajawal,Arial,sans-serif;color:var(--ink);line-height:1.65}button,input{font:inherit}button{cursor:pointer}.sadu{height:13px;background:repeating-linear-gradient(90deg,var(--green) 0 18px,var(--gold) 18px 26px,#8b1e24 26px 34px,white 34px 40px);border-bottom:2px solid var(--gold)}header{background:#fffc;backdrop-filter:blur(8px);position:sticky;top:0;z-index:5;box-shadow:0 3px 12px #004b2414}.nav{max-width:1100px;margin:auto;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-weight:900;color:var(--dark);font-size:1.16rem}.nav-items{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pill{border-radius:30px;padding:5px 12px;background:var(--mint);border:1px solid #a7d0b8;font-weight:800;color:var(--dark)}.goldpill{background:#fbf6e8;border-color:var(--gold);color:#80610f}main{max-width:1050px;margin:26px auto 65px;padding:0 16px}.screen{display:none;animation:appear .3s ease}.screen.active{display:block}@keyframes appear{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}.panel{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 10px 28px #004b2417}.hero{overflow:hidden;padding:0;border:2px solid #d6bc78}.hero-head{padding:38px 22px;background:linear-gradient(130deg,var(--dark),var(--green),#14834c);text-align:center;color:white}.emblem{margin:0 auto 15px;width:82px;height:82px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:3rem;background:#ffffff1f}.hero h1,.certificate h1{font-family:Amiri,serif;font-size:clamp(2rem,5vw,3rem);margin:0}.hero-head p{color:#ffe29a;font-weight:800}.hero-body{padding:24px;max-width:760px;margin:auto}.credits{display:flex;gap:12px;justify-content:space-around;flex-wrap:wrap;background:#fbf6e8;border:1px dashed var(--gold);border-radius:13px;padding:12px;text-align:center}.credits small{display:block;color:#667085}.credits strong{color:var(--dark)}.namebox{margin:20px 0;padding:18px;background:var(--paper);border:2px solid #b9dcca;border-radius:15px}label{font-weight:900;color:var(--dark);display:block;margin-bottom:8px}input{width:100%;padding:12px 16px;border:2px solid var(--line);border-radius:12px;outline:none;font-weight:800;background:white}input:focus{border-color:var(--green)}.features,.station-grid,.two-col,.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}.feature{background:var(--mint);color:var(--dark);border-radius:12px;padding:12px;font-weight:800}.btn{background:white;color:var(--dark);border:2px solid var(--green);padding:11px 18px;border-radius:13px;font-weight:900;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:6px}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(120deg,var(--green),var(--dark));color:white;border-color:var(--green)}.gold{background:linear-gradient(120deg,#d4aa35,#9e7916);border-color:var(--gold);color:white}.soft{background:var(--paper);border-color:var(--line);color:var(--ink)}.center{text-align:center}.topgap{margin-top:20px}.map-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:20px}.map-top h2,.section-title{color:var(--dark);margin:0 0 5px}.muted{color:#617083}.progress{height:14px;background:#e6e1d7;border-radius:30px;overflow:hidden;margin-top:7px}.progress div{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));width:0;transition:width .4s}.station-card{display:flex;flex-direction:column;justify-content:space-between;gap:14px;border:2px solid var(--line)}.station-card.done{border-color:var(--green);background:#f4fbf7}.sthead{display:flex;justify-content:space-between;align-items:center}.tag{padding:4px 12px;border-radius:30px;background:#fbf6e8;color:#97751a;font-weight:900}.station-card h3{margin:10px 0 1px;color:var(--dark);font-size:1.42rem}.station-card h4{margin:0;color:#98771d}.actions{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:20px}.station-banner{background:linear-gradient(120deg,var(--dark),var(--green));color:white;border-bottom:5px solid var(--gold);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:18px}.station-banner h2{margin:4px 0}.info h3{color:var(--dark);margin:0 0 10px}.rule{background:#fbf6e8;border-right:4px solid var(--gold);padding:12px;border-radius:10px;font-weight:800}.example{background:var(--mint);padding:12px;border-radius:10px}.math{direction:ltr;unicode-bidi:isolate;display:inline-block;border:1px solid #b9dcca;background:white;color:var(--dark);padding:2px 8px;border-radius:8px;font-weight:900}.lab{text-align:center;margin:18px 0}.balance{max-width:450px;margin:20px auto 5px;display:flex;align-items:end;justify-content:space-between;padding:14px 10px 6px;border-bottom:7px solid #9e7916;border-radius:5px}.pan{background:var(--mint);border:2px solid var(--green);border-radius:13px;padding:10px;min-width:100px;color:var(--dark);font-size:1.2rem;font-weight:900}.base{width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:30px solid var(--dark);margin:auto}.question{font-size:1.28rem;font-weight:900;margin:18px 0}.option{background:var(--paper);color:var(--ink);border:2px solid var(--line);padding:16px;border-radius:13px;font-weight:900;font-size:1.1rem}.option:hover:not(:disabled){border-color:var(--green);background:var(--mint)}.option.correct{background:#dcfce7;border-color:#15803d;color:#14532d}.option.wrong{background:#fee2e2;border-color:#b91c1c;color:#991b1b}.option:disabled{cursor:default}.feedback{padding:15px;border-radius:12px;margin-top:14px;font-weight:800}.feedback.good{background:#dcfce7;color:#14532d;border:1px solid #15803d}.feedback.hint{background:#fef3c7;color:#854d0e;border:1px solid #f59e0b}.feedback.bad{background:#fee2e2;color:#991b1b;border:1px solid #ef4444}.quiz-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}.numeric-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.numeric-row input{max-width:240px;text-align:center;direction:ltr}.certificate{border:10px double var(--gold);outline:4px solid var(--green);outline-offset:-18px;background:#fffdf8;text-align:center;padding:48px 30px;max-width:900px;margin:20px auto;box-shadow:0 12px 28px #004b241c}.certificate h1{color:var(--green)}.certificate .student{font:700 clamp(1.8rem,4vw,2.8rem) Amiri,serif;color:var(--dark);border-bottom:2px dashed var(--gold);display:inline-block;padding:6px 30px;min-width:240px}.certificate p{font-size:1.17rem;font-weight:700}.certscore{background:var(--green);color:white;border:2px solid var(--gold);border-radius:30px;padding:7px 21px;display:inline-block;font-weight:900}.signatures{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-around;gap:20px;margin-top:32px}.signatures strong{font:700 1.5rem Amiri,serif;color:var(--dark)}.seal{width:95px;height:95px;display:grid;place-items:center;border:3px double var(--gold);border-radius:50%;background:#fbf6e8;color:var(--dark);font-weight:900}.overlay{position:fixed;inset:0;background:#152036a8;z-index:10;display:none;align-items:center;justify-content:center;padding:16px}.overlay.open{display:flex}.dialog{max-width:420px;width:100%;text-align:center}.dialog h2{color:var(--dark)}#confetti{position:fixed;inset:0;pointer-events:none;z-index:9}@media(max-width:550px){.nav-items .pill{font-size:.82rem}.panel{padding:16px}.hero{padding:0}.hero-body{padding:17px}.hero-head{padding:30px 16px}.balance .pan{min-width:92px;padding:8px 5px}.certificate{padding:34px 19px}.cert-name{min-width:0}}@media print{@page{size:A4 landscape;margin:8mm}body{background:white!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}header,.sadu,.no-print,#confetti,.overlay{display:none!important}main{max-width:none;margin:0;padding:0}.screen{display:none!important}#certificate-screen{display:block!important}.certificate{box-shadow:none;margin:0 auto;width:100%;max-width:100%;break-inside:avoid;padding:24px}}
+</style></head><body><canvas id="confetti"></canvas><div class="sadu"></div><header><div class="nav"><div class="brand">🌴 المستكشفة السعودية <small style="display:block;color:#9e7916">رحلة في عالم المعادلات</small></div><div class="nav-items"><span class="pill">👩🏻‍🎓 <span id="navName">ضيفة الرحلة</span> <button class="btn soft" style="padding:2px 7px" onclick="editName()">✏️</button></span><span class="pill goldpill">🎯 <span id="navScore">٠٪ (٠/٢٢)</span></span><button class="btn soft" onclick="toggleSound()" id="soundBtn">🔊</button><button class="btn soft" onclick="askReset()">🔄</button></div></div></header><main>
+<section class="screen active" id="welcome-screen"><div class="panel hero"><div class="hero-head"><div class="emblem">🌴</div><h1>المستكشفة السعودية:<br>رحلة في عالم المعادلات</h1><p>المملكة العربية السعودية • مادة الرياضيات للصف الأول المتوسط</p><p>معادلات الجمع والطرح والضرب والقسمة</p></div><div class="hero-body"><div class="credits"><div><small>إعداد وتصميم الطالبة</small><strong>وتين طه عسيري — الصف الأول المتوسط</strong></div><div><small>إشراف معلمة المادة</small><strong>الأستاذة حسناء كيلاني</strong></div></div><div class="namebox"><label for="welcomeName">✍🏻 اسم المستكشفة (اكتبي اسمك ليظهر في شهادة الإنجاز)</label><input id="welcomeName" placeholder="اكتبي اسمكِ الثلاثي" oninput="setName(this.value)"><p class="muted" style="margin-bottom:0">يمكن تعديل الاسم لاحقًا قبل طباعة الشهادة.</p></div><div class="features"><div class="feature">🗺️ ٥ محطات وطنية</div><div class="feature">⚖️ ميزان المعادلات</div><div class="feature">🎯 ٣ محاولات وتلميحات</div><div class="feature">🏅 شهادة بالاسم والنتيجة</div></div><div class="center topgap"><button class="btn primary" onclick="start()">🚀 انطلقي في رحلة الاستكشاف</button></div></div></div></section>
+<section class="screen" id="map-screen"><div class="panel map-top"><div><h2>🗺️ خريطة محطات الاستكشاف</h2><div class="muted">اختاري المحطة وتعلّمي القاعدة الذهبية ثم أكملي تحديات المعادلات.</div></div><div style="min-width:min(100%,260px);flex:1;max-width:380px"><strong id="progressLabel">٠٪ (٠ من ٢٢)</strong><div class="progress"><div id="progressFill"></div></div></div></div><div class="station-grid" id="stationGrid"></div><div class="panel actions"><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn gold" onclick="openCertificate()">🏅 عرض شهادة الإنجاز</button><button class="btn" id="retryBtn" onclick="retryRemaining()">🎯 إعادة الأسئلة المتبقية</button></div><button class="btn soft" onclick="askReset()">🔄 ابدأ من جديد</button></div></section>
+<section class="screen" id="station-screen"><div class="panel station-banner"><div><span id="stationNumber">المحطة ١</span><h2 id="stationTitle"></h2></div><button class="btn soft" onclick="show('map')">🗺️ العودة إلى الخريطة</button></div><div class="two-col"><div class="panel info"><h3>📜 القاعدة الذهبية</h3><div class="rule" id="rule"></div><p class="muted" id="tip"></p></div><div class="panel info"><h3>✍🏻 مثال محلول خطوة بخطوة</h3><div class="example" id="example"></div></div></div><div class="panel lab"><h3 class="section-title">⚖️ مختبر ميزان المعادلات التفاعلي</h3><p class="muted">طبقي العملية العكسية على الطرفين للمحافظة على المساواة</p><div class="balance"><div class="pan" id="leftPan"></div><strong style="font-size:1.5rem;color:#9e7916">=</strong><div class="pan" id="rightPan"></div></div><div class="base"></div><div class="topgap"><button class="btn primary" id="labBtn" onclick="applyLab()"></button> <button class="btn soft" onclick="resetLab()">إعادة ضبط الميزان</button></div><p id="labMsg" style="font-weight:900;color:var(--green)"></p></div><div class="panel"><div class="actions" style="margin-top:0"><strong id="questionCounter"></strong><span class="pill goldpill" id="attempts"></span></div><div class="question" id="questionText"></div><div class="options" id="optionArea"></div><div id="numericArea" class="numeric-row" style="display:none"><input id="numberAnswer" inputmode="decimal" placeholder="اكتبي الناتج" onkeydown="if(event.key==='Enter')submitNumber()"><button class="btn primary" id="numberBtn" onclick="submitNumber()">تحقق من الإجابة</button></div><div id="feedback" aria-live="polite"></div><div class="quiz-nav"><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn soft" id="prevBtn" onclick="move(-1)">السابق</button><button class="btn primary" id="nextBtn" onclick="move(1)">السؤال التالي</button></div><button class="btn gold" onclick="show('map')">✅ إتمام المحطة والعودة للخريطة</button></div></div></section>
+<section class="screen" id="certificate-screen"><div class="panel actions no-print" style="margin-top:0"><div style="flex:1;min-width:230px"><label>تعديل اسم المستكشفة في الشهادة</label><input id="certInput" oninput="setName(this.value)"></div><div><button class="btn primary" onclick="window.print()">🖨️ طباعة / حفظ PDF</button> <button class="btn" onclick="show('map')">🗺️ الخريطة</button></div></div><div class="certificate"><div style="font-weight:900;color:var(--dark)">المملكة العربية السعودية • وزارة التعليم • مادة الرياضيات (الصف الأول المتوسط)</div><div style="font-size:2.2rem">🏅</div><h1>شهادة إنجاز وتفوّق</h1><div class="pill goldpill">رحلة المستكشفة السعودية في عالم المعادلات</div><p>تُمنح هذه الشهادة بكل فخر واعتزاز للمستكشفة المبدعة:</p><div class="student" id="certName"></div><p>لإتمامها رحلة استكشاف معادلات الجمع والطرح والضرب والقسمة عبر محطات المملكة العربية السعودية (الدرعية، العُلا، نيوم، جدة التاريخية، والرياض)، محققةً نسبة إتقان قدرها:</p><div class="certscore" id="certScore"></div><div class="signatures"><div><small>مصممة الرحلة</small><br><strong>وتين طه عسيري</strong><br>الصف الأول المتوسط</div><div class="seal">🌴<br>ختم التميز</div><div><small>إشراف معلمة المادة</small><br><strong>حسناء كيلاني</strong><br>معلمة الرياضيات</div></div></div></section>
+</main><div class="overlay" id="modal"><div class="panel dialog"><h2 id="modalTitle"></h2><p id="modalText"></p><div id="modalContent"></div><div class="actions" style="justify-content:center" id="modalButtons"></div></div></div>
+<script>
+const STATIONS=[
+{id:'diriyah',num:'المحطة ١',city:'الدرعية التاريخية',topic:'معادلات الجمع',desc:'انطلقي من مهد الدولة السعودية وتعلّمي حل معادلات الجمع باستخدام خاصية الطرح للمساواة.',rule:'لحل معادلة جمع مثل (س + أ = ب)، نطرح العدد (أ) من كلا طرفي المعادلة لعزل المتغير.',tip:'العملية العكسية للجمع هي الطرح، ويجب إجراء العملية نفسها على الطرفين.',example:['س + ٦ = ١٤','س + ٦ - ٦ = ١٤ - ٦','س = ٨'],lab:['س + ٤','١٠','اطرحي ٤ من الطرفين (−٤)','س','٦','أحسنتِ! بطرح ٤ من الطرفين: س = ٦.'],questions:[
+['d1','mcq','حلّي المعادلة: س + ٧ = ١٥',['س = ٨','س = ٢٢','س = ٧','س = ٩'],0,'اطرحي ٧ من كلا الطرفين: ١٥ - ٧.','س = ١٥ - ٧ = ٨.'],
+['d2','mcq','ما قيمة ص في المعادلة: ص + (−٤) = ١٠ ؟',['ص = ٦','ص = −١٤','ص = ١٤','ص = −٦'],2,'طرح (−٤) يكافئ إضافة ٤.','ص = ١٠ + ٤ = ١٤.'],
+['d3','mcq','أوجدي الحل: −٩ + ك = −٣',['ك = −١٢','ك = ٦','ك = −٦','ك = ١٢'],1,'اجمعي ٩ إلى طرفي المعادلة.','ك = −٣ + ٩ = ٦.'],
+['d4','mcq','زار ١٢ طالبًا حي الطريف بالدرعية، ثم انضم إليهم آخرون فأصبحوا ٢٧ طالبًا. كم طالبًا انضم؟',['١٥ طالبًا','٣٩ طالبًا','١٤ طالبًا','١٧ طالبًا'],0,'اكتبي: ١٢ + ز = ٢٧، ثم اطرحي ١٢.','ز = ٢٧ − ١٢ = ١٥ طالبًا.']]},
+{id:'alula',num:'المحطة ٢',city:'العُلا',topic:'معادلات الطرح',desc:'استكشفي جبال العُلا وأتقني حل معادلات الطرح باستخدام خاصية الجمع للمساواة.',rule:'لحل معادلة طرح مثل (س − أ = ب)، نجمع العدد (أ) إلى كلا الطرفين.',tip:'العملية العكسية للطرح هي الجمع، وانتبهي عند طرح عدد سالب.',example:['س − ٥ = ٩','س − ٥ + ٥ = ٩ + ٥','س = ١٤'],lab:['س − ٥','٧','اجمعي ٥ للطرفين (+٥)','س','١٢','رائع! بإضافة ٥ إلى الطرفين: س = ١٢.'],questions:[
+['u1','mcq','حلّي المعادلة: س − ٨ = ١٣',['س = ٥','س = ٢١','س = −٥','س = ١٩'],1,'اجمعي ٨ إلى كلا الطرفين.','س = ١٣ + ٨ = ٢١.'],
+['u2','mcq','ما قيمة م في المعادلة: م − ١١ = −٤ ؟',['م = −١٥','م = −٧','م = ٧','م = ١٥'],2,'اجمعي ١١ إلى −٤.','م = −٤ + ١١ = ٧.'],
+['u3','mcq','أوجدي الحل: ل − (−٦) = ١٥',['ل = ٢١','ل = ٩','ل = −٩','ل = −٢١'],1,'طرح السالب يعني الجمع: ل + ٦ = ١٥.','ل = ١٥ − ٦ = ٩.'],
+['u4','mcq','انخفضت درجة الحرارة في العُلا ٦ درجات فأصبحت ٩ درجات مئوية. كم كانت قبل الانخفاض؟',['٣ درجات','١٥ درجة','١٦ درجة','٦ درجات'],1,'المعادلة د − ٦ = ٩.','د = ٩ + ٦ = ١٥ درجة مئوية.']]},
+{id:'neom',num:'المحطة ٣',city:'نيوم',topic:'معادلات الضرب',desc:'حلّقي نحو مستقبل المملكة في نيوم وتدرّبي على حل معادلات الضرب باستخدام القسمة.',rule:'لحل معادلة ضرب مثل (أ س = ب) حيث أ لا يساوي صفرًا، نقسم الطرفين على معامل س.',tip:'تشابه الإشارات في القسمة يعطي ناتجًا موجبًا واختلافها يعطي سالبًا.',example:['٤س = ٢٤','٤س ÷ ٤ = ٢٤ ÷ ٤','س = ٦'],lab:['٣س','١٥','اقسمي الطرفين على ٣ (÷٣)','س','٥','ممتاز! بقسمة الطرفين على ٣: س = ٥.'],questions:[
+['n1','mcq','حلّي المعادلة: ٥س = ٣٥',['س = ٣٠','س = ٧','س = ٦','س = ١٧٥'],1,'اقسمي الطرفين على ٥.','س = ٣٥ ÷ ٥ = ٧.'],
+['n2','mcq','ما قيمة ص في المعادلة: −٤ص = ٢٨ ؟',['ص = ٧','ص = ٣٢','ص = −٧','ص = −٢٤'],2,'اقسمي على −٤؛ موجب ÷ سالب = سالب.','ص = ٢٨ ÷ (−٤) = −٧.'],
+['n3','mcq','أوجدي الحل: −٦ن = −٤٢',['ن = −٧','ن = ٧','ن = −٣٦','ن = ٦'],1,'سالب ÷ سالب = موجب.','ن = (−٤٢) ÷ (−٦) = ٧.'],
+['n4','mcq','تنتج ٣ ألواح شمسية متطابقة في نيوم ٢٤ كيلوواط. ما إنتاج اللوح الواحد؟',['٧ كيلوواط','٨ كيلوواط','٢١ كيلوواط','٧٢ كيلوواط'],1,'المعادلة ٣ط = ٢٤.','ط = ٢٤ ÷ ٣ = ٨ كيلوواط.']]},
+{id:'jeddah',num:'المحطة ٤',city:'جدة التاريخية',topic:'معادلات القسمة',desc:'تجولي بين رواشين جدة التاريخية وتعلّمي حل معادلات القسمة باستخدام الضرب.',rule:'لحل معادلة قسمة مثل (س ÷ أ = ب)، نضرب كلا الطرفين في أ، بشرط ألا يكون صفرًا.',tip:'العملية العكسية للقسمة هي الضرب مع مراعاة الإشارات.',example:['س ÷ ٣ = ٧','(س ÷ ٣) × ٣ = ٧ × ٣','س = ٢١'],lab:['س ÷ ٢','٦','اضربي الطرفين في ٢ (×٢)','س','١٢','أبدعتِ! بضرب الطرفين في ٢: س = ١٢.'],questions:[
+['j1','mcq','حلّي المعادلة: س ÷ ٤ = ٩',['س = ١٣','س = ٣٦','س = ٥','س = ٢٤'],1,'اضربي الطرفين في ٤.','س = ٩ × ٤ = ٣٦.'],
+['j2','mcq','ما قيمة ع في المعادلة: ع ÷ (−٣) = ٨ ؟',['ع = ٢٤','ع = −٢٤','ع = −٥','ع = ١١'],1,'اضربي ٨ في −٣.','ع = ٨ × (−٣) = −٢٤.'],
+['j3','mcq','أوجدي الحل: ف ÷ (−٥) = −٦',['ف = −٣٠','ف = ٣٠','ف = −١١','ف = ١'],1,'اضربي سالبًا في سالب.','ف = (−٦) × (−٥) = ٣٠.'],
+['j4','mcq','وُزّعت رواشين تراثية على ٤ واجهات في جدة التاريخية وكان نصيب كل واجهة ٧ رواشين. كم العدد الكلي؟',['١١ روشانًا','٢٨ روشانًا','٣ رواشين','٢٤ روشانًا'],1,'اكتبي ر ÷ ٤ = ٧.','ر = ٧ × ٤ = ٢٨ روشانًا.']]},
+{id:'riyadh',num:'المحطة ٥ (الختامية)',city:'الرياض — قصر المصمك',topic:'التحدي الشامل للمعادلات',desc:'اجمعي مهارات الجمع والطرح والضرب والقسمة عبر الإدخال المباشر والاختيار.',rule:'حدّدي العملية المرتبطة بالمتغير ثم طبّقي العملية العكسية على الطرفين بدقة.',tip:'يمكن كتابة الأعداد بالأرقام العربية أو الإنجليزية، مع علامة الناقص قبل العدد السالب.',example:['−٣س = ٢١','−٣س ÷ (−٣) = ٢١ ÷ (−٣)','س = −٧'],lab:['س + ٦','−٢','اطرحي ٦ من الطرفين (−٦)','س','−٨','عمل رائع! −٢ − ٦ = −٨.'],questions:[
+['r1','input','أوجدي قيمة س: س + ١٤ = ٢٣',null,9,'اطرحي ١٤ من ٢٣.','س = ٢٣ − ١٤ = ٩.'],
+['r2','input','أوجدي قيمة ص: ص − ٩ = −٢',null,7,'اجمعي ٩ إلى −٢.','ص = −٢ + ٩ = ٧.'],
+['r3','input','أوجدي قيمة ك: −٧ك = ٤٢',null,-6,'اقسمي ٤٢ على −٧.','ك = ٤٢ ÷ (−٧) = −٦.'],
+['r4','input','أوجدي قيمة م: م ÷ ٦ = −٥',null,-30,'اضربي −٥ في ٦.','م = (−٥) × ٦ = −٣٠.'],
+['r5','mcq','أي المعادلات التالية حلّها يساوي −٤ ؟',['س + ٤ = ٠','س − ٤ = ٠','٣س = ١٢','س ÷ ٢ = −٨'],0,'عوّضي س بـ −٤ في الخيارات.','المعادلة س + ٤ = ٠ تعطي س = −٤.'],
+['r6','input','في احتفال يوم التأسيس بالرياض، وُزّع ٩٦ مشاركًا بالتساوي على ٨ فرق للعرضة السعودية. كم مشاركًا في كل فرقة؟',null,12,'اكتبي ٨ف = ٩٦.','ف = ٩٦ ÷ ٨ = ١٢ مشاركًا.']]}
+];
+const $=id=>document.getElementById(id),ALL=STATIONS.flatMap(s=>s.questions),AR='٠١٢٣٤٥٦٧٨٩';const ad=n=>String(n).replace(/\d/g,x=>AR[+x]);const normalize=s=>String(s).trim().replace(/[٠-٩]/g,c=>String(AR.indexOf(c))).replace(/[−–—]/g,'-').replace(/٫/g,'.').replace(/\s/g,'');
+let state={name:'',si:0,qi:0,status:{},sound:true};function init(){state.status={};ALL.forEach(q=>state.status[q[0]]={tries:3,solved:false,exhausted:false,wrong:[]});}init();
+function sound(ok=true){if(!state.sound)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const a=new C(),notes=ok?[523,659,784]:[390,310];notes.forEach((f,i)=>{let o=a.createOscillator(),g=a.createGain(),t=a.currentTime+i*.095;o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(.10,t);g.gain.exponentialRampToValueAtTime(.001,t+.17);o.connect(g).connect(a.destination);o.start(t);o.stop(t+.18)});setTimeout(()=>a.close(),650)}catch(e){}}function toggleSound(){state.sound=!state.sound;$('soundBtn').textContent=state.sound?'🔊':'🔇'}
+function confetti(){let cv=$('confetti'),c=cv.getContext('2d');cv.width=innerWidth;cv.height=innerHeight;let ps=Array.from({length:90},()=>({x:Math.random()*cv.width,y:-Math.random()*cv.height,v:2+Math.random()*5,w:5+Math.random()*8,color:['#006c35','#c59b27','#16a34a','#f59e0b'][Math.floor(Math.random()*4)]})),i=0;function draw(){c.clearRect(0,0,cv.width,cv.height);ps.forEach(p=>{p.y+=p.v;c.fillStyle=p.color;c.fillRect(p.x,p.y,p.w,p.w)});if(i++<160)requestAnimationFrame(draw);else c.clearRect(0,0,cv.width,cv.height)}draw()}
+function setName(v){state.name=v.trim();let name=state.name||'المستكشفة المبدعة';$('navName').textContent=name;$('certName').textContent=name;$('welcomeName').value=v;$('certInput').value=v}function editName(){modal('✏️ تعديل اسم المستكشفة','اكتبي الاسم ليظهر على الشهادة.','<input id="newName" placeholder="الاسم الثلاثي">',[['حفظ',()=>{setName($('newName').value);closeModal()}],['إلغاء',closeModal]]);$('newName').value=state.name}
+function modal(title,msg,content,buttons){$('modalTitle').textContent=title;$('modalText').textContent=msg;$('modalContent').innerHTML=content;$('modalButtons').innerHTML='';buttons.forEach(([name,fn],i)=>{let b=document.createElement('button');b.className='btn '+(i===0?'primary':'soft');b.textContent=name;b.onclick=fn;$('modalButtons').appendChild(b)});$('modal').classList.add('open')}function closeModal(){$('modal').classList.remove('open')}function askReset(){modal('🔄 بدء الرحلة من جديد','هل تريدين تصفير النتائج والمحاولات؟ سيبقى الاسم كما هو.','',[['نعم، ابدأ من جديد',()=>{init();closeModal();show('welcome')}],['إلغاء',closeModal]])}
+function show(scr){document.querySelectorAll('.screen').forEach(el=>el.classList.remove('active'));$(scr+'-screen').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});if(scr==='map')renderMap();if(scr==='certificate')renderCert();}function start(){setName($('welcomeName').value);show('map')}
+function score(){let n=Object.values(state.status).filter(v=>v.solved).length;return {n,total:ALL.length,p:Math.round(n/ALL.length*100)}}function header(){let x=score();$('navScore').textContent=ad(x.p)+'٪ ('+ad(x.n)+'/'+ad(x.total)+')'}
+function renderMap(){header();let sc=score();$('progressLabel').textContent=`${ad(sc.p)}٪ (${ad(sc.n)} من ${ad(sc.total)} سؤالًا)`;$('progressFill').style.width=sc.p+'%';$('retryBtn').style.display=sc.n===sc.total?'none':'inline-flex';$('stationGrid').innerHTML='';STATIONS.forEach((s,i)=>{let n=s.questions.filter(q=>state.status[q[0]].solved).length,done=n===s.questions.length;let div=document.createElement('div');div.className='panel station-card'+(done?' done':'');div.innerHTML=`<div><div class="sthead"><span class="tag">${s.num}</span><span class="pill">${done?'✅ مكتملة':ad(n)+' / '+ad(s.questions.length)}</span></div><h3>${s.city}</h3><h4>${s.topic}</h4><p class="muted">${s.desc}</p></div><button class="btn ${done?'':'primary'}" onclick="openStation(${i})">${done?'🔁 مراجعة المحطة':'🧭 ابدئي الاستكشاف'}</button>`;$('stationGrid').appendChild(div)})}
+function openStation(i,q=0){state.si=i;state.qi=q;let s=STATIONS[i];$('stationNumber').textContent=s.num;$('stationTitle').textContent=s.city+' — '+s.topic;$('rule').textContent=s.rule;$('tip').textContent='💡 '+s.tip;$('example').innerHTML=s.example.map((x,i)=>`<div>${['المعادلة:','العملية العكسية:','الحل:'][i]} <span class="math">${x}</span></div>`).join('');resetLab();renderQ();show('station')}
+function resetLab(){let l=STATIONS[state.si].lab;$('leftPan').textContent=l[0];$('rightPan').textContent=l[1];$('labBtn').textContent=l[2];$('labBtn').disabled=false;$('labMsg').textContent=''}function applyLab(){let l=STATIONS[state.si].lab;$('leftPan').textContent=l[3];$('rightPan').textContent=l[4];$('labBtn').disabled=true;$('labMsg').textContent=l[5];sound()}
+function renderQ(){header();let s=STATIONS[state.si],q=s.questions[state.qi],t=state.status[q[0]];$('questionCounter').textContent=`السؤال ${ad(state.qi+1)} من ${ad(s.questions.length)}`;$('questionText').textContent=q[2];$('attempts').textContent=t.solved?'✅ إجابة صحيحة':t.exhausted?'انتهت المحاولات':`❤️ ${ad(t.tries)} من ٣ محاولات`;$('optionArea').innerHTML='';$('feedback').innerHTML='';$('numericArea').style.display=q[1]==='input'?'flex':'none';$('optionArea').style.display=q[1]==='mcq'?'grid':'none';if(q[1]==='mcq')q[3].forEach((txt,j)=>{let b=document.createElement('button');b.className='option'+((t.solved||t.exhausted)&&j===q[4]?' correct':'')+(t.wrong.includes(j)?' wrong':'');b.textContent=txt;b.disabled=t.solved||t.exhausted||t.wrong.includes(j);b.onclick=()=>answer(j);$('optionArea').appendChild(b)});else{$('numberAnswer').value=t.solved?ad(q[4]):'';$('numberAnswer').disabled=t.solved||t.exhausted;$('numberBtn').disabled=t.solved||t.exhausted}if(t.solved)feedback('good','🎉 إجابة صحيحة! '+q[6]);else if(t.exhausted)feedback('bad','انتهت المحاولات. الحل: '+q[6]+' يمكنك إعادة المحاولة من الخريطة.');$('prevBtn').disabled=state.qi===0;$('nextBtn').textContent=state.qi===s.questions.length-1?'🗺️ العودة للخريطة':'السؤال التالي'}
+function feedback(type,msg){let d=$('feedback');d.className='feedback '+type;d.textContent=msg}
+function answer(value){let q=STATIONS[state.si].questions[state.qi],t=state.status[q[0]];if(t.solved||t.exhausted)return;if(value===q[4]){t.solved=true;sound();renderQ();if(score().n===ALL.length){sound();confetti()}}else{t.tries--;if(q[1]==='mcq')t.wrong.push(value);if(t.tries===0)t.exhausted=true;sound(false);renderQ();if(!t.exhausted)feedback('hint',`💡 حاولي مجددًا. تلميح: ${q[5]}`)}}
+function submitNumber(){let q=STATIONS[state.si].questions[state.qi],v=normalize($('numberAnswer').value);if(!/^-?\d+(\.\d+)?$/.test(v)){feedback('hint','اكتبي عددًا صحيحًا أو سالبًا، مثل ٩ أو −٦.');return}answer(Number(v))}
+function move(d){let next=state.qi+d;if(next<0)return;if(next>=STATIONS[state.si].questions.length){show('map');return}state.qi=next;renderQ();window.scrollTo({top:Math.max(0,$('questionText').getBoundingClientRect().top+scrollY-170),behavior:'smooth'})}
+function retryRemaining(){for(let s of STATIONS){for(let i=0;i<s.questions.length;i++){let q=s.questions[i],t=state.status[q[0]];if(!t.solved){t.tries=3;t.exhausted=false;t.wrong=[];openStation(STATIONS.indexOf(s),i);return}}}show('map')}
+function renderCert(){let s=score();$('certScore').textContent=`${ad(s.p)}٪ (${ad(s.n)} من ${ad(s.total)} نقطة)`;$('certInput').value=state.name;$('certName').textContent=state.name||'المستكشفة المبدعة';if(s.n===s.total)confetti()}
+function openCertificate(){show('certificate')}
+header();setName('');
+</script></body></html>
